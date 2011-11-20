@@ -1,0 +1,6 @@
+1.请先安装本目录下的sql
+
+2.需要在要显示的Rss地方加代码：
+<?php echo rss_feed_link(RSS_ICON); ?>
+
+3.在 后台 - 基本设置 - rss对rss的基本信息设置 

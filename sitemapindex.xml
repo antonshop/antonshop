@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="includes/templates/template_default/css/gss.xsl"?>
+<sitemapindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/siteindex.xsd"
+        xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<!-- generator="Zen-Cart SitemapXML" v 2.1.0 30.04.2009 10:35 -->
+ <sitemap>
+  <loc>http://localhost/sunwinningshop/sitemapezpages.xml</loc>
+  <lastmod>2011-09-05</lastmod>
+ </sitemap>
+</sitemapindex>

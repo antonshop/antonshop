@@ -1,0 +1,255 @@
+<!--
+/**
+ * @package documentation
+ * @copyright Copyright 2003-2010 Zen Cart Development Team
+ * @license http://www.zen-cart.com/license/2_0.txt GNU Public License V2.0
+ * @version $Id: 3.readme_paypal_ipn.html 15956 2010-04-15 17:22:44Z drbyte $
+ */
+//-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>PayPal 及时付款通知 - 功能及安装指南</title>
+<meta name="author" content="Zen Cart" />
+<meta name="copyright" content="2004, 2006, 2009, 2010" />
+
+<style type="text/css">
+<!--
+body, table{ font-family:Verdana, Arial, Helvetica, sans-serif; font-size:14px; }
+table.intro {border-color:C96E29; }
+td.intro{background-color:#EEEEEE ; border-color:5778ce; font-size:13px; }
+td.plainbox, div.callout {border: 1px dashed; border-color: C96E29; margin:5 40 5 40;}
+.heading {background-color:5778CE; font-weight:bold; font-size:14px; width: 100%; }
+.title1 {color:C96E29; font-weight:bold; font-size:22px; }
+.title2 {color:C96E29; font-weight:bold; font-size:13px; }
+.small {font-size:12px ;}
+.error {color:FF0000; }
+.filename {font-family: mono, "Courier New", Courier ; font-size:14px; color: c96e29;}
+.pseudolink {text-decoration:underline; color:5778CE;}
+h1.intro { color: #ffffff; border:1px solid #aca893; background-color: #c96e29;  font-size: 22px;   padding: 4px;}
+h1 { color: #ffffff;    border:1px solid #aca893;   background-color: #5778ce;   font-size: 20px;   padding: 4px;}
+h2 { color: #c96e29; font-size: 18px;}
+h3 { color: #5778ce; font-size: 16px; margin-bottom:0px;}
+h4 { color: #c96e29; font-size: 14px;}
+-->
+</style>
+</head>
+<body>
+
+<table class="intro" cellspacing="4" cellpadding="6" border="3" width="748px" align="center">
+<tr><td class="intro">
+<center><h1 class="intro">欢迎使用Zen Cart中文版 ...</h1></center>
+<br />
+Zen Cart&trade;软件使用的是GNU通用公共许可协议，您可以免费使用、修改Zen Cart&trade;软件。
+<br />
+<br />
+虽然该软件是免费的，但是欢迎您每次下载新版本前捐款，以帮助我们继续软件开发、升级，和维护免费论坛。
+<br />
+<br />
+捐款网址：
+<a href="http://www.zen-cart.com/index.php?main_page=infopages&pages_id=14" target="_blank">Zen Cart&trade; 团队</a>
+<br /><br />
+感谢您的支持<br />
+<em>Zen Cart China</em><br />
+<br />
+<center>
+<span class="small">
+Zen Cart&trade; 源自: Copyright 2003 osCommerce<br />
+该软件希望提供有用的功能，但[不做保证]，也不保证[适用于特定用途]<br />
+该软件受限于GNU通用公共许可协议<br /><br />
+</span>
+</center>
+</td></tr></table>
+<br />
+<table border="3" width="748px" align="center" cellpadding="6">
+  <tr>
+<td align="center"><img src="osi-certified-120x100.png" /><br />
+该软件通过OSI开源软件认证。<br />
+OSI Certified是开源动力的认证标志。
+</td></tr></table>
+<br />
+<table border="3" width="748px" align="center" cellpadding="6">
+  <tr>
+<td>
+<center>
+<h1 class="intro">PayPal (IPN) 及时付款通知<br />
+功能及安装指南</h1>
+</center>
+<div>
+<h1>PayPal (IPN) 及时付款通知模块概述 </h1>
+<ul type="disc">
+<li> 完全集成Zen Cart结帐流程、付款和总额计算类。</li>
+<li> PayPal的(IPN)及时付款通知自动更新商店的数据库，无论客户是否返回商店。</li>
+<li> 所有 PayPal IPN 信息在管理订单页面下可见。</li>
+<li> 完全支持Zen Cart内置的优惠券、礼券、可下载商品及运输选项。</li>
+<li> 支持PayPal及时付款、电子支票、信用卡付款、及多种货币。</li>
+<li> 订单状态根据支付方式、或退款/止付/取消等转变<br />
+</li>
+</ul>
+</div>
+<div>
+<h1>使用前提条件</h1>
+<ul type="disc">
+<li>完全、正常安装了Zen Cart中文版 v1.3.0.x</li>
+<li>PayPal的Premier 或者 Merchant Business 帐号。<br />
+<br />
+<em>一些帐号设置需要在PayPal帐号中( www.paypal.com)进行<br />
+见下面常见问答部分的说明。</em><br />
+</li>
+</ul>
+</div>
+<div>
+<h1>PayPal IPN 模块安装</h1>
+<h3>安装模块</h3>
+<ul type="disc">
+<li>打开Zen Cart中文版管理页面。</li>
+<li>将光标移到菜单条 <em>模块</em> 上。</li>
+<li>从下拉菜单选择 <em>付款</em> 。</li>
+<li>点击 <em>PayPal IPN</em> 的图标。</li>
+<li>点击 <strong>安装</strong> 按钮。</li>
+</ul>
+<em>恭喜! 您已经安装好PayPal IPN模块了。</em>
+<br />
+<br />
+<h3>升级模块 (或激活新版本中的修改)</h3>
+如果您刚从Zen Cart 旧版本升级:
+<ul type="disc">
+<li>打开Zen Cart中文版管理页面。</li>
+<li>将光标移到菜单条 <em>模块</em> 上。</li>
+<li>从下拉菜单选择 <em>付款</em> 。</li>
+<li>点击 <em>PayPal IPN</em> 的图标。</li>
+<li>点击 <strong><em>编辑</em></strong> 按钮 .</li>
+<li>写下以前的所有配置信息。</li>
+<li>点击 [确定] </li>
+<li>点击 <strong>删除</strong> 按钮，以删除旧版本中的配置信息。</li>
+<li>点击 <strong>安装</strong> 按钮，以激活新版本。</li>
+<li>重新输入您之前记下的配置信息。</li>
+</ul>
+<em>恭喜! 您已经升级好PayPal IPN模块了。</em>
+<h1>PayPal IPN 模块配置</h1>
+<h3>配置模块</h3>
+<ul type="disc">
+<li><strong>打开PayPal模块</strong> - 您想接受PayPal付款吗?
+<ul type="disc">
+<li> True<br />
+<em>如果缺省不是打开，选 True</em></li>
+<li> False<br />
+<em>选择False将关闭该模块，客户在结帐时不会看到该支付方式。</em></li>
+</ul>
+</ul>
+<ul>
+<li><strong>商业编号</strong> - 您的PayPal帐号的主要电子邮件地址<br />
+<em>一定要使用PayPal帐号的<strong>主要</strong>电子邮件地址。</em> <br>
+提示: 电子邮件地址注意大小写</li>
+<br />
+<br />
+<li><strong>交易货币</strong> - 选择您接受的货币<br />
+<ul type="disc">
+<li> 选择货币(即客户购物时选择的货币)<br />
+<em>如果您打算接受多种货币，选择该选项</em></li>
+<br />
+<li> 只接受 USD<br />
+<em>如果您打算 <strong>只</strong> 接受美元，选择该选项</em><br>
+<br />
+</li>
+<li> 只接受 CAD<br />
+<em>如果您打算 <strong>只</strong> 接受加元，选择该选项</em></li>
+<br />
+<li> 只接受 EUR<br />
+<em>如果您打算 <strong>只</strong> 接受欧元，选择该选项</em></li>
+<br />
+<li> 只接受 GBP<br />
+<em>如果您打算 <strong>只</strong> 接受英镑，选择该选项</em></li>
+<br />
+<li> 只接受 JPY<br />
+<em>如果您打算 <strong>只</strong> 接受日元，选择该选项</em></li>
+<br />
+<li> 只接受 AUD<br />
+<em>如果您打算 <strong>只</strong> 接受澳元，选择该选项</em></li>
+<br />
+</ul>
+<li><strong>付款适用地区</strong> - 如果选择了地区，该支付方式只适用于该地区，其它地区的客户结帐时不会看到PayPal支付方式。</li>
+<br />
+
+<li><strong>设置通知状态</strong> - 设置通过该支付方式支付但还没有完成的订单状态为该值。(建议 '等待中' )</li>
+<br />
+<li><strong>设置订单状态</strong> - 设置通过该支付方式支付并已经完成付款的订单状态为该值。(建议 '处理中' )<br>
+(这是paypal通过IPN通知网店，客户在paypal网站支付完成后的状态。) </li>
+<br />
+<li><strong>设置退款订单状态</strong> - 设置通过该支付方式支付并已经退款(全部或部分)的订单状态为该值。(建议 '等待中')</li>
+<br />
+<li><strong>显示顺序</strong> - 显示顺序 ... 例如: 结帐时，显示支付模块的顺序。值低的显示在前。</li>
+<br />
+<li><strong></strong><strong>continue 按钮的文字</strong> - 客户在paypal网站上付款时，有一个&quot;continue&quot;按钮，用于支付完成后返回到商店网站。这里输入该按钮的文字。留空将使用&quot;Continue&quot; (缺省 = 留空)。</li>
+<br />
+<li><strong>页面样式</strong> - 在paypal.com网站上，您可以定制客户支付时页面的外观。定制该页面时，您可以设定名称。缺省的名称是&quot;paypal&quot;，&quot;paypal&quot;是未指定时使用的页面名称。<br>
+  如果您自定义了页面样式，可以在这里输入样式名称，用于客户结帐时显示。<br>
+  &quot;paypal&quot;为缺省的样式。<br>
+  &quot;primary&quot;为你在paypal网站上定义的主样式。<br>
+  通常设置为&quot;paypal&quot;就可以了。</li>
+<br />
+<li><strong>PayPal网页服务的模式</strong> - 选择PayPal正式或测试服务的网址</li>
+<ul type="disc">
+  <li>www.paypal.com/cgi-bin/webscr<br />
+    <em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;选择这个地址作为正式服务</em></li>
+  <li>(也许要用 www.paypal.com/us/cgi-bin/webscr) </li>
+  </ul>
+<br />
+<li><strong>调试模式</strong> - 可以详细记录paypal IPN的服务器与商店通信的状态。仅用于程序调试，仅供技术人员使用。如果您选择&quot;email&quot;数据，将发送到店主的邮箱。如果您选择记录，将保存在 /includes/modules/paypal/logs 目录，该目录需要读/写权限。<br>
+</li>
+</ul>
+<br />
+</div>
+<div>
+<h1>常见问答</h1>
+<p><strong>我要打开PayPal帐号上的IPN吗? 我要给IPN功能指定什么地址?</strong><br />
+<br />
+<strong>是的</strong>, 必须打开。<br />
+1. 登录您的PayPal帐号，转到 <strong>Profile</strong><br />
+2. 点击 <strong>"Instant Payment Notification Preferences"</strong><br />
+3. 点击 Edit<br />
+地址要指向: <span class="filename">http://www.mydomain.com/ipn_main_handler.php</span> <br />
+<em>或者 </em>如果您的Zen Cart中文版装在子目录中: <span class="filename"><br>
+http://www.mydomain.com/<strong>子目录名</strong>/ipn_main_handler.php</span><br />
+<br />
+
+<br />
+<strong>我要打开PayPal的自动返回功能吗?</strong><br />
+<br />
+<strong>是的</strong>，要打开PayPal的自动返回功能，您的客户可以在完成付款后的5-10秒内自动返回您的Zen Cart商店。<br />
+<br />
+1. 登录您的PayPal帐号，转到<strong>Profile</strong><br />
+2. 
+点击 <strong>"Website Payments Preferences"</strong><br />
+3.
+修改<strong>Auto-Return</strong>为"On"<br />
+
+4. 提供返回地址: <br />
+没有SSL的网站:<br />
+<span class="filename"><strong>http://</strong>www.mysite.com/MY_SHOP/index.php?main_page=checkout_process</span><br />
+<em>or</em><br />
+拥有SSL证书的网站:<br />
+<span class="filename"><strong>https://</strong>www.mysite.com/MY_SHOP/index.php?main_page=checkout_process</span><br /> 
+<em>或者</em><br />
+
+<span class="filename">https://<strong>mysite.secureserver.net</strong>/MY_SHOP/index.php?main_page=checkout_process</span><br />
+<br />
+<strong>要打开&quot;PayPal帐号选项&quot;吗？</strong><br />
+您自己决定。<br />
+</p>
+<p><strong>Sessions</strong><br />
+提示: sessions自动工作。不要在Zen Cart管理中修改sessions设置。</p>
+</div>
+<h1>更多信息</h1>
+<a href="https://cms.paypal.com/us/cgi-bin/?cmd=_render-content&content_ID=developer/library_documentation" target="_blank">PayPal technical documentation library</a>
+<div>
+<br />
+<br />
+</div>
+</td>
+</tr>
+</table>
+<br /><br />
+<p align="center"><em>Zen Cart 中文版 版权所有 2004 - 2010</em></p>
+</body>
+</html>

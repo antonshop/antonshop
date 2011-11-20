@@ -1,0 +1,34 @@
+Zen Cart - 电子商务的艺术
+欢迎使用 Zen Cart 购物车软件
+
+下面的安装说明比较简单。
+详细说明请看/docs目录下的HTML版本。
+
+所有说明文件都在/docs目录下面。
+
+
+Zen Cart自带安装程序。但您首先需要将文件解压，并上传到网页服务器上。
+
+网页服务器可以是本地计算机或是Internet上的主机。
+
+第一步就是将Zen Cart的压缩文件展开，具体方法与您使用的操作系统有关。
+
+解压文件后，通过FTP或其它方法，上传到您的网页服务器，然后执行安装程序。
+
+打开浏览器，输入以下地址：
+
+如果您的网页服务器是本地计算机，地址为：
+
+   http://localhost/{zencart目录}/zc_install/
+
+如果使用的是在线的服务器，地址为：
+
+   http://{www.您的域名.com}/zc_install/
+
+然后按照提示安装Zen Cart。
+
+更详细的安装说明，请看文件/docs/1.readme_installation.html
+
+
+
+(文档修订: $Id: INSTALL.TXT 2010-10-27 Jack $)

@@ -1,0 +1,1 @@
+本目录中图片拷贝到includes\modules\payment\ctopay\中改名为ctopay_submit_button.gif，可以修改支付按钮的样式

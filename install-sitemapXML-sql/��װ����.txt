@@ -1,0 +1,42 @@
+地址：
+http://www.sem580.com/zencart-sitemapxml-an-zhuang.html
+http://www.zen-cart.cn/forum/topic22734.html
+
+相信绝大部分人都比较喜欢Google Sitemap 这个插件。新版2009-03-07问世。很多人也都有安装。这篇文章主要是给那些使用特殊模板（Light)的人参考.因为那些模式基本上都用的老版Google Sitemap Version:1.3.19。老版我碰到的最大的问题是当URL达到一定量时，会生成不了新的XML地图。昨天晚上碰到这个问题，头痛了N小时外六分钟，上午一来就开贴向JACK求救。现把详细过程分享下。
+
+一、新装SitemapXML
+如果你是Zencart里还没有装过Sitemap插件
+1.下载最新SitemapXML，将里面文件复制进对应zen cart文件夹里。
+2. 进后台->工具->Install SQL Patches 运行（不是上传，是运行Send） 将安装包里install install.sql.内容复制到运行框里，Send
+3. 进后台->设置->Sitemap XML 设置各项参数
+4. 进后台->工具>Sitemap XML 生成XML地图及上传sitemap （如果报错，查看下放XML的目录是否没有写权限）
+
+二、已装Google Sitemap
+如果你zen-cart已安装有Google Sitemap，那么首先要卸载老版本。
+1.找到你老版号，一般在根目录里googlesitemap.php里能找到。然后去下载老版的Google Sitemap安装包，我们以1.3.19为例。
+2.照着安装包文件，逐一删除
+3.进后台->工具->Install SQL Patches 运行安装包里带的卸载（uninstall.sql）
+4.回到新装SitemapXML流程里。
+
+三、特殊情况（有安装管理员分级模块）
+如果你按照上面方法安装后，后台提示：Sorry, your security clearance does not allow you to access this resource. Please contact your site administrator if you believe this to be incorrect. Sorry for any inconvenience.那是因为你系统有安装过管理员分级模块,你需要把新装的SitemapXML权限打开。（/admin/admin_control.php?adminID=1）
+如果你发现管理员分级模块不能保存，恭喜，你要进数据库玩玩了。因为现在这个模块还是有些问题存在。你要进数据库修改（在这谢谢Zencart QQ群里一位兄弟的指导）
+1.进入数据库，找到admin_files表，找出Sitemap XML的pages_id,正常就是最后两个。
+2.进入表admin_allowed_pages把上面两个ID插入进去。
+
+完工！
+
+Incoming search terms:
+zen cart google sitemap
+zencart Google XML Sitemap 使用
+Google SitemapXML
+google sitmap xml怎么装
+zencart详解
+zencart 插件安装
+zencart中如何卸载sitemap
+zencart Google sitemap
+如何删除zen cart Google XML Sitemap Admin
+zencart插件安装
+
+
+

@@ -1,0 +1,351 @@
+<!--
+/**
+ * @package documentation
+ * @copyright Copyright 2003-2007 Zen Cart Development Team
+ * @license http://www.zen-cart.com/license/2_0.txt GNU Public License V2.0
+ * @version $Id: whatsnew_1.3.8.html 7527 2007-11-28 21:09:59Z drbyte $
+ */
+//-->
+<html>
+	<head>
+		<title>Zen Cart v1.3.8新增功能</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<meta name="author" content="Ian Wilson &amp; Kim Elliott" />
+		<meta name="copyright" content="2004, 2007" />
+	</head>
+
+<style type="text/css">
+<!--
+body, table{ font-family:Verdana, Arial, Helvetica, sans-serif; font-size:14px; }
+table.intro {border-color:C96E29; }
+td.intro{background-color:#EEEEEE ; border-color:5778ce; font-size:12px; }
+td.plainbox, div.callout {border: 1px dashed; border-color: C96E29; margin:5 40 5 40;}
+.heading {background-color:5778CE; font-weight:bold; font-size:14px;	width: 100%; }
+
+.title1 {color:C96E29; font-weight:bold; font-size:22px; }
+.title2 {color:C96E29; font-weight:bold; font-size:13px; }
+.small {font-size:11px ;}
+.error {color:FF0000; }
+.filename {font-family: mono, "Courier New", Courier ; font-size:14px; color: c96e29;}
+.pseudolink {text-decoration:underline; color:5778CE;}
+h1.intro { color: #ffffff; border:1px solid #aca893; background-color: #c96e29;  font-size: 22px;   padding: 4px;}
+h1 { color: #ffffff;    border:1px solid #aca893;   background-color: #5778ce;   font-size: 20px;   padding: 4px;}
+h2 { color: #c96e29; 	font-size: 18px;}
+h3 { color: #5778ce;	font-size: 16px; margin-bottom:0px;}
+h4 { color: #c96e29;	font-size: 14px;}
+h5 { color: #5778ce;	font-size: 16px; margin-bottom:0px; margin-top:0px; }
+.style1 {
+	font-size: 18px;
+	font-weight: bold;
+}
+.emphasize {
+	color: #336600;
+}
+
+
+-->
+</style>
+<body>
+
+<table class="intro" cellspacing="4" cellpadding="6" border="3" width="748px" align="center">
+<tr><td class="intro">
+<center><h1 class="intro">欢迎使用 Zen Cart 中文版 ...</h1></center>
+<br />
+Zen Cart&trade;软件使用的是GNU通用公共许可协议，您可以免费使用、修改Zen Cart&trade;软件。
+<br />
+<br />
+虽然该软件是免费的，但是欢迎您每次下载新版本前捐款，以帮助我们继续软件开发、升级，和维护免费论坛。
+<br />
+<br />
+捐款网址：
+<a href="http://www.zen-cart.com/index.php?main_page=infopages&pages_id=14" target="_blank">Zen Cart&trade; 团队</a>
+<br />
+<br />
+感谢您的支持<br />
+<em>Zen Cart&trade; 团队</em><br />
+<br />
+
+<center>
+<span class="small">
+Zen Cart&trade; 源自: Copyright 2003 osCommerce<br />
+该软件希望提供有用的功能，但[不做保证]，也不保证[适用于特定用途]<br />
+该软件受限于GNU通用公共许可协议<br /><br />
+</span>
+</center>
+</td></tr></table>
+
+<br />
+<table border="3" width="748px" align="center" cellpadding="6">
+  <tr>
+<td align="center"><img src="osi-certified-120x100.png" /><br />
+该软件通过OSI开源软件认证。<br />
+OSI Certified是开源动力的认证标志。</td></tr></table>
+<br />
+
+<table border="3" width="748px" align="center" cellpadding="6">
+  <tr>
+<td>
+<h1>版本v1.3.7到v1.3.8的升级说明</h1>
+<p>如果从<strong><u>Zen Cart v1.3.7</u></strong>升级，很简单:<br>
+  - 比较所有修改的文件... 将您修改过的地方，重新添加到新文件中<br>
+  - 上传新文件 (含您自己修改过的部分) 到服务器<br>
+  - 上传<span class="filename">zc_install</span>目录到服务器，运行<span class="filename">zc_install/index.php</span> <br>
+  ... 在系统检测页面，选择<strong>升级数据库</strong>，执行相应的升级。</p>
+<p>如果从<strong><u>v1.3.7之前的版本</u></strong>升级, 请查看&quot;<a href="2.readme_how_to_upgrade.html">如何升级</a>&quot;文档，位于/docs目录。</p>
+<h1>重要说明</h1>
+<ul>
+<li><span class="style1">安全:</span><span class="error"> 在商店"正式"运营前，请仔细阅读并实施<a href="./important_site_security_recommendations.html" target="_blank">网站安全建议</a></span>。如有疑问，请联系主机商，保证设置正确。<br>
+<br>
+</li>
+<li>修复低风险的XSS漏洞<br>
+<br>
+</li>
+<li><span class="emphasize">新增:</span> Combine Shopping Cart Contents .... <span class="emphasize">If customer logs in and had items in their saved shopping cart, they are now taken to their cart and shown a message alerting them to the fact that those items have been merged with their new cart. </span> This warning can be disabled via switch in admin: Admin-&gt;Configuration-&gt;Stock-&gt;Show Notice of Combining Shopping Cart on Login<br>
+<br>
+</li>
+<li>Sideboxes for New/Featured/Special can now contain more than 1 product. Also, the randomizing of the selected products has been improved. The number of items to be shown can be set in Admin-&gt;Configuration-&gt;Maximum Values<br>
+  <br>
+  <br>
+</li>
+<li><span class="style1">为英美店主增加了 PayPal Website Payments Pro</span> <br>
+<br>
+</li>
+<li><span class="style1 error">PayPal IPN 用户:</span> <span class="error">If you are using the <strong>PayPal IPN</strong> payment module, you will need to Remove and re-Install the PayPal module in Admin-&gt;Modules-&gt;Payment-&gt;PayPal in order to take advantage of the bugfixes in the module.</span> (Write down your settings first, for easier re-configuration!) <br>
+WHEN YOU RECONFIGURE, be sure to also setup PDT token information if you'd like faster completion of transactions. <br>
+<br>
+</li>
+  <li><span class="style1">PayPal Express Checkout 用户:</span> <span class="error">A change was made to this module to allow friendlier logging of problems to the Administrator. If you are using the <strong>PayPal Express Checkout</strong>  payment module, you will need to Remove and re-Install the module in Admin-&gt;Modules-&gt;Payment in order to make this work properly.</span> (Write down your settings first, for easier re-configuration!) <br>
+        <em>If you don't remove+reinstall it, you will have some blank spaces in your configuration settings when you attempt to edit it next.</em> <br>
+<br>
+</li>
+<li><strong class="style1">Authorize.net SIM 模块用户</strong> ... you'll need to record your settings, remove the module, and re-install it, and then re-enter your configuration settings. MD5 support was added, meaning that you can set an MD5 validation key in your Authorize.net account and in the module, making sure that the communications are double-validated before payment is accepted. Prevents spoofing.<br>
+<br>
+</li>
+<li><strong class="style1">新增 Authorize.net eCheck 模块</strong> ... If you have an account with Authorize.net and wish to offer eCheck payment options, the built-in module will handle this for you.<br>
+<br>
+</li>
+<li><strong class="style1">USPS 模块更新</strong> ... USPS has made some changes in the last 6 months, some announced, some not. The module has been updated to accommodate these changes.<br>You will need to Remove and re-Install the module in Admin-&gt;Modules-&gt;Shipping in order to make this work properly. (Write down your settings first, for easier re-configuration!) <br>
+<br>
+</li>
+<li><strong>样式表修改:</strong><br>
+- media manager ... converted IDs to Classes: .mediaTitle, .mediaTypeLink<br>
+- textarea ... removed float:left<br>
+ADDED NEW STYLE SELECTORS for Shipping Estimator output:<br>
+- #shoppingcartBody #shippingEstimatorContent<br>
+- .seDisplayedAddressLabel<br>
+- .seDisplayedAddressInfo<br>
+- .seShipTo<br>
+<br>
+</li>
+</ul>
+<h1>升级模板</h1>
+Zen Cart中文版的模板系统从v1.3.x开始有很大变化。因此，您有两个选择:
+<ul>
+<li>使用新的样式表并适当修改，来升级已有的模板；或者</li>
+<li>如果想基本不用表格、模板代码更紧凑，更好的方法是新建一个模板(基于缺省的template_default模板)，重新定制。</li>
+</ul>
+
+
+<p>有关升级模板的更多细节，请访问用户论坛。</p>
+
+
+<h1>修改记录 - 修改的文件列表</h1>
+<p>从版本v1.3.6开始所做的修改的文件列表，请看<a href="changelog-v1-3-8.html" target="_blank">changelog-v1-3-8.html</a> </p>
+<h1>新增功能 ... </h1>
+<h3><strong>下面是版本v1.3.8中包含的修改: </strong></h3>
+<ul>
+<li class="emphasize"><strong>新增</strong>: login pages now have a built-in security token, which prevents XSRF and other hacks </li>
+<li class="emphasize"><strong>新增</strong>: Ability to ban user accounts via admin (edit customer) </li>
+<li class="emphasize"><strong>新增</strong>: Home &amp; Per-page metatags can now be defined in the meta_tags.php language file </li>
+<li class="emphasize"><strong>新增</strong>: EZ-Page metatags can now be defined in the meta_tags.php language file </li>
+<li class="emphasize"><strong>新增</strong>: additional pages added to robots-exclusion list  prevent indexing of non-product pages </li>
+<li class="emphasize"><strong>新增</strong>: Admin server-info page now reports database-size info and various PHP settings </li>
+<li class="emphasize"><strong>新增</strong>: If customer logs in and had items in their saved shopping cart, they are now taken to their cart and shown a message alerting them to the fact that those items have been merged with their new cart. </li>
+<li class="emphasize"><strong>新增</strong>: Quick Customer address listing of whole address book</li>
+<li class="emphasize"><strong>新增</strong>: manufacturer pulldown can skip manufacturers with no associated products</li>
+<li class="emphasize"><strong>新增</strong>: warning in admin if Welcome Coupon is approaching expiry.  </li>
+<li class="emphasize"><strong>新增</strong>: Admin orders are now searchable on product name or model, or order number </li>
+<li class="emphasize"><strong>新增</strong>: Month numbers added to CC expiry dates in pulldowns of core payment modules <br>
+</li>
+<li class="emphasize"><strong>新增</strong>: Customer comments can be included on packing slip and invoice<br>
+</li>
+<li class="emphasize"><strong>新增</strong>: Authorize.net E-Check module added</li>
+<li class="emphasize"><strong>新增</strong>: nochex_apc payment module added and integrated with core</li>
+<li class="emphasize"><strong>改进</strong>: Authorize.net SIM module overhaul, including MD5 hash support, CVV, debug </li>
+<li class="emphasize"><strong>改进</strong>: Authorize.net AIM module improvements, including MD5 hash support, capt/void </li>
+<li class="emphasize"><strong>改进</strong>: Customers page in admin now shows open GV balances, and is sortable on same </li>
+<li class="emphasize"><strong>改进</strong>: Textarea counter for text-input-attribute fields improved to ignore spaces and CR</li>
+<li class="emphasize"> <strong>改进</strong>: Improvements to the affiliate-feedback info during checkout-process </li>
+<li class="emphasize"><strong>改进</strong>: PayPal IPN now supports  PDT to allow real-time-handling of PayPal Standard transactions without having to wait for IPN in all cases.  Requires that merchant has enabled PDT and enters their encryption key/token.</li>
+<li class="emphasize"><strong>改进</strong>: Session security improved with additional sanitization <br>
+  <br>
+  <br>
+</li>
+<li>        修改: CSS -- Some template ID tags changed to classes because rendered from inside a loop </li>
+        <li>修改: Updated some payment modules to display &quot;not configured&quot; alerts if appropriate </li>
+<li>修改: table CAPTIONs moved into lang file for upcoming-products code </li>
+<li>修改: USPS - updates to handle various 2007 changes made by USPS</li>
+<li>修改: Installer now also sets shipping country to match store country during initial setup </li>
+<li>修改: Installer now detects CURL support more effectively </li>
+<li>修改: added CURL testing script and IPN communication check tool to extras folder </li>
+<li>修改: magic_quotes_sybase is now disabled at runtime if server has it enabled</li>
+<li>修改: paypal IPN postbacks no longer use SSL due to so many hosts not having SSL support in their fopen wrapper configurations. </li>
+<li>修改: added worio.com and panscient spiders to spider detection list </li>
+<li>修改: &quot;NF&quot; changed to &quot;NL&quot; for province of Newfoundland Canada </li>
+<li>修改: PayPal IPN now uses init_system instead of ipn_application_top, to minimize likelihood of addons causing IPN transactions to fail.</li>
+<li>修改: ezpages now uses mediumtext field type instead of the smaller text type </li>
+<li>修改: payment modules no longer able to store entire CC/CVV numbers. PCI rules. </li>
+<li>修改: admin activity log now tracks login attempts, thus allowing identification of brute-force login tries; also stores longer referrer data </li>
+<li>修改: db structure change to db_cache and session tables, allowing larger datatypes </li>
+<li>修改: hard-coded delimiters on attribute prices and weights moved to _info language files </li>
+<li>修改: renamed &quot;Credit Card&quot; module in admin to &quot;Credit Card - Offline Processing&quot; for clarity </li>
+<li>修改: admin payment modules are now more friendly when discovering mismatched language files vs payment modules, ie: for cases where newbies upload files to wrong place </li>
+<li>修改: default minimum city length set to 2 instead of 3, per code suggestion </li>
+<li>修改: whos_online referrer data truncated to suit database data type restrictions </li>
+<li>修改: orders_products_attributes field changed from BLOB to TEXT since not binary </li>
+<li>修改: admin can send newsletters to self for testing purposes </li>
+<li>修改: customer_firstname added to $_SESSION</li>
+<li>修改: ezpages links no longer include &amp;chapter=0 </li>
+<li>修改: added field-definition checker to sniffer class</li>
+<li>修改: split_page_results now handles 'distinct' queries </li>
+<li>修改: payment modules accepting credit cards now give the number and name of months</li>
+<li>修改: SMTP email password now shows as **** in admin instead of plain text  </li>
+<li>修改: ot_total order-total module can no longer be 'removed' via admin, for safety </li>
+<li>修改: zen_order_id fields in paypal and linkpoint_api tables changed to order_id to prevent confusion encountered by folks fiddling in raw database export files </li>
+<li>修改: email system improvements to minimize dumping due to content challenges</li>
+<li>修改: basic support added for Gmail mail support as long as webhost supports SSL/TLS</li>
+<li>修改: partial CC digits now included in order-confirmation email</li>
+<li>修改: if problems found with configure.php, instead of going directly to zc_install, we now present a more friendly page with some instructions and FAQ links</li>
+<li>修改: Added audience entry for &quot;non-purchasing&quot; customers for sending newsletters to</li>
+</ul>
+<ul><li>修复: Optimized the way cpath is calculated ... runs faster now, and is more relevant in subcats </li>
+<li>修复: Centerboxes now generate URLs containing relevant cPath </li>
+<li>修复: CURL proxy recommendation for GoDaddy updated to named FQDN instead of IP </li>
+<li>修复: Admin session-fixation problem fixed </li>
+<li>修复: Downloads occasionally would croak if buffering was enabled</li>
+<li>修复: login and create-account code synchronized </li>
+<li>修复: improvements to featured/special modules for faster db queries </li>
+<li>修复: XHTML validation fixes to several sideboxes </li>
+<li>修复: Added missing CC types </li>
+<li>修复: numerous MySQL5 fixes </li>
+<li>修复: version-history display in admin was always skipping the current version date info. Fixed. </li>
+<li>修复: some noindex pages were missing from the robots-skip list </li>
+<li>修复: invalid cPath pages were being spidered improperly</li>
+<li>修复: minor performance improvements on options_values_manager for attribute-heavy sites</li>
+<li>修复: remove three cases where php short tags were used, standardizing on long tags.</li>
+<li>修复: paypal ipn module now supports the locale code for all countries, in accordance with their updated api spec</li>
+</ul>
+<ul>
+<li>补丁: Always Show Category wasn't always showing proper category for feature/new/special </li>
+<li>补丁:  tax-rate calc fixed in admin product-edit page</li>
+<li>补丁: Prices were not displaying on quantity discounts if store-status mode was set to 1</li>
+<li>补丁: upcoming products were not selected properly due to a time miscalc</li>
+<li>补丁: Coupon/GV Tax calculations improved</li>
+<li>补丁: 100% coupon calculation improvements </li>
+<li>补丁: Group Pricing module updated to use new tax recalculation logic, added consistency </li>
+<li>补丁: tax calc functions improved </li>
+<li>补丁: Minimum Order feature bug repaired   </li>
+<li>补丁: fix popen() vulnerability in the 3rd-party phpMailer system</li>
+<li>补丁: disabled CURL warnings in payment modules  when module inactive </li>
+<li>补丁: products_price_manager was not properly handling non-entered values in MySQL5</li>
+<li>补丁: products_price_manager fixed default product selection for empty categories </li>
+<li>补丁: products_price_manager fix calculation on discounts to work with from Price and Special</li>
+<li>补丁: linkpoint_api payment module  fix for empty fields </li>
+<li>补丁: developer toolkit improvements to handle quotes better</li>
+<li>补丁: order_total module would occasionally not properly detect template override</li>
+<li>补丁: metatag bug was causing call-for-price products to show a 0.00 price in title bar</li>
+<li>补丁: timeout template was missing /div if customer was logged in</li>
+<li>补丁: GV/Coupon resets were not always happening after completion of purchase</li>
+<li>补丁: closed several unclosed dir-&gt;open() calls which were consuming extra resource handles</li>
+<li>补丁: some search checkboxes not being remembered when returning to search page</li>
+<li>补丁: download filesize info was not showing if the download had expired</li>
+<li>补丁: download button was showing even if downloads had expired, in certain cases</li>
+<li>补丁: download expiry details occasionally incorrect in admin </li>
+<li>补丁: coupon-admin would sometimes not display restricted products properly</li>
+<li>补丁: additional sanitization of email addresses before sending emails</li>
+<li>补丁: table/zone rate modules  missing percentage charges on last setting if based on price</li>
+<li>补丁: navigation issues in admin      product price manager tools</li>
+<li>补丁: email format-selection fields were not stored properly if not shown to customer</li>
+<li>补丁: payment modules didn't always submit the proper referrer IP address if proxied</li>
+<li>补丁: default currency selector anomalies fixed</li>
+<li>补丁: rich-text editor bug in metatag section (shouldn't be activated), same on newsletters </li>
+<li>补丁: page-not-found header bug resolved</li>
+<li>补丁: admin version-display had extraneous code</li>
+<li>补丁: data-type enforcement changes in multiple places</li>
+<li>补丁: categories-icon link and image didn't always properly match listing</li>
+<li>补丁: fix missing flag for customer comments on listing</li>
+<li>补丁: fix ability to use extra-boxes folder with gv menu </li>
+<li>补丁: removed hard-coded language content from contact-us page</li>
+<li>补丁: email system traps for extraneous @ and spaces, and provide friendlier error messages</li>
+<li>补丁: additional-images module problem in PHP5 fixed</li>
+<li>补丁: when customer-forced-to-login mode is active, privacy page was being blocked </li>
+<li>补丁: duplicate-key bug on db_cache method </li>
+<li>补丁: Free Charger payment module had order-status conflict with $0 orders caused by GV</li>
+<li>补丁: added 5-min timer to Store Manager update actions</li>
+<li>补丁: Fix dropdown errors when Alpha sorter is disabled and stopping normal Cats and Manufacturer dropdown from displaying</li>
+<li>补丁: some category name html was showing in metatags</li>
+<li>补丁: when add-to-cart doesn't redirect to shopping cart, sometimes product_id was lost</li>
+<li>补丁: text-only emails were missing the email-disclaimer text</li>
+<li>补丁: 'SHOW_PRODUCT_INFO_COLUMNS_ALSO_PURCHASED_PRODUCTS' key was updated incorrectly from v127 to v130. Is now fixed by upgrading database.</li>
+<li>补丁: media manager template was using duplicate CSS IDs. Changed to classes in stylesheet </li>
+<li>补丁: tell-a-friend &quot;back&quot; button invalid ALT text</li>
+<li>补丁: zen_clean_html function wasn't stripping all required tags</li>
+<li>补丁: fixed missing body tag on salemaker editor</li>
+<li>补丁: trim trailing spaces from image data, which were causing empty image placeholders   </li>
+<li>补丁: empty html content in emails now handled properly</li>
+<li>补丁: shipping estimator pages not rendering consistently, also fixed address display</li>
+<li>补丁: shipping estimator was not showing quotes if module limited to certain zone</li>
+<li>补丁: UPS - updated Worldwide Saver option</li>
+<li>补丁: Fix bug on shopping-cart with shipping by price where attributes prices were not being included/excluded for Virtual or Always Free Shipping products</li>
+<li>补丁: Fix Order Totals to not include javascript code for coupon names</li>
+<li>补丁: Discount Coupons were missing start and end dates on  HTML/TEXT emails</li>
+<li>补丁: admin no longer asks for customer fax number if disabled</li>
+<li>补丁: no longer shows &quot;send a GV&quot; after GV balance is fully used</li>
+<li>补丁: coupon-restriction page had conflicts in naming of some html objects, breaking inputs</li>
+<li>补丁: if you deleted the active language but didn't switch to another one before adding another, then you'd end up with blank product/category names/descriptions for the new lang </li>
+<li>补丁: specials-expiry wasn't honoring midnight properly</li>
+<li>补丁: admin order-search no longer mistakenly loses search criteria if empty info entered</li>
+<li>补丁: fix ez-pages behaviour -- incorrect use of target=_blank</li>
+<li>补丁: fix missing fax/phone information on create-account &quot;extra&quot; emails</li>
+<li>补丁: use native session_write_close to ensure session stuff is always written out, regardless</li>
+<li>补丁: HTML emails were not always sharing full footer details with text emails</li>
+<li>补丁: HTML emails were now always showing proper line-breaks between product details </li>
+<li>补丁: HTML emails from payment modules weren't sending content properly</li>
+<li>补丁: restored sort order to the list of products on a purchase</li>
+<li>补丁: company name missing on edit of additional addresses</li>
+<li>补丁: record-company filter wasn't properly filtered for records, and was focused on music</li>
+<li>补丁: fixed notifier typo in order class</li>
+<li>补丁: some payment modules were not using &quot;default&quot; order-status properly, thus orders could disappear from list unless searched for specifically  </li>
+<li>补丁: split-login-page mistaken error messages removed</li>
+<li>补丁: PDF downloads were sometimes encountering symlink errors, or streaming bad data. Now captures those errors. Also handles filenames containing symbols </li>
+<li>补丁: changed download timeout to 20 minutes if server allows it, to aid in larger downloads not ending prematurely</li>
+<li>补丁: restrictions were not being passed to newly created sub-categories </li>
+<li>补丁: item shipping was mistakenly resetting order count </li>
+<li>补丁: tpl_main_page had wrong ID-- is now indexHome on home page </li>
+<li>补丁: Fixed Salemaker error on popup for More Info missing Categories Name</li>
+<li>补丁: group pricing division-by-zero error when tax amount was 0</li>
+<li>补丁: customer_authorization problem fixed, including left/right/header/footer issues</li>
+<li>补丁: when deleting categories, meta-tag data wasn't being removed properly</li>
+<li>补丁: prevent drawing of extra fieldsets on checkout-shipping page if modules disabled</li>
+<li>补丁: document-general price was showing sale pricing ... but shouldn't</li>
+<li>补丁: shipping estimator page was showing weights differently from shopping cart</li>
+<li>补丁: media manager interface in admin wasn't handling pagination properly</li>
+<li>补丁: text-only emails from coupon-admin weren't including description</li>
+<li>补丁: text emails weren't including disclaimers properly, thus getting rejected in some cases</li>
+<li>补丁: PayPal Express checkout wasn't passing coupon discounts or shipping taxes properly</li>
+<li>补丁: fmod_round problems resolved -- was causing problems with min/max calcs</li>
+<li>补丁: text-only email &quot;previews&quot; in admin weren't handling line-breaks correctly</li>
+<li>补丁: coupon code wasn't releasing properly post-order or on invalid product</li>
+<li>补丁: admin tax-class page was allowing deletion of actively-assigned tax classes</li>
+<li>补丁: PayPal Express Checkout button was enabled even if module was restricted or if order was over the 10,000 USD threshold</li>
+<li>补丁: use onKeyUp instead of onChange in coupon-redemption field (onchange is for pulldowns)</li>
+<li>补丁: search engine spiders could trigger PHP errors in shopping_cart sidebox</li>
+<li>补丁: techsupp.php was using php &quot;short&quot; tags in a few places. Changed to normal tags.</li>
+</ul></td>
+</tr>
+</table>
+<br /><br />
+<p align="center"><em>Zen Cart 中文版 版权所有 2007</em></p>
+<br /><br />
+</body>
+</html>

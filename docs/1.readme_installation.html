@@ -1,0 +1,279 @@
+<!--
+/**
+ * @package documentation
+ * @copyright Copyright 2003-2008 Zen Cart Development Team
+ * @license http://www.zen-cart.com/license/2_0.txt GNU Public License V2.0
+ * @version $Id: 1.readme_installation.html 12650 2009-03-20 09:46:22Z drbyte $
+ */
+//-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<style type="text/css">
+<!--
+body, table{ font-family:Verdana, Arial, Helvetica, sans-serif; font-size:14px; }
+table.intro {border-color:C96E29; }
+td.intro{background-color:#EEEEEE ; border-color:5778ce; font-size:13px; }
+td.plainbox, div.callout {background-color: #d7e0f2; border: 1px dashed; border-color: C96E29; padding: 8; margin:5 40 5 40;}
+.heading {background-color:5778CE; font-weight:bold; font-size:14px; width: 100%; }
+.title1 {color:C96E29; font-weight:bold; font-size:22px; }
+.title2 {color:C96E29; font-weight:bold; font-size:13px; }
+.small {font-size:12px ;}
+.error {color:FF0000; }
+.filename {font-family: mono, "Courier New", Courier ; font-size:14px; color: c96e29;}
+.pseudolink {text-decoration:underline; color:5778CE;}
+h1.intro { color: #ffffff; border:1px solid #aca893; background-color: #c96e29;  font-size: 22px;   padding: 4px;}
+h1 { color: #ffffff;    border:1px solid #aca893;   background-color: #5778ce;   font-size: 20px;   padding: 4px;}
+h2 { color: #c96e29; 	font-size: 18px;}
+h3 { color: #5778ce;	font-size: 16px; margin-bottom:0px;}
+h4 { color: #c96e29;	font-size: 14px;}
+
+
+-->
+</style>
+<title>安装Zen Cart中文版</title>
+</head>
+<body>
+
+<table class="intro" cellspacing="4" cellpadding="6" border="3" width="748px" align="center">
+<tr><td class="intro">
+<center><h1 class="intro">欢迎使用 Zen Cart 中文版 ...</h1></center>
+<br />
+Zen Cart&trade;软件使用的是GNU通用公共许可协议，您可以免费使用、修改Zen Cart&trade;软件。
+<br />
+<br />
+虽然该软件是免费的，但是欢迎您每次下载新版本前捐款，以帮助我们继续软件开发、升级，和维护免费论坛。
+<br />
+<br />
+捐款网址：
+<a href="http://www.zen-cart.com/index.php?main_page=infopages&pages_id=14" target="_blank">Zen Cart&trade; 团队</a>
+<br /><br />
+感谢您的支持<br />
+<em>Zen Cart China</em><br />
+<br />
+
+<center>
+<span class="small">
+Zen Cart&trade; 源自: Copyright 2003 osCommerce<br />
+该软件希望提供有用的功能，但[不做保证]，也不保证[适用于特定用途]<br />
+该软件受限于GNU通用公共许可协议<br /><br />
+</span>
+</center>
+</td></tr></table>
+
+<br />
+<table border="3" width="748px" align="center" cellpadding="6">
+  <tr>
+<td align="center"><img src="osi-certified-120x100.png" /><br />
+该软件通过OSI开源软件认证。<br />
+OSI Certified是开源动力的认证标志。</td></tr></table>
+<br />
+
+<table border="3" width="748px" align="center" cellpadding="6">
+  <tr>
+<td>
+<center><h1 class="intro">全新安装</h1></center>
+<div><h1>开始 ... </h1>
+<p>这是安装Zen Cart中文版的指南。如果您已有Zen Cart&trade;而需要从旧版本升级，请看<strong><a href="./2.readme_how_to_upgrade.html" target="_blank">升级指南</a></strong>以及<strong><a href="./index.html" target="_blank">新增功能</a>文档。</strong><br />
+</p>
+<h2>基本要求</h2>
+<p>您已经下载了Zen Cart中文版网上商店软件。</p>
+<h3>数据库</h3>
+<p>在继续安装前，确认您可以存取MySQL数据库，以及有相关用户名/密码。您需要用主机商提供的控制面板先建立一个数据库，如需帮助，请联系您的主机提供商，或在Zen Cart China的用户论坛提出。Zen Cart&trade; 无法为您创建数据库。</p>
+<h3>ZIP文件</h3>
+<p>因为您已经在阅读本指南，您应该已经将Zen Cart中文版的文件解压了。如果还没解压，现在就将文件解压，保持目录结构不变。<br />
+</p>
+</div>
+<div><h1>将Zen Cart中文版的文件上传到您的网页服务器</h1>
+<p>通过FTP上传所有文件到网站服务器的一个目录下。例如: <span class="filename">/catalog
+</span><br />
+<em>(我们以&quot;<span class="filename">/catalog</span>&quot;为例子。您可以&quot;不要&quot;目录，或使用其他名字，例如&quot;<span class="filename">/zencart</span>&quot;，或者&quot;<span class="filename">/store</span>&quot;等等)</em> <br />
+<br />
+<em>提示: 上传文件的时候，请确认您的FTP程序及网站服务器支持&quot;<span class="error">长文件名</span>&quot;。例如，缺省情况下，MAC OS通常不管理长文件名，您需要修改相关设置。</em> </p>
+<h3>上传到哪个目录？</h3>
+每个主机的目录结构都不相同。<br>
+很多文件用户不可见。用户可以通过浏览器存取的目录通常为:
+<p>- /home/YOURNAME/public_html<br>
+或<br>
+- /var/www/YOURNAME/httpdocs<br>
+或<br>
+- /usr/accounts/a/b/YOURNAME/httpd<br>
+等等...</p>
+<p>如果不知道存放到哪个目录，请咨询主机商。</p>
+</div>
+
+<div>
+<h1><strong>创建configure.php文件</strong></h1>
+在服务器上要创建两个configure.php文件，用来设定服务器参数及上传的文件的位置。创建文件后，还要修改权限。
+<br />
+<br />
+提示: 可以通过FTP程序的chmod功能来修改权限。通常是鼠标右键点击相应目录或文件名，会弹出该选项的菜单。(可能在&quot;属性&quot;中) <br />
+<br />
+
+在服务器上，找到文件: <span class="filename"><strong>/catalog/includes/</strong>dist-configure.php</span>
+<br />
+将该文件改名为 <span class="filename">configure.php </span>并修改权限为 777
+<em>(所有人可以读取-写入-执行)</em> <br />
+<br />
+
+接下来, 在服务器上找到文件: <span class="filename"><strong>/catalog/admin/</strong>includes/dist-configure.php</span>
+<br />
+将该文件改名为 <span class="filename">configure.php </span>并修改权限为 777 <em>(所有人可以读取-写入-执行)</em><br />
+<br />
+<br />
+<br />
+<strong>IIS用户提示：</strong> 如果您使用IIS，也许不熟悉&quot;chmod 777&quot;命令。在运行IIS的Windows系统下，您需要用鼠标右键点击文件(或者是下面说的目录), 选择[属性]，然后在[安全]标签下，确认MACHINE_NAME\IUSR_MACHINE_NAME帐号至少有&quot;读取&quot; 和 &quot;写入&quot; 的权限... 最好还有 &quot;修改&quot; 权限。需要分别设置列出的每一个文件/目录。(如果没有列出用户IUSR_XXXXXX，那么点击 &quot;添加&quot; 然后在列表中加入该用户，再设置相应权限。) <br />
+</div>
+<div><h1>设置目录权限</h1>
+现在，将下面的目录权限改为 777 (读取/写入/执行). <br />
+<br />
+<span class="filename">/catalog/cache<br />
+/catalog/images<br />
+/catalog/includes/languages/english/html_includes<br />
+/catalog/media<br />
+/catalog/pub<br />
+/catalog/admin/backups <br />
+/catalog/admin/images/graphs<br /></span>
+<br />
+提示: 打开目录catalog/images，修改<strong>所有</strong>子目录以及它们的子目录为777。例如 (这只是部分列表): <br />
+<span class="filename">/catalog/images/attributes<br />
+/catalog/images/dvd<br />
+/catalog/images/large<br />
+/catalog/images/large/dvd<br />
+/catalog/images/medium <br />
+/catalog/images/upload<br /></span>
+<br />
+提示: 如果您忘了修改某个图像目录或其中的子目录 <span class="filename">/images</span> ，在使用时，会提示您无法写入该目录<br />
+<br />
+其它的目录和文件，可以 CHMOD 644 或者 444, 这取决于您的服务器设置。</div>
+<div>
+<h1>运行安装程序准备工作</h1>
+安装程序相当智能化，应该能自动检测到下面的配置。<br />
+<br />
+您需要确认这些配置是正确的，有些服务器可能会不同。<br />
+<br />
+安装程序需要以下信息：<br />
+<ul>
+<li><strong>全新安装的Zen Cart中文版目录的物理路径</strong><br />
+例如: <span class="filename">/home2/zencart/public_html/catalog</span></li><br /><br />
+<li><strong>HTTP 路径(您的商店域名及目录的网址)</strong><br />
+例如: <span class="filename">http://www.mydomain.com/catalog</span><br /></li></ul>
+<h3>SSL</h3>
+如果您安装正式的运营网店，最好要用SSL保证客户交易数据的安全。如果您还没有SSL证书，可以向主机商咨询。你需要在下面输入SSL的资料，通常已经是正确的，除非您使用"共享SSL"服务。您的主机商会提供正确的网址。<br />
+如果是在本地或测试服务器上安装，不需要保护敏感数据时，可以不修改SSL设置，在安装时不用打开。
+<ul>
+<li><strong>HTTPS服务器 (您的网站的SSL网址)</strong><br />
+例如: <span class="filename">https://www.mydomain.com</span><br />
+提示: 如果您使用共享SSL，该地址类似于:<br />
+<span class="filename">https://mydomain.secureservername.net/</span><br />
+- 或者 - <span class="filename">https://secure.sharedservername.net/~username</span><br />
+</li><br />
+<li><strong>HTTPS路径(您的商店的SSL域名及目录的网址)</strong><br />
+例如: <span class="filename">https://www.mydomain.com/catalog</span><br />
+- 或者 - <span class="filename">https://secure.sharedservername.net/~username/catalog</span></li>
+</ul>
+</div>
+<div>
+<h1>运行安装程序</h1>
+在浏览器地址栏，输入您新商店的网址, 安装程序将自动运行。<br />
+例如: <span class="filename">http://www.mydomain.com/catalog</span> <br />
+- 或者 - 直接运行安装程序: <span class="filename">http://www.mydomain.com/catalog/zc_install</span><br />
+<br />
+<em>如果您看到的是文件名和目录的列表，请与您的网站服务商联系，了解如何让服务器自动检测PHP文件。</em><br />
+<br />
+您会看到&quot;Zen Cart中文版&quot;的安装页面，上面列出了Zen Cart中文版的功能。<br />
+点击<em>继续</em>将转到许可协议页面，您需要阅读并接受GPL许可协议。<br />
+<h3>系统检查</h3>
+接着，安装程序会检测服务器是否满足运行Zen Cart中文版的技术要求，列出需要您确认的主机参数。所有标记为红色的或带 &quot;X&quot;的，都需要修正，安装程序才能继续。标记为橙色或黄色的 &quot;注意&quot;项目，是警告信息，与安装不一定有关。图像目录及之前说明的内容也会列出。如果您在服务器上做了修改，可以点击<em>重新检查</em>或在浏览器下按F5键，刷新显示，检查所作的修改。<br />
+<br />
+如果在服务器上发现旧版本的Zen Cart，安装程序会检测数据库补丁版本并显示在屏幕上。在这个情况下，屏幕上会显示&quot;<em>升级</em>&quot;按钮让您选择。查看<strong>升级指南</strong>。<br />
+<br />
+一旦您对&quot;安装预查&quot;满意后， 安装检查就完成了(理想状况是, 所有标记都是绿色), 您可以点击屏幕下角的&quot;<em>安装</em>&quot;按钮。<br />
+<h3>系统设置</h3>在系统设置页面，您需要输入上面栏目&quot;运行安装程序准备工作&quot;中提到的内容。<br />
+<br />
+指明是否在服务器上使用SSL(在登录、结帐及管理页面使用安全连接)。如果您还没有SSL证书，<strong>现在不要打开该选项</strong>，<em>以后可以修改。(见<a href="http://www.zen-cart.cn" target="_blank">Zen Cart China</a> 网站上的常见问答)。</em><br />
+<br />
+提示: 如果出现以下错误，检查以上步骤，保证没有遗漏。所有的错误信息都带有弹出窗口说明，可以点击<span class="pseudolink">详细说明...</span>链接。<br />
+<div class="callout">
+<strong>警告: 发现问题</strong><br />
+<ul>
+<li><span class="error"> /includes/configure.php 文件不存在。</span>&nbsp;&nbsp;<span class="pseudolink">详细说明...</span></li><li><span class="error">/admin/includes/configure.php 文件不存在。</span>&nbsp;&nbsp;<span class="pseudolink">详细说明...</span>
+</li><br />
+</ul></div>
+<h3>phpBB安装</h3>下面，提示您输入phpBB路径。如果您的网站上已经安装了phpBB论坛，可以和Zen Cart连接，只要输入服务器上安装phpBB文件的路径。例如, 如果在<span class="filename">......public_html/forums</span>&nbsp;中，那么您在phpBB文件路径中输入<span class="filename">/forums</span>。
+<h3>数据库安装</h3>
+下一个屏幕, 需要输入MySQL数据库的信息，包括用户名和密码。这可以从您的主机商提供的cPanel或相关屏幕获得。如果您还没有MySQL数据库及用户名和密码，那么您需要创建一个。<br />
+具体方法请咨询您的主机提供商。<strong>在Zen Cart中文版安装程序能继续安装前，您需要创建数据库和用户。</strong>.<br />
+<br />
+<em>该屏幕上的其它信息:</em>
+<ul>
+<li>目前，MySQL是主要的数据库类型。<br />
+以后的版本也许会支持其它的数据库类型。</li><br />
+<li>出于安全考虑，建议您将数据库Sessions保存在数据库中。</li></ul>
+<h3>商店设置</h3>
+现在，填写您的商店信息。<br />
+<br />
+<em>提示: 除了&quot;演示数据&quot;，这里所有的信息，以后在商店的管理页面都可以修改。</em><br />
+<br />
+<div class="callout"><strong>演示数据</strong><br />
+如果您想安装演示数据，选择 [是]。<br />
+<br />
+建议您安装演示数据以熟悉本软件。演示数据内含很多例子，解释和展示了Zen Cart的大量功能。<br />
+<br />
+您也可以安装一个带演示数据的测试站点，及一个单独的正式站点。这样，可以利用演示数据获得帮助。</div> <br />
+<br />
+点击保存商店设置后，会有些延迟，是因为要创建数据库表及安装可选的演示数据。
+<h3>管理设置</h3>
+现在，完成管理信息，包括设置管理员登录名、管理员邮件及密码。<br />
+<br />
+提示: 用户名和密码都是大小写敏感的。<br />
+<br />
+保存管理设置，安装完成!
+<br />
+如果安装到这里都没有错误，您现在就可以进入管理页面或商店前台。<br />
+</div>
+<div>
+<h1>安装之后</h1>
+进入商店前台后，您会看到<em>configure.php</em>文件和<span class="filename">/zc_install</span>目录的安全警告信息。<br />
+<br />
+<br />
+<strong>configure.php文件</strong><br />
+您现在要修改两个<em>configure.php</em>文件的权限，<span class="filename">chmod 644 </span><em>( 或444， 与您的服务器有关...有时不能通过FTP来设置444，而要使用主机商提供的控制面板或文件管理器来设置)</em><br />
+<br />
+这两个文件位于:<br />
+<span class="filename">/catalog/includes/configure.php<br />
+/catalog/admin/includes/configure.php </span><br />
+<br />
+最好在安装完成之后，从服务器上下载一份这两个文件的备份，因为这些文件在安装时，已经按您的服务器设置好了。<br />
+<br />
+如果出现错误或问题，经常可以通过修改这两个文件来纠正。<br />
+<br />
+<br />
+<strong>zc_install目录</strong><br />
+最后, 要删除或改名<span class="filename"> /catalog/zc_install </span>目录，例如:<span class="filename"> /catalog/zc_install_complete </span><br />
+<br />
+提示: <em>不要</em> 使用<span class="filename">zc_install_complete </span>，因为黑客读了本说明，也会知道这个名字。<br />
+</div>
+<div>
+<h1>下一步</h1>
+有关更多"<em>如何建立自己的网上商店</em>"，请看<strong><a href="http://www.zen-cart.cn" target="_blank">Zen Cart China</a></strong>的常见问答部分
+<br />
+
+<br />
+您也要熟悉使用Zen Cart的开发员工具，该工具位于管理页面的&quot;工具&quot;下。它可以帮你找到几乎所有需要定制的东西！</div>
+<div>
+<h1>帮助和支持</h1>
+更多的帮助及支持，请看Zen Cart China的<strong>常见问答</strong>或访问<strong>用户论坛</strong>，网址是：<a href="http://www.zen-cart.cn" target="_blank">www.zen-cart.cn</a><br />
+<br />
+<br />
+<em>祝您安装顺利，很高兴您选择Zen Cart中文版！</em> <br />
+<br />
+</div>
+</td>
+</tr>
+</table>
+<p align="center"><em>Zen Cart 中文版 版权所有 2010</em></p>
+<br /><br />
+</body>
+</html>

@@ -1,0 +1,272 @@
+<!--
+/**
+ * @package documentation
+ * @copyright Copyright 2003-2006 Zen Cart Development Team
+ * @license http://www.zen-cart.com/license/2_0.txt GNU Public License V2.0
+ * @version $Id: 4.readme_html_email_templates.html 12650 2009-03-20 09:46:22Z drbyte $
+ */
+//-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Zen Cart的HTML电子邮件支持</title>
+<meta name="author" content="Ian Wilson &amp; Kim Elliott" />
+<meta name="copyright" content="2004" />
+
+<style type="text/css">
+<!--
+body, table{ font-family:Verdana, Arial, Helvetica, sans-serif; font-size:14px; }
+table.intro {border-color:C96E29; }
+td.intro{background-color:#EEEEEE ; border-color:5778ce; font-size:13px; }
+td.plainbox, div.callout {border: 1px dashed; border-color: C96E29; margin:5 40 5 40;}
+.heading {background-color:5778CE; font-weight:bold; font-size:14px; width: 100%; }
+.title1 {color:C96E29; font-weight:bold; font-size:22px; }
+.title2 {color:C96E29; font-weight:bold; font-size:13px; }
+.small {font-size:12px ;}
+.error {color:FF0000; }
+.filename {font-family: mono, "Courier New", Courier ; font-size:14px; color: c96e29;}
+.pseudolink {text-decoration:underline; color:5778CE;}
+h1.intro { color: #ffffff; border:1px solid #aca893; background-color: #c96e29;  font-size: 22px;   padding: 4px;}
+h1 { color: #ffffff;    border:1px solid #aca893;   background-color: #5778ce;   font-size: 20px;   padding: 4px;}
+h2 { color: #c96e29; font-size: 18px;}
+h3 { color: #5778ce; font-size: 16px; margin-bottom:0px;}
+h4 { color: #c96e29; font-size: 14px;}
+.style1 {font-size: 14pt}
+-->
+</style>
+</head>
+<body>
+
+<table class="intro" cellspacing="4" cellpadding="6" border="3" width="748px" align="center">
+<tr><td class="intro">
+<center><h1 class="intro">欢迎使用 Zen Cart 中文版 ...</h1></center>
+<br />
+Zen Cart&trade;软件使用的是GNU通用公共许可协议，您可以免费使用、修改Zen Cart&trade;软件。
+<br />
+<br />
+虽然该软件是免费的，但是欢迎您每次下载新版本前捐款，以帮助我们继续软件开发、升级，和维护免费论坛。
+<br />
+<br />
+捐款网址：
+<a href="http://www.zen-cart.com/index.php?main_page=infopages&pages_id=14" target="_blank">Zen Cart&trade; 团队</a>
+<br /><br />
+感谢您的支持<br />
+<em>Zen Cart China</em><br />
+<br />
+<center>
+<span class="small">
+Zen Cart&trade; 源自: Copyright 2003 osCommerce<br />
+该软件希望提供有用的功能，但[不做保证]，也不保证[适用于特定用途]<br />
+该软件受限于GNU通用公共许可协议<br /><br />
+</span>
+</center>
+</td></tr></table>
+<br />
+<table border="3" width="748px" align="center" cellpadding="6">
+  <tr>
+<td align="center"><img src="osi-certified-120x100.png" /><br />
+该软件通过OSI开源软件认证。<br />
+OSI Certified是开源动力的认证标志。
+</td></tr></table>
+<br />
+<table border="3" width="748px" align="center" cellpadding="6">
+  <tr>
+<td>
+<center>
+<h1 class="intro">Zen Cart的HTML电子邮件支持</h1>
+</center>
+<div>
+<h1>如何使用 - 超文本编辑器 / Email存档 / 发送HTML邮件</h1>
+<h3>打开 HTML/超文本编辑器支持:</h3>
+<p>您可以在<span class="filename">商店设置 | 基本设置 | &nbsp;HTML编辑器 下选择编辑器<br />
+</span></p>
+<h3>与超文本信息相关的电子邮件系统设置</h3>
+<p>在管理页面下，选择 <span class="filename">商店设置 | 电子邮件选项</span></p>
+a.&nbsp;确认 &quot;<strong>电子邮件发送方式</strong>&quot; 的设置正确<br />
+b.&nbsp;<strong>使用MIME HTML格式发送电子邮件</strong> = &quot;true&quot;<br />
+c.&nbsp;<strong>发送电子邮件</strong> = true<br />
+d.&nbsp;<strong>电子邮件存档</strong> = 建议将该值设为 &quot;true&quot; -- 提示，会不断增加数据库大小<br />
+<h3>在哪里发送HTML消息? </h3>
+您可以在管理页面下发送 <strong>电子商情</strong>，位于 <span class="filename">&quot;工具&quot; | &quot;电子商情管理 &quot;</span>。<br />
+<strong>商品通知</strong>也在这里，因为也是在新闻管理页面下生成的。
+<p>您还可以用 <span class="filename">&quot;工具&quot; | &quot;发送电子邮件&quot;</span>，或在管理页面的 <span class="filename">&quot;客户管理&quot; | &quot;客户资料&quot;</span> 下面，点击 &quot;<strong>电子邮件</strong>&quot;.</p>
+<p>同样也可用于<strong>优惠券</strong>、<strong>礼券的邮件</strong>，以及<strong>礼券队列</strong>。</p>
+<h3>如何添加自己的HTML代码到电子邮件中? (不使用编辑器) </h3>
+您还可以切换到HTML编辑器为 &quot;源代码&quot; (点击方框，或点击图标), 然后将HTML源码直接粘贴到编辑器中即可。<br />
+而且，您可以关闭编辑器，但还能发送HTML消息，只要将HTML源码直接粘贴到超文本方框中。
+</div>
+<div>
+<h1>简单说明和常见问答</h1>
+
+
+<h3>关于只接受文本消息的客户
+</h3>
+<p>您可以将文本格式的内容置于邮件底部，和HTML一起发送，这样没有HTML兼容的邮件客户也可以阅读。&nbsp;如果您将 &quot;文字&quot; 字段留空，您的HTML内容将被转换(基本上是删除HTML标签) 并发送文字部分。</p>
+<h3>电子邮件[来自]字段显示不正常</h3>
+<p>如果您的电子邮件的 &quot;来自&quot; 字段含有额外的括号 &quot;)&quot;，是因为商店的EMAIL_FROM的电子邮件地址设置不正确。</p>
+<h3>编辑器在您的浏览器下无法正常工作</h3>
+<p>如果您发现HTML编辑器因为浏览器而无法正常工作，最简单的办法就是在管理页面关闭编辑器，而直接粘贴HTML代码 - 可以用您自己的HTML编辑器</p>
+<p>Mozilla在粘贴文本到HTMLarea中存在某些问题 ... 是javascript中有关安全的设置。</p>
+<h3>退回邮件处理</h3>
+<p>Zen Cart不会自动处理退回的电子邮件/电子商情。</p>
+<p>如果您收到&quot;退回&quot;的电子邮件，您可以在 管理页面 | 客户资料 中关闭该客户的订阅，方法如下：在右上角的 &quot;搜索&quot; 框中输入邮件地址，然后回车。找到后就可以修改订阅者的帐号设置。(电子邮件, HTML, 电子商情, 等等)</p>
+</div>
+<div>
+<h1 align="center" class="intro">如何使用HTML邮件模板系统</h1>
+<p>邮件模板系统的文件 <span class="filename">email_*.htm</span> 位于 <span class="filename">/email</span> 目录</p>
+<h1>电子邮件模板样式表</h1>
+<p>由于基于HTML的电子邮件标准非常多，因此不可能预测各种电子邮件客户端的输出类型。&nbsp;所以，不建议使用链接的样式表。&nbsp;某些客户端甚至拒绝接受带样式表链接的邮件</p>
+<p>在编码您的HTML电子邮件模板时，最好按照HTML 3.2和CSS1的标准。</p>
+<h1>创建HTML邮件和CSS问题的帮助</h1>
+<a href="http://www.alistapart.com/articles/cssemail/">这里列出的几篇文章</a>非常有用。
+<h1>模板系统关键字对照</h1>
+下面的关键字，在各种模块中都以实际的HTML来代替，&nbsp;只要在您的模板结构中使用，应该都没问题!!!<br />
+注意所有的模板标签都以$开头<br />
+<h3>所有模块</h3>
+$EMAIL_FIRST_NAME&nbsp;(多数模块提供客户名字)<br />
+$EMAIL_LAST_NAME<br />
+&nbsp;<br />
+$EMAIL_TO_NAME<br />
+$EMAIL_TO_ADDRESS&nbsp;(接收人: 电子邮件地址)<br />
+$EMAIL_FROM_NAME<br />
+$EMAIL_FROM_ADDRESS&nbsp;(发件人: 电子邮件地址.... 缺省为管理页面下EMAIL_FROM的设置)<br />
+$EMAIL_STORE_NAME&nbsp;(在商店设置 | 基本设置 中定义)<br />
+$EMAIL_STORE_OWNER&nbsp;(店主的名字 -- 在管理页面中定义)<br />
+$EMAIL_STORE_URL&nbsp;(格式化 A HREF 为您的商店网址，使用 STORE_NAME 显示内容)<br />
+$EMAIL_DATE_LONG&nbsp;(例如: 星期一 六月 14, 2004 11:28 上午)<br />
+$EMAIL_DATE_SHORT&nbsp;(例如: 06/14/2004)<br />
+$BASE_HREF&nbsp;(商店 http 基本路径)<br />
+$EXTRA_INFO&nbsp;(这是位于信息底部的 &quot;商店专用&quot; 部分，副本抄送管理员)<br />
+&nbsp;<br />
+&quot;languages/..../email_extras.php&quot; 中有三个定义:<br />
+$EMAIL_DISCLAIMER&nbsp;(免责声明)<br />
+$EMAIL_SPAM_DISCLAIMER&nbsp;(免责声明 关于: 垃圾邮件 -- 应该定制为遵循本国法律...当然您得遵守!)<br />
+$EMAIL_FOOTER_COPYRIGHT<br />
+&nbsp;<br />
+$EMAIL_MESSAGE_HTML&nbsp;(这是您要发送的信息(通过编辑器))<br />
+&nbsp;<br />
+
+<h2>管理页面:</h2>
+
+<h3>优惠券</h3>
+尊敬的 $EMAIL_FIRST_NAME $EMAIL_LAST_NAME,<br />
+$EMAIL_MESSAGE_HTML&nbsp;(管理页面下输入的内容)<br />
+$COUPON_TEXT_TO_REDEEM&nbsp;(&quot;您收到一份优惠券&quot;)<br />
+$COUPON_TEXT_VOUCHER_IS&nbsp;(优惠券号码为:&quot;)<br />
+$COUPON_CODE&nbsp;(实际优惠券号码)<br />
+$COUPON_DESCRIPTION&nbsp;(优惠券描述，当在管理页面下创建优惠券时有输入)<br />
+$COUPON_TEXT_REMEMBER&nbsp;(&quot;妥善保管该号码&quot;)<br />
+$COUPON_REDEEM_STORENAME_URL&nbsp;(&quot;要兑现，请访问我们的商店: +网址&quot;)<br />
+<h3>来自管理员的礼券邮件</h3>
+尊敬的 $EMAIL_FIRST_NAME $EMAIL_LAST_NAME<br />
+$EMAIL_MESSAGE_HTML&nbsp;(管理页面下输入的内容)<br />
+$GV_WORTH&nbsp;(&quot;您收到一份礼券，价值: &quot; )<br />
+$GV_AMOUNT&nbsp;(礼券金额)<br />
+$GV_REDEEM&nbsp;(要兑现礼券，请进入我们的商店，或点击这里:)<br />
+$GV_CODE_URL&nbsp;(兑现礼券的网址)<br />
+<h3>管理页面下的礼券队列 (释放已购买的礼券)</h3>
+尊敬的 $EMAIL_FIRST_NAME $EMAIL_LAST_NAME<br />
+$GV_NOTICE_INTRO&nbsp;(您从我们的商店购买了一张礼券: 网址)&nbsp;(可选)<br />
+$GV_NOTICE_AMOUNT_URL&nbsp;(您从我们的商店购买了价值$$$$的礼券: 网址)<br />
+$GV_NOTICE_VALUE&nbsp;(释放购买的礼券)<br />
+$TEXT_REDEEM_COUPON_MESSAGE_BODY&nbsp;(空，除非在语言文件中定义)<br />
+$TEXT_REDEEM_COUPON_MESSAGE_FOOTER&nbsp;(空，除非在语言文件中定义)&nbsp;<br />
+<h3>低库存</h3>
+- $EMAIL_SUBJECT<br />
+- $EMAIL_MESSAGE_HTML -- 包含结帐时生成的低库存详情<br />
+
+<h3>电子商情 &amp; 商品通知, 及管理员电子邮件</h3>
+Dear $EMAIL_FIRST_NAME $EMAIL_LAST_NAME,<br />
+$EMAIL_MESSAGE_HTML&nbsp;(管理员输入)<br />
+<h3>来自管理员的订单状态更新</h3>
+$EMAIL_CUSTOMERS_NAME&nbsp;(取自订单数据表 -- 包含数据库中的 名字/姓氏)<br />
+$EMAIL_STORE_NAME<br />
+$EMAIL_TEXT_ORDER_NUMBER&nbsp;(数据库中的订单号码)<br />
+$EMAIL_TEXT_INVOICE_URL&nbsp;(存取 &quot;我的帐号记录&quot; 的网址)<br />
+$EMAIL_TEXT_DATE_ORDERED&nbsp;(订单日期)<br />
+$EMAIL_TEXT_STATUS_UPDATED&nbsp;(&quot;已经更新为:&quot;)<br />
+$EMAIL_TEXT_STATUS_LABEL&nbsp;(&quot;新的状态:&quot;)<br />
+$EMAIL_TEXT_NEW_STATUS&nbsp;(状态及备注)<br />
+$EMAIL_TEXT_STATUS_PLEASE_REPLY&nbsp;(&quot;如有任何疑问，请回复该地址&quot;)<br />
+<h3>密码提示:</h3>
+$EMAIL_SUBJECT&nbsp;(&quot;请求重置密码&quot;)<br />
+$CUSTOMERS_NAME&nbsp;(管理员或客户的名字)<br />
+$EMAIL_MESSAGE_HTML&nbsp;(重置密码的内容)<br />
+&nbsp;<br />
+<h2>商店前台:</h2>
+<h3>联系我们</h3>
+$CONTACT_US_OFFICE_FROM&nbsp;(商店专用: 含发件人电子邮件 和 联系人名字)<br />
+$EMAIL_MESSAGE_HTML&nbsp;(客户给管理员的消息)<br />
+<h3>欢迎邮件</h3>
+$EMAIL_GREETING&nbsp;(先生/女士/尊敬的 + 姓氏 和/或 名字)<br />
+$EMAIL_WELCOME&nbsp;(&quot;欢迎来到 ....商店名称....&quot;)<br />
+&nbsp;<br />
+$COUPON_BLOCK ... 包含下面的内容，在 商店设置 | 基本设置 | 礼券和优惠券 下为新客户设置后才显示<br />
+.....$COUPON_TEXT_VOUCHER_IS<br />
+.....$COUPON_DESCRIPTION<br />
+.....$COUPON_TEXT_TO_REDEEM<br />
+.....$COUPON_CODE<br />
+$GV_BLOCK ... 包含下面的内容，给新客户设置礼券后才显示，见上面的优惠券<br />
+.....$GV_WORTH<br />
+.....$GV_REDEEM<br />
+.....$GV_CODE_URL<br />
+&nbsp;<br />
+$EMAIL_MESSAGE_HTML&nbsp;(欢迎信息: 由常量 &quot;EMAIL_TEXT&quot; 定义)<br />
+$EMAIL_CONTACT_OWNER<br />
+$EMAIL_CLOSURE<br />
+<h3>购买礼券并加入帐户后，发送给朋友</h3>
+显示礼券图片，以及: &nbsp;<br />
+......$EMAIL_GV_AMOUNT&nbsp;<br />
+......$GV_REDEEM_CODE<br />
+$EMAIL_STORE_NAME<br />
+$EMAIL_GV_TEXT_HEADER&nbsp;(这是一张礼券)<br />
+$EMAIL_GV_AMOUNT&nbsp;(金额)<br />
+$EMAIL_GV_FROM&nbsp;(来自我的名字)<br />
+$EMAIL_GV_MESSAGE&nbsp;(&quot;我的留言&quot;)<br />
+$EMAIL_GV_SEND_TO&nbsp;(您的名字)<br />
+$EMAIL_MESSAGE_HTML&nbsp;(我的留言 -- 在发送前输入)<br />
+$GV_REDEEM_HOW&nbsp;(如何兑现礼券)<br />
+$GV_REDEEM_URL&nbsp;(兑现的地址)<br />
+$EMAIL_GV_FIXED_FOOTER&nbsp;(如果您无法兑现，可在结帐时输入，或联系店主)<br />
+$EMAIL_GV_SHOP_FOOTER&nbsp;(目前为空)<br />
+<h3>推荐给朋友</h3>
+$EMAIL_TEXT_HEADER&nbsp;(&quot;重要信息&quot;)<br />
+$EMAIL_GREET&nbsp;(&quot;Hi _____&quot;)<br />
+$EMAIL_INTRO&nbsp;(&quot;您的朋友觉得您也许对这个有兴趣。下面是具体内容:&quot;)<br />
+EMAIL_MESSAGE_HTML&nbsp;(推荐人输入的消息)<br />
+$EMAIL_PRODUCT_LINK<br />
+$EMAIL_CONTACT_STORE<br />
+<h3>订单确认</h3>
+$EMAIL_TEXT_HEADER&nbsp;(&quot;订单确认&quot;)<br />
+$INTRO_STORE_NAME<br />
+$INTRO_ORDER_NUM_TITLE&nbsp;(&quot;订单号码:&quot;)<br />
+$INTRO_ORDER_NUMBER&nbsp;(订单号码)<br />
+$INTRO_DATE_TITLE&nbsp;(&quot;订单日期:&quot;)<br />
+$INTRO_DATE_ORDERED&nbsp;(订单日期)<br />
+$INTRO_URL_TITLE&nbsp;(A HREF 到帐号的链接的描述)<br />
+$INTRO_URL_VALUE&nbsp;(A HREF 到帐号的链接)<br />
+$ORDER_COMMENTS&nbsp;(客户下单时输入的备注)<br />
+$PRODUCTS_TITLE&nbsp;(&quot;商品详情:&quot;)<br />
+$PRODUCTS_LIST&nbsp;(商品、属性及价格的详细清单)<br />
+$ORDER_TOTALS&nbsp;(订单总额)<br />
+$HEADING_ADDRESS_INFORMATION&nbsp;(&quot;地址内容:&quot;)<br />
+$ADDRESS_DELIVERY_TITLE&nbsp;(&quot;送货地址:&quot;)<br />
+$ADDRESS_DELIVERY_ADDRESS&nbsp;(订单实际送货地址)<br />
+$SHIPPING_METHOD_TEXT&nbsp;(&quot;配送方式&quot;)<br />
+$SHIPPING_METHOD_TITLE&nbsp;(选择的配送方式)<br />
+$ADDRESS_BILLING_TITLE&nbsp;(&quot;帐单地址:&quot;)<br />
+$ADDRESS_BILLING_DETAIL&nbsp;(订单的帐单地址)<br />
+$PAYMENT_METHOD_TEXT&nbsp;(&quot;支付方式:&quot;)<br />
+$PAYMENT_METHOD_TITLE&nbsp;(选择的支付方式)<br />
+$PAYMENT_METHOD_FOOTER&nbsp;(支付方式备注)<br />
+<h3><br />
+
+</h3>
+</div>
+</td>
+</tr>
+</table>
+<br /><br />
+<p align="center"><em>Zen Cart 中文版 版权所有 2004 - 2010</em></p>
+</body>
+</html>

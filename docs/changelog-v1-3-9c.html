@@ -1,0 +1,147 @@
+<!--
+/**
+ * @package documentation
+ * @copyright Copyright 2003-2010 Zen Cart Development Team
+ * @license http://www.zen-cart.com/license/2_0.txt GNU Public License V2.0
+ * @version $Id: changelog-v1-3-9c.html 16288 2010-05-16 19:40:22Z drbyte $
+ */
+//-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+body, table{ font-family:Verdana, Arial, Helvetica, sans-serif; font-size:14px; }
+table.intro {border-color:#C96E29; }
+td.intro{background-color:#EEEEEE ; border-color:#5778ce; font-size:14px; }
+td.plainbox, div.callout {border: 1px dashed; border-color: #C96E29; margin:5px 40px 5px 40px;}
+.heading {background-color:#5778CE; font-weight:bold; font-size:14px;	width: 100%; }
+
+.title1 {color:#C96E29; font-weight:bold; font-size:22px; }
+.title2 {color:#C96E29; font-weight:bold; font-size:13px; }
+.small {font-size:10px ;}
+.error {color:#FF0000; }
+.filename {font-family: mono, "Courier New", Courier ; font-size:14px; color: #c96e29;}
+.pseudolink {text-decoration:underline; color:#5778CE;}
+h1.intro { color: #ffffff; border:1px solid #aca893; background-color: #c96e29;  font-size: 22px;   padding: 4px;}
+h1 { color: #ffffff;    border:1px solid #aca893;   background-color: #5778ce;   font-size: 20px;   padding: 4px;}
+h2 { color: #c96e29; 	font-size: 18px;}
+h3 { color: #5778ce;	font-size: 16px; margin-bottom:0px;}
+h4 { color: #c96e29;	font-size: 14px;}
+-->
+</style>
+<title>Zen Cart(tm)修改记录</title>
+</head>
+<body>
+
+<table class="intro" cellspacing="4" cellpadding="6" border="3" width="748px" align="center">
+<tr><td class="intro">
+<center><h1 class="intro">欢迎使用 Zen Cart 中文版 ...</h1></center>
+<br />
+Zen Cart&trade;软件使用的是GNU通用公共许可协议，您可以免费使用、修改Zen Cart&trade;软件。
+<br />
+<br />
+虽然该软件是免费的，但是欢迎您每次下载新版本前捐款，以帮助我们继续软件开发、升级，和维护免费论坛。
+<br />
+<br />
+捐款网址：
+<a href="http://www.zen-cart.com/index.php?main_page=infopages&pages_id=14" target="_blank">Zen Cart&trade; 团队</a>
+<br />
+<br />
+感谢您的支持<br />
+<em>Zen Cart&trade; 团队</em><br />
+<br />
+
+<center>
+<span class="small">
+Zen Cart&trade; 源自: Copyright 2003 osCommerce<br />
+该软件希望提供有用的功能，但[不做保证]，也不保证[适用于特定用途]<br />
+该软件受限于GNU通用公共许可协议<br /><br /></span>
+</center>
+</td></tr></table>
+
+<br />
+<table border="3" width="748px" align="center" cellpadding="6">
+  <tr>
+<td align="center"><img src="osi-certified-120x100.png" /><br />
+该软件通过OSI开源软件认证。<br />
+OSI Certified是开源动力的认证标志。</td></tr></table>
+<br />
+
+
+<table border="3" width="748px" align="center" cellpadding="6">
+<tr><td>
+<h1>.htaccess 文件的特别说明</h1>
+<p>Inside some folders is an .htaccess file that lists certain *permitted* filetypes which may be accessed. (Anything else is blocked to prevent abuse on your site).</p>
+<p>The side-effect of this is that if you choose to use media types that are not already listed in the *permitted* list, then your visitors will not be able to see those resources. </p>
+<p>Thus, if you are using product images that are not in the list of permitted types in your /images/.htaccess, you will need to add those types to the list.</p>
+<p>Similarly, if you are using certain media types in music product previews, you will need to make sure those are in your /media/.htaccess </p>
+<p>And, if you are using filetypes for downloadable products that are not already listed in your /pub/.htaccess and /download/.htaccess you will need to add those as well.</p>
+
+<h1 align="center" class="intro">版本1.3.9c</h1>
+<p>NOTE:<br>
+  该版本新增功能，请查看<a href="whatsnew_1.3.9c.html" target="_blank">whatsnew_1.3.9c.html</a>文件，位于<span class="filename">/docs</span>目录。<br />
+      <br>
+      下面是修改的文件/目录: </p>
+<h1>移动的文件 (从版本v1.3.9b起)</h1>
+<ul>
+<li>/admin/attributes_controller.php</li>
+<li>/admin/categories.php</li>
+<li>/admin/downloads_manager.php</li>
+<li>/admin/layout_controller.php</li>
+<li>/admin/includes/init_includes/init_sessions.php</li>
+<li>/admin/includes/init_includes/init_tlds.php</li>
+<li>/admin/includes/languages/english/coupon_restrict.php</li>
+<li>/admin/includes/modules/category_product_listing.php</li>
+<li>/admin/includes/modules/document_general/collect_info.php</li>
+<li>/admin/includes/modules/document_product/collect_info.php</li>
+<li>/admin/includes/modules/product/collect_info.php</li>
+<li>/admin/includes/modules/product_free_shipping/collect_info.php</li>
+<li>/admin/includes/modules/product_music/collect_info.php</li>
+<li>/docs/ &lt;VARIOUS FILES HERE&gt;</li>
+<li>/includes/form_check.js.php</li>
+<li>/includes/version.php</li>
+<li>/includes/classes/cc_validation.php</li>
+<li>/includes/functions/functions_taxes.php</li>
+<li>/includes/init_includes/init_canonical.php</li>
+<li>/includes/init_includes/init_sessions.php</li>
+<li>/includes/init_includes/init_tlds.php</li>
+<li>/includes/modules/pages/account_edit/jscript_form_check.php</li>
+<li>/includes/modules/pages/account_password/jscript_form_check.php</li>
+<li>/includes/modules/pages/address_book_process/jscript_main.php</li>
+<li>/includes/modules/pages/checkout_payment_address/jscript_main.php</li>
+<li>/includes/modules/pages/checkout_shipping_address/jscript_main.php</li>
+<li>/includes/modules/pages/create_account/jscript_form_check.php</li>
+<li>/includes/modules/pages/download/header_php.php</li>
+<li>/includes/modules/pages/login/jscript_form_check.php</li>
+<li>/includes/modules/payment/authorizenet_aim.php</li>>
+<li>/includes/modules/payment/authorizenet_echeck.php</li>>
+<li>/includes/modules/payment/paypal/paypal_curl.php</li>>
+<li>/includes/modules/payment/paypalwpp.php</li>>
+<li>/includes/modules/payment/paypaldp.php</li>>
+<li>/includes/templates/template_default/templates/tpl_product_free_shipping_info_display.php</li>
+<li>/includes/templates/template_default/templates/tpl_product_info_display.php</li>
+<li>/includes/templates/template_default/templates/tpl_document_product_info_display.php</li>
+<li>/includes/templates/template_default/templates/tpl_document_general_info_display.php</li>
+<li>/includes/templates/template_default/templates/tpl_product_music_info_display.php</li>
+<br />
+<li>/zc_install/ ... 假定 *所有* /zc_install/ 下的文件都已修改
+</ul>
+
+<h1>删除的文件 (从版本v1.3.9b起)</h1><ul>
+<li>无</li>
+</ul>
+<h1>新增的文件 (从版本v1.3.9b起)</h1><ul>
+<li>无</li>
+</ul>
+<h1>移动的文件 (从版本v1.3.9b起)</h1><ul>
+<li>无</li>
+</ul>
+<h1>&nbsp;</h1>
+</td>
+</tr>
+</table>
+<p align="center"><em>Zen Cart 中文版 版权所有 2004 - 2010</em></p>
+<br /><br />
+</body>
+</html>
