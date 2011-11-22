@@ -39,10 +39,10 @@
 // NOTE: be sure to leave the trailing '/' at the end of these lines if you make changes!
 // * DIR_WS_* = Webserver directories (virtual/URL)
   // these paths are relative to top of your webspace ... (ie: under the public_html or httpdocs folder)
-  define('DIR_WS_ADMIN', '/sunwinningshop/admincp/');
-  define('DIR_WS_CATALOG', '/sunwinningshop/');
-  define('DIR_WS_HTTPS_ADMIN', '/sunwinningshop/admincp/');
-  define('DIR_WS_HTTPS_CATALOG', '/sunwinningshop/');
+  define('DIR_WS_ADMIN', '/antonshop/wt_manage/');
+  define('DIR_WS_CATALOG', '/antonshop/');
+  define('DIR_WS_HTTPS_ADMIN', '/antonshop/wt_manage/');
+  define('DIR_WS_HTTPS_CATALOG', '/antonshop/');
 
   define('DIR_WS_IMAGES', 'images/');
   define('DIR_WS_ICONS', DIR_WS_IMAGES . 'icons/');
@@ -58,8 +58,8 @@
 
 // * DIR_FS_* = Filesystem directories (local/physical)
   //the following path is a COMPLETE path to your Zen Cart files. eg: /var/www/vhost/accountname/public_html/store/
-  define('DIR_FS_ADMIN', 'D:/phpnow/htdocs/sunwinningshop/admin/');
-  define('DIR_FS_CATALOG', 'D:/phpnow/htdocs/sunwinningshop/');
+  define('DIR_FS_ADMIN', 'D:/phpnow/htdocs/antonshop/wt_manage/');
+  define('DIR_FS_CATALOG', 'D:/phpnow/htdocs/antonshop/');
 
   define('DIR_FS_CATALOG_LANGUAGES', DIR_FS_CATALOG . 'includes/languages/');
   define('DIR_FS_CATALOG_IMAGES', DIR_FS_CATALOG . 'images/');
@@ -76,7 +76,7 @@
   define('DB_SERVER', 'localhost');
   define('DB_SERVER_USERNAME', 'root');
   define('DB_SERVER_PASSWORD', 'root');
-  define('DB_DATABASE', 'sunwinningshop');
+  define('DB_DATABASE', 'antonshop');
   define('USE_PCONNECT', 'false');
   define('STORE_SESSIONS', 'db');
   // for STORE_SESSIONS, use 'db' for best support, or '' for file-based storage
@@ -87,6 +87,6 @@
   // or webserver user has write privileges (chmod 666 or 777). We recommend using the "cache" folder inside the Zen Cart folder
   // ie: /path/to/your/webspace/public_html/zen/cache   -- leave no trailing slash  
   define('SQL_CACHE_METHOD', 'none'); 
-  define('DIR_FS_SQL_CACHE', 'D:/phpnow/htdocs/sunwinningshop/cache');
+  define('DIR_FS_SQL_CACHE', 'D:/phpnow/htdocs/antonshop/cache');
 
 // EOF
