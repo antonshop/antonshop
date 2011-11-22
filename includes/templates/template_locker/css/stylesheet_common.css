@@ -26,8 +26,8 @@ em,var {font-style:normal;}
 
 .hd_two {width:1000px;margin:0 auto;overflow:hidden;zoom:1;}
 .hd_two .logo,.search input {float:left;}
-.hd_two .two_center,.hd_two .hd_pic {float:left;margin-top:23px;}
-.two_center {width:385px;}
+.hd_two .hd_pic {float:left;margin-top:23px;}
+.two_center {width:385px; float:right; margin-top:23px;}
 .two_center .search {border:1px solid #c5c5c5;padding:3px 0;width:383px;overflow:hidden;zoom:1;}
 .search form,.fd_in form {overflow:hidden;zoom:1;}
 .search .text {float:left;border:0 none;width:260px;height:21px;padding:7px 0 5px 3px;}

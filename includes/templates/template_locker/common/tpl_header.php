@@ -25,10 +25,7 @@
                 </form>
             </div>
         </div>
-        <div class="hd_pic">
-        	<img src="<?php echo DIR_WS_TEMPLATE;?>images/days.jpg" alt=""/>&nbsp;&nbsp;
-            <img src="<?php echo DIR_WS_TEMPLATE;?>images/free.jpg" alt=""/>
-        </div>
+        <div class="clearBoth"></div>
     </div>
                                                                     <!-- nav -->
     <div class="hd_nav">
