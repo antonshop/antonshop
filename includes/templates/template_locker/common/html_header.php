@@ -30,10 +30,7 @@ require(DIR_WS_MODULES . zen_get_module_directory('meta_tags.php'));
 <meta name="generator" content="Zen Cart, http://www.zen-cart.cn" />
 <?php if (defined('ROBOTS_PAGES_TO_SKIP') && in_array($current_page_base,explode(",",constant('ROBOTS_PAGES_TO_SKIP'))) || $current_page_base=='down_for_maintenance' || $robotsNoIndex === true) { ?>
 <meta name="robots" content="noindex, nofollow" />
-
 <?php } ?>
-<script src="<?php echo DIR_WS_TEMPLATE;?>jscript/jq.js" type="text/javascript"></script>
-<script src="<?php echo DIR_WS_TEMPLATE;?>jscript/common.js" type="text/javascript"></script>
 <?php if (defined('FAVICON')) { ?>
 <link rel="icon" href="<?php echo FAVICON; ?>" type="image/x-icon" />
 <link rel="shortcut icon" href="<?php echo FAVICON; ?>" type="image/x-icon" />

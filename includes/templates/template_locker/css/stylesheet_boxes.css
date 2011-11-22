@@ -1,0 +1,355 @@
+
+/* ----------------------- BOXES ------------------------- */
+
+.box {margin-bottom:10px;}
+
+.box-head {
+	color:#565656;
+	font-size:15px;
+	line-height:15px;
+	font-weight:normal;
+	padding: 12px 0 20px 17px;
+	background:url("../images/marker1.gif"/*tpa=http://livedemo00.template-help.com/zencart_35883/includes/templates/theme546/images/marker1.gif*/) no-repeat 0px 16px;
+	border-bottom:1px solid #251f1a;
+	width:179px;
+	margin: 0 17px 0 17px;
+
+}
+.box-head a {
+	text-decoration:none;
+}
+.box-head a:hover {
+	text-decoration:underline;
+}
+
+.box-body {}
+
+.box-body ul {margin:0; padding:19px 0 0 0!important; list-style:none;}
+.box-body ul li {
+	margin:0 17px 0 45px;
+}
+.box-body ul li:first-child a{
+	border:none;
+}
+.box-body ul li a {
+	color:#434343;
+	font-size:14px;
+	line-height:26px;
+}
+.box-body ul li a:hover {
+	color:#313532;
+}
+.box-body ul li.category-products a:hover,
+.box-body ul li .category-subs-parent-selected,
+.box-body ul li .category-subs-selected{
+	color:#313532;
+}
+.box-body ol {margin:0; padding:19px 0 10px 0; list-style:none;}
+.box-body ol li {
+	margin:0 17px 0 45px;
+}
+.box-body ol li a {
+	color:#434343;
+	font-size:14px;
+	line-height:26px;
+}
+.box-body ol li a:hover {
+	color:#313532;
+}
+
+
+/* ----------------------- LISTING BOXES ------------------------- */
+
+
+#categories {
+	background:url("../images/cat-bg.jpg"/*tpa=http://livedemo00.template-help.com/zencart_35883/includes/templates/theme546/images/cat-bg.jpg*/) repeat left top;
+	padding-bottom:21px;
+}
+#categories ul {padding:10px 0 0 0!important;}
+#categories ul li{
+	margin:0 17px 0 19px;
+}
+#categories ul li a{
+	color:#fff;
+	text-transform:uppercase;
+	font-size:11px;
+	line-height:25px;
+	text-decoration:none;
+	border-top:1px solid #bbbb91;
+	display:block;
+	background:url("../images/marker3.gif"/*tpa=http://livedemo00.template-help.com/zencart_35883/includes/templates/theme546/images/marker3.gif*/) no-repeat 19px 10px;
+	padding:0 0 0 32px;
+}
+#categories ul li:first-child a{
+	border:none;
+}
+#categories ul li a:hover{	
+	color:#313532;
+}
+#categories .box-head{
+	color:#fff;
+	background:url("../images/marker2.gif"/*tpa=http://livedemo00.template-help.com/zencart_35883/includes/templates/theme546/images/marker2.gif*/) no-repeat 17px 26px;
+	padding: 22px 0 18px 31px;
+	border-bottom:1px solid #fff;
+	width:163px;
+	margin: 0 17px 0 19px;
+}	
+
+
+#moreinformation {}
+
+
+#information {}
+
+
+#bestsellers {}
+
+
+#ezpages {
+	margin-bottom:41px;
+}
+
+
+#orderhistory {}
+#orderhistory .box-body img {background:#FFFFFF; padding:2px; border:1px solid #AAAAAA; vertical-align:middle; margin:2px 0px 2px 0px;}
+#orderhistory .box-body li{ margin:0 17px 0 20px;}
+#orderhistory .no-bg{ background:none; padding:0;}
+#orderhistory a{ display:inline;}
+
+
+/* ----------------------- BANNER BOXES ------------------------- */
+
+#bannerbox {}
+
+#bannerbox2 {}
+
+#bannerboxall {}
+
+
+
+/* ----------------------- PRODUCT BOXES ------------------------- */
+
+#featured a img, 
+#whatsnew a img, 
+#specials a img, 
+#reviews a img, 
+#manufacturerinfo img, 
+#productnotifications img {margin:0 0 8px;}
+
+#reviews img {margin:5px 0 0;}
+
+
+
+
+#featured {}
+#featured .box-head{
+	padding-bottom:19px;
+	margin-bottom:20px;
+}
+#featured .img{
+	text-align:center;
+}
+#featured .img img{
+	border:1px solid #eaead9;
+	width:172px;
+	height:209px;
+	padding:4px;
+}
+#featured .img:hover img{
+	border:1px solid #b0b080;
+}
+#featured .sb-info{
+	text-align:center;
+	padding:10px 0 0 0;
+}
+#featured .name{
+	color:#000000;
+	font-size:12px;
+	line-height:16px;
+	text-decoration:underline;
+}
+#featured .name:hover{
+	text-decoration:none;
+}
+#featured .text{
+	text-transform:uppercase;
+	color:#909090;
+	font-size:11px;
+	line-height:16px;
+	padding:7px 0 17px 0;
+}
+#featured .box-body .normalprice {text-decoration:line-through; color:#000;
+	font-family:"Times New Roman", Times, serif;
+	font-size:20px;
+	line-height:20px;
+	font-weight:normal;}
+	
+#featured .box-body .productSpecialPrice, .productSalePrice, .productSpecialPriceSale {color:#778260;
+	font-family:"Times New Roman", Times, serif;
+	font-size:20px;
+	line-height:20px;
+	font-weight:normal;}
+
+
+#whatsnew {}
+#whatsnew .box-head{
+	padding-bottom:19px;
+	margin-bottom:20px;
+}
+#whatsnew .img{
+	text-align:center;
+}
+#whatsnew .img img{
+	border:1px solid #eaead9;
+	width:172px;
+	height:209px;
+	padding:4px;
+}
+#whatsnew .img:hover img{
+	border:1px solid #b0b080;
+}
+#whatsnew .sb-info{
+	text-align:center;
+	padding:10px 0 0 0;
+}
+#whatsnew .name{
+	color:#000000;
+	font-size:12px;
+	line-height:16px;
+	text-decoration:underline;
+}
+#whatsnew .name:hover{
+	text-decoration:none;
+}
+#whatsnew .text{
+	text-transform:uppercase;
+	color:#909090;
+	font-size:11px;
+	line-height:16px;
+	padding:7px 0 17px 0;
+}
+#whatsnew .box-body .normalprice {text-decoration:line-through; color:#000;
+	font-family:"Times New Roman", Times, serif;
+	font-size:20px;
+	line-height:20px;
+	font-weight:normal;}
+	
+#whatsnew .box-body .productSpecialPrice, .productSalePrice, .productSpecialPriceSale {color:#778260;
+	font-family:"Times New Roman", Times, serif;
+	font-size:20px;
+	line-height:20px;
+	font-weight:normal;}
+
+
+#specials {}
+#specials .box-head{
+	padding-bottom:19px;
+	margin-bottom:20px;
+}
+#specials .img{
+	text-align:center;
+}
+#specials .img img{
+	border:1px solid #eaead9;
+	width:172px;
+	height:209px;
+	padding:4px;
+}
+#specials .img:hover img{
+	border:1px solid #b0b080;
+}
+#specials .desc{
+	text-align:center;
+	padding:10px 0 0 0;
+}
+#specials .name{
+	color:#000000;
+	font-size:12px;
+	line-height:16px;
+	text-decoration:underline;
+}
+#specials .name:hover{
+	text-decoration:none;
+}
+#specials .text{
+	text-transform:uppercase;
+	color:#909090;
+	font-size:11px;
+	line-height:16px;
+	padding:7px 0 17px 0;
+}
+#specials .box-body .normalprice {text-decoration:line-through; color:#000;
+	font-family:"Times New Roman", Times, serif;
+	font-size:20px;
+	line-height:20px;
+	font-weight:normal;}
+	
+#specials .box-body .productSpecialPrice, .productSalePrice, .productSpecialPriceSale {color:#778260;
+	font-family:"Times New Roman", Times, serif;
+	font-size:20px;
+	line-height:20px;
+	font-weight:normal;}
+
+
+#reviews {}
+#reviews .box-body{ text-align:center; padding:20px;}
+
+#manufacturerinfo {}
+
+
+#productnotifications {}
+#productnotifications .box-body{ text-align:center; padding:20px;}
+
+
+
+
+/* ----------------------- FORM BOXES ------------------------- */
+
+#search {}
+#search .box-body{
+	overflow:hidden;
+	padding:20px;
+}
+#search input{ border:solid 0px; padding:0; background:none; vertical-align:middle; float:left;}
+#search .input1{ border:solid 1px #000; width:135px; padding:9px 5px;}
+
+
+#manufacturers {}
+#manufacturers .box-body {text-align:center; padding:20px;}
+
+
+#currencies {}
+#currencies .box-body {text-align:center; padding:20px;}
+#currencies select{ width:90%;}
+
+#tellafriend {}
+#tellafriend .box-body{ text-align:center; padding:20px;}
+#tellafriend .no-border input{ border:solid 0px; padding:0;}
+
+#recordcompanies {}
+#recordcompanies .box-body {text-align:center; padding:20px;}
+
+
+#musicgenres {}
+#musicgenres .box-body {text-align:center; padding:20px;}
+
+
+
+/* ----------------------- TEXT BOXES ------------------------- */
+
+#languages {}
+#languages .box-body {text-align:center; padding:20px;}
+
+
+#whosonline {}
+#whosonline .box-body {text-align:center; padding:20px;}
+
+
+#documentcategories {}
+
+
+#shoppingcart {}
+#shoppingcart .cart_line {}
+#shoppingcart #cartBoxEmpty {text-align:center; padding:20px;}
+#shoppingcart li{ margin:0 17px 0 20px;}
+#shoppingcart .price{ padding-right:15px;}

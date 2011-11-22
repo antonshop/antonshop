@@ -12,51 +12,87 @@
  * @version $Id: tpl_index_product_list.php 15589 2010-02-27 15:03:49Z ajeh $
  */
 ?>
-<?php include(DIR_WS_MODULES . zen_get_module_directory(FILENAME_PRODUCT_LISTING));?>
+<div class="centerColumn" id="indexProductList">
+
+<h1 id="productListHeading"><?php echo $breadcrumb->last(); ?></h1>
+
+<?php
+if (PRODUCT_LIST_CATEGORIES_IMAGE_STATUS == 'true') {
+// categories_image
+  if ($categories_image = zen_get_categories_image($current_category_id)) {
+?>
+<div id="categoryImgListing" class="categoryImg"><?php echo zen_image(DIR_WS_IMAGES . $categories_image, '', CATEGORY_ICON_IMAGE_WIDTH, CATEGORY_ICON_IMAGE_HEIGHT); ?></div>
+<?php
+  }
+} // categories_image
+?>
+
 <?php
 // categories_description
     if ($current_categories_description != '') {
 ?>
-<div id="indexProductListCatDescription" class="right_list"><?php echo $current_categories_description;  ?></div>
+<div id="indexProductListCatDescription" class="content"><?php echo $current_categories_description;  ?></div>
 <?php } // categories_description ?>
 
-<h1 class="mav_tit">
-	<strong><?php echo $breadcrumb->last(); ?></strong>
-    <div class="mavericks_rg">
-	<?php if ( ($listing_split->number_of_rows > 0) && ( (PREV_NEXT_BAR_LOCATION == '1') || (PREV_NEXT_BAR_LOCATION == '3') ) ) {
-    ?>
-       <?php echo TEXT_RESULT_PAGE . ' ' . $listing_split->display_links(MAX_DISPLAY_PAGE_LINKS, zen_get_all_get_params(array('page', 'info', 'x', 'y', 'main_page'))); ?>
-    <?php
-    }
-    ?>
-    </div>
-</h1>
+<?php
+  $check_for_alpha = $listing_sql;
+  $check_for_alpha = $db->Execute($check_for_alpha);
 
-
-<div class="mav_con">
-    <?php
-	echo $lc_text;
-    ?>
-</div>  
-<h1 class="mav_tit">
-    <strong><?php echo $breadcrumb->last(); ?></strong>
-    <div class="mavericks_rg">
-    <?php if ( ($listing_split->number_of_rows > 0) && ( (PREV_NEXT_BAR_LOCATION == '1') || (PREV_NEXT_BAR_LOCATION == '3') ) ) {
-    ?>
-       <?php echo TEXT_RESULT_PAGE . ' ' . $listing_split->display_links(MAX_DISPLAY_PAGE_LINKS, zen_get_all_get_params(array('page', 'info', 'x', 'y', 'main_page'))); ?>
-    <?php
-    }
-    ?>
-    </div>
-</h1>
+  if ($do_filter_list || ($check_for_alpha->RecordCount() > 0 && PRODUCT_LIST_ALPHA_SORTER == 'true')) {
+  $form = zen_draw_form('filter', zen_href_link(FILENAME_DEFAULT), 'get') . '<label class="inputLabel">' .TEXT_SHOW . '</label>';
+?>
 
 <?php
-// if ($show_top_submit_button == true or $show_bottom_submit_button == true or (PRODUCT_LISTING_MULTIPLE_ADD_TO_CART != 0 and $show_submit == true and $listing_split->number_of_rows > 0)) {
-  if ($show_top_submit_button == true or $show_bottom_submit_button == true) {
+  echo $form;
+  echo zen_draw_hidden_field('main_page', FILENAME_DEFAULT);
+  echo zen_hide_session_id();
+?>
+<?php
+  // draw cPath if known
+  if (!$getoption_set) {
+    echo zen_draw_hidden_field('cPath', $cPath);
+  } else {
+    // draw manufacturers_id
+    echo zen_draw_hidden_field($get_option_variable, $_GET[$get_option_variable]);
+  }
+
+  // draw music_genre_id
+  if (isset($_GET['music_genre_id']) && $_GET['music_genre_id'] != '') echo zen_draw_hidden_field('music_genre_id', $_GET['music_genre_id']);
+
+  // draw record_company_id
+  if (isset($_GET['record_company_id']) && $_GET['record_company_id'] != '') echo zen_draw_hidden_field('record_company_id', $_GET['record_company_id']);
+
+  // draw typefilter
+  if (isset($_GET['typefilter']) && $_GET['typefilter'] != '') echo zen_draw_hidden_field('typefilter', $_GET['typefilter']);
+
+  // draw manufacturers_id if not already done earlier
+  if ($get_option_variable != 'manufacturers_id' && isset($_GET['manufacturers_id']) && $_GET['manufacturers_id'] > 0) {
+    echo zen_draw_hidden_field('manufacturers_id', $_GET['manufacturers_id']);
+  }
+
+  // draw sort
+  echo zen_draw_hidden_field('sort', $_GET['sort']);
+
+  // draw filter_id (ie: category/mfg depending on $options)
+  if ($do_filter_list) {
+    echo zen_draw_pull_down_menu('filter_id', $options, (isset($_GET['filter_id']) ? $_GET['filter_id'] : ''), 'onchange="this.form.submit()"');
+  }
+
+  // draw alpha sorter
+  require(DIR_WS_MODULES . zen_get_module_directory(FILENAME_PRODUCT_LISTING_ALPHA_SORTER));
 ?>
 </form>
-<?php } ?>
+<?php
+  }
+?>
+<br class="clearBoth" />
 
+<?php
+/**
+ * require the code for listing products
+ */
+ require($template->get_template_dir('tpl_modules_product_listing.php', DIR_WS_TEMPLATE, $current_page_base,'templates'). '/' . 'tpl_modules_product_listing.php');
+?>
 
 
 <?php
@@ -70,6 +106,103 @@ if ($error_categories==true) {
   }
 ?>
 
+<?php
+$show_display_category = $db->Execute(SQL_SHOW_PRODUCT_INFO_MISSING);
+
+while (!$show_display_category->EOF) {
+?>
+
+<?php
+  if ($show_display_category->fields['configuration_key'] == 'SHOW_PRODUCT_INFO_MISSING_FEATURED_PRODUCTS') { ?>
+<?php
+/**
+ * display the Featured Products Center Box
+ */
+?>
+<?php require($template->get_template_dir('tpl_modules_featured_products.php',DIR_WS_TEMPLATE, $current_page_base,'templates'). '/tpl_modules_featured_products.php'); ?>
+<?php } ?>
+
+<?php
+  if ($show_display_category->fields['configuration_key'] == 'SHOW_PRODUCT_INFO_MISSING_SPECIALS_PRODUCTS') { ?>
+<?php
+/**
+ * display the Special Products Center Box
+ */
+?>
+<?php require($template->get_template_dir('tpl_modules_specials_default.php',DIR_WS_TEMPLATE, $current_page_base,'templates'). '/tpl_modules_specials_default.php'); ?>
+<?php } ?>
+
+<?php
+  if ($show_display_category->fields['configuration_key'] == 'SHOW_PRODUCT_INFO_MISSING_NEW_PRODUCTS') { ?>
+<?php
+/**
+ * display the New Products Center Box
+ */
+?>
+<?php require($template->get_template_dir('tpl_modules_whats_new.php',DIR_WS_TEMPLATE, $current_page_base,'templates'). '/tpl_modules_whats_new.php'); ?>
+<?php } ?>
+
+<?php
+  if ($show_display_category->fields['configuration_key'] == 'SHOW_PRODUCT_INFO_MISSING_UPCOMING') {
+    include(DIR_WS_MODULES . zen_get_module_directory(FILENAME_UPCOMING_PRODUCTS));
+  }
+?>
+<?php
+  $show_display_category->MoveNext();
+} // !EOF
+?>
+<?php } //// eof: categories error ?>
+
+<?php
+//// bof: categories
+$show_display_category = $db->Execute(SQL_SHOW_PRODUCT_INFO_LISTING_BELOW);
+if ($error_categories == false and $show_display_category->RecordCount() > 0) {
+?>
+
+<?php
+  $show_display_category = $db->Execute(SQL_SHOW_PRODUCT_INFO_LISTING_BELOW);
+  while (!$show_display_category->EOF) {
+?>
+
+<?php
+    if ($show_display_category->fields['configuration_key'] == 'SHOW_PRODUCT_INFO_LISTING_BELOW_FEATURED_PRODUCTS') { ?>
+<?php
+/**
+ * display the Featured Products Center Box
+ */
+?>
+<?php require($template->get_template_dir('tpl_modules_featured_products.php',DIR_WS_TEMPLATE, $current_page_base,'templates'). '/tpl_modules_featured_products.php'); ?>
+<?php } ?>
+
+<?php
+    if ($show_display_category->fields['configuration_key'] == 'SHOW_PRODUCT_INFO_LISTING_BELOW_SPECIALS_PRODUCTS') { ?>
+<?php
+/**
+ * display the Special Products Center Box
+ */
+?>
+<?php require($template->get_template_dir('tpl_modules_specials_default.php',DIR_WS_TEMPLATE, $current_page_base,'templates'). '/tpl_modules_specials_default.php'); ?>
+<?php } ?>
+
+<?php
+    if ($show_display_category->fields['configuration_key'] == 'SHOW_PRODUCT_INFO_LISTING_BELOW_NEW_PRODUCTS') { ?>
+<?php
+/**
+ * display the New Products Center Box
+ */
+?>
+<?php require($template->get_template_dir('tpl_modules_whats_new.php',DIR_WS_TEMPLATE, $current_page_base,'templates'). '/tpl_modules_whats_new.php'); ?>
+<?php } ?>
+
+<?php
+    if ($show_display_category->fields['configuration_key'] == 'SHOW_PRODUCT_INFO_LISTING_BELOW_UPCOMING') {
+      include(DIR_WS_MODULES . zen_get_module_directory(FILENAME_UPCOMING_PRODUCTS));
+    }
+?>
+<?php
+  $show_display_category->MoveNext();
+  } // !EOF
+?>
 
 <?php
 } //// eof: categories

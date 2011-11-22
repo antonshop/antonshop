@@ -11,54 +11,24 @@
  * @license http://www.zen-cart.com/license/2_0.txt GNU Public License V2.0
  * @version $Id: tpl_checkout_shipping_default.php 14807 2009-11-13 17:22:47Z drbyte $
  */
-
 ?>
-
-<div class="shop_car">
-<div class="car_tit"><span class="car_list"><a href="###">Your Shopping Cart Contents</a></span><span class="car_list  cart_special"><a href="###">Shipping and Payment Confirmation</a></span><span class="car_last"><a href="###">Order Confirmation</a></span></div>
+<div class="centerColumn" id="checkoutShipping">
 
 <?php echo zen_draw_form('checkout_address', zen_href_link(FILENAME_CHECKOUT_SHIPPING, '', 'SSL')) . zen_draw_hidden_field('action', 'process'); ?>
 
-
-
-
-
-
 <h1 id="checkoutShippingHeading"><?php echo HEADING_TITLE; ?></h1>
-
-
-
-
-
-
 <?php if ($messageStack->size('checkout_shipping') > 0) echo $messageStack->output('checkout_shipping'); ?>
 
-
-
-
-<!--Shipping Information ADDRESS-->
 <h2 id="checkoutShippingHeadingAddress"><?php echo TITLE_SHIPPING_ADDRESS; ?></h2>
 
 <div id="checkoutShipto" class="floatingBox back">
 <?php if ($displayAddressEdit) { ?>
 <div class="buttonRow forward"><?php echo '<a href="' . $editShippingButtonLink . '">' . zen_image_button(BUTTON_IMAGE_CHANGE_ADDRESS, BUTTON_CHANGE_ADDRESS_ALT) . '</a>'; ?></div>
 <?php } ?>
-
 <address class=""><?php echo zen_address_label($_SESSION['customer_id'], $_SESSION['sendto'], true, ' ', '<br />'); ?></address>
 </div>
 <div class="floatingBox important forward"><?php echo TEXT_CHOOSE_SHIPPING_DESTINATION; ?></div>
 <br class="clearBoth" />
-<!--Shipping Information ADDRESS-->
-
-
-
-
-
-
-
-
-
-
 
 <?php
   if (zen_count_shipping_modules() > 0) {
@@ -66,8 +36,6 @@
 
 <h2 id="checkoutShippingHeadingMethod"><?php echo TABLE_HEADING_SHIPPING_METHOD; ?></h2>
 
-
-<!--shipping ti shi yu-->
 <?php
     if (sizeof($quotes) > 1 && sizeof($quotes[0]) > 1) {
 ?>
@@ -82,12 +50,6 @@
 <?php
     }
 ?>
-<!--shipping ti shi yu-->
-
-
-
-
-
 <?php
     if ($free_shipping == true) {
 ?>
@@ -160,18 +122,6 @@
 <?php
   }
 ?>
-
-
-
-
-
-
-
-
-
-
-
-
 <fieldset class="shipping" id="comments">
 <legend><?php echo TABLE_HEADING_COMMENTS; ?></legend>
 <?php echo zen_draw_textarea_field('comments', '45', '3'); ?>
@@ -182,20 +132,3 @@
 
 </form>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

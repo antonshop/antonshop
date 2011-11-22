@@ -13,19 +13,5 @@
  */
 require(DIR_WS_MODULES . zen_get_module_directory('category_row.php'));
 
-  //require($template->get_template_dir('tpl_columnar_display.php',DIR_WS_TEMPLATE, $current_page_base,'common'). '/tpl_columnar_display.php');
+  require($template->get_template_dir('tpl_columnar_display.php',DIR_WS_TEMPLATE, $current_page_base,'common'). '/tpl_columnar_display.php');
 ?>
-<div class="right_list">
-    <ul class="child_list">
-        
-<?php
-	$category_list = '';
-	while (!$categories->EOF) {
-		$category_list .= ',' . $categories->fields['categories_id'];
-?>
-	<li><a href="<?php echo zen_href_link(FILENAME_DEFAULT, "&cPath=".$categories->fields['parent_id']."_".$categories->fields['categories_id']."");?>">&gt;&gt;　<?php echo $categories->fields['categories_name'];?></a></li>
-<?php $categories->MoveNext(); }
-	$category_list = $categories->fields['parent_id'] . $category_list;
-?>
-	</ul>
-</div>

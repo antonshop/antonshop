@@ -1,0 +1,13 @@
+#socialIcons { text-align:right; width:100%; margin:15px 0; position:relative; }
+#socialIcons a img{ width:24px; height:24px;}
+#easyTooltip{
+	background:#fff;
+	border:1px solid #cccccc;
+	padding: 16px 15px 17px 16px;
+	font-size:12px;
+	line-height:12px;
+	font-family:Tahoma, Geneva, sans-serif;
+	color:#666666;
+	position:relative;
+	z-index:510;
+}

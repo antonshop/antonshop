@@ -11,7 +11,35 @@
 ?>
 <div class="centerColumn" id="reviewsWrite">
 <?php echo zen_draw_form('product_reviews_write', zen_href_link(FILENAME_PRODUCT_REVIEWS_WRITE, 'action=process&products_id=' . $_GET['products_id'], 'SSL'), 'post', 'onsubmit="return checkForm(product_reviews_write);"'); ?>
+<!--bof Main Product Image -->
+      <?php
+        if (zen_not_null($products_image)) {
+    ?>
+  <div id="reviewWriteMainImage" class="centeredContent back"><?php
+        	/**
+ * display the main product image
+        	 */
+   require($template->get_template_dir('/tpl_modules_main_product_image.php',DIR_WS_TEMPLATE, $current_page_base,'templates'). '/tpl_modules_main_product_image.php'); ?>
+</div>
+<?php
+  //} else {
+  ?>
 
+<?php
+        }
+      ?>
+<!--eof Main Product Image-->
+<div class="forward">
+<div id="reviewsWriteProductPageLink" class="buttonRow"><?php echo '<a href="' . zen_href_link(zen_get_info_page($_GET['products_id']), zen_get_all_get_params()) . '">' . zen_image_button(BUTTON_IMAGE_GOTO_PROD_DETAILS , BUTTON_GOTO_PROD_DETAILS_ALT) . '</a>'; ?></div>
+<div class="buttonRow"><?php echo '<a href="' . zen_href_link(FILENAME_REVIEWS) . '">' . zen_image_button(BUTTON_IMAGE_REVIEWS, BUTTON_REVIEWS_ALT) . '</a>'; ?></div>
+</div>
+
+<h1 id="reviewsWriteHeading"><?php echo $products_name . $products_model; ?></h1>
+
+<h2 id="reviewsWritePrice"><?php echo $products_price; ?></h2>
+
+<h3 id="reviewsWriteReviewer" class=""><?php echo SUB_TITLE_FROM, zen_output_string_protected($customer->fields['customers_firstname'] . ' ' . $customer->fields['customers_lastname']); ?></h3>
+<br class="clearBoth" />
 
 <?php if ($messageStack->size('review_text') > 0) echo $messageStack->output('review_text'); ?>
 
@@ -40,6 +68,6 @@
     <div class="buttonRow forward"><?php echo zen_image_submit(BUTTON_IMAGE_SUBMIT, BUTTON_SUBMIT_ALT); ?></div>
 <br class="clearBoth" />
 
-<div id="" class="notice">NOTE: HTML tags are not allowed.</div>
+<div id="reviewsWriteReviewsNotice" class="notice"><?php echo TEXT_NO_HTML . (REVIEWS_APPROVAL == '1' ? '<br />' . TEXT_APPROVAL_REQUIRED: ''); ?></div>
 </form>
 </div>

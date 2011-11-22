@@ -1,0 +1,38 @@
+/**
+ * @copyright Copyright 2010 Glenn Herbert
+ * @license http://www.gnu.org/licenses/ GNU Public License V3.0
+ * /includes/templates/your_template/css/stylesheet_ezpages_footer_columns.css
+ * Ezpages Footer Columns by Glenn Herbert (gjh42) 2010-12-08
+ */
+ 
+#navSuppWrapper {
+	background:#fff;
+	border-top:1px solid #dcdbda;
+	padding-bottom:33px;
+	width:680px;
+	float:right;
+	margin-right:47px;
+}
+#navSupp{
+
+}
+.ezpagesFooterCol {float: left; padding: 0;}
+
+.ezpagesFooterCol h4 {color: #996633; text-align: center;}
+
+.ezpagesFooterCol ul {float: left; margin:0;}
+
+#navSupp .ezpagesFooterCol li {display: block; text-align: left;}
+
+#navSupp .ezpagesFooterCol a { color: #848484; font-weight: normal; font-size:14px; line-height:14px; text-decoration:none; background:url("../images/footer-separator.jpg"/*tpa=http://livedemo00.template-help.com/zencart_35883/includes/templates/theme546/images/footer-separator.jpg*/) no-repeat left 5px; padding: 0 18px 0 23px}
+#navSupp .ezpagesFooterCol.col1 a{ background:none; padding:0 18px 0 0;}
+#navSupp .ezpagesFooterCol a:hover{ color:#000;}
+
+#navSupp a.activeEZPage, #navSupp a.activeILPage {color: #000;}
+
+.ezpagesFooterCol a:hover {text-decoration: underline; color: #00aa44;}
+
+#navSupp ul {border: none; padding:28px 0 0 0!important;}
+
+.ezpagesFooterColComment {font-size: 0.9em; color: #aabbcc; display: block;}
+.ezpagesFooterCol{ width:auto!important;}

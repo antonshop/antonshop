@@ -22,15 +22,15 @@
 // $Id: tpl_news_archive.php v1.000 2005-02-04 dreamscape <dechantj@pop.belmont.edu>
 //
 
-  $content = '<ul class="sidebar_news">';
+  $content = '<div class="newsArchiveSideBox">';
 
 	$newsDisplay = new newsDisplay();
+
 	foreach ($newsArchiveList as $archive) {
-		$newsDisplay->article_sidebar_list($archive);
+		$newsDisplay->articleFooter(sprintf(BOX_NEWS_ARCHIVE_TEXT_ARCHIVE_LIST_HEADER, $archive['archiveDate']), $archive['archiveLinks'], false, false, false);
 	}
 
 	$content .= $newsDisplay->displayNewsPage(false);
 
-  $content .= '</ul>';
-  
+  $content .= '</div>';
 ?>
