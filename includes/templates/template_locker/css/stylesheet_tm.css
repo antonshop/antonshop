@@ -26,21 +26,20 @@ color:#3e3e3e;
 	line-height:15px;
 	font-weight:normal;
 	padding: 0 0 20px 17px;
-	background:url("../images/marker1.gif"/*tpa=http://livedemo00.template-help.com/zencart_35883/includes/templates/theme546/images/marker1.gif*/) no-repeat 1px 4px;
+	background:url("../images/marker1.gif") no-repeat 1px 4px;
 	border-bottom:1px solid #fafaf7;
 	margin:20px 0 18px 0; {color:#3e3e3e;
 	font-size:15px;
 	line-height:15px;
 	font-weight:normal;
 	padding: 0 0 20px 17px;
-	background:url("../images/marker1.gif"/*tpa=http://livedemo00.template-help.com/zencart_35883/includes/templates/theme546/images/marker1.gif*/) no-repeat 1px 4px;
+	background:url("../images/marker1.gif") no-repeat 1px 4px;
 	border-bottom:1px solid #fafaf7;
 	margin:20px 0 18px 0;}
 
 font-size:12px; font-weight:normal; background:#fafafa; color:#000; {font-size:12px; font-weight:normal; background:#fafafa; color:#000;}
 #000 {color:#000;}
 
-/*  --------------------------------------------------------------------  */
 
 /* CSS Document */
 
@@ -53,7 +52,7 @@ td { vertical-align:top; text-align:left;}
 
 .main-width { width:981px; margin:0 auto; text-align:left;}
 .wrapp{
-	background:url("../images/body-bg.jpg"/*tpa=http://livedemo00.template-help.com/zencart_35883/includes/templates/theme546/images/body-bg.jpg*/) repeat-x left top #fff; 
+	background:url("../images/body-bg.jpg") repeat-x left top #fff; 
 }
 .bottom{
 	height:150px;
@@ -80,7 +79,7 @@ ul { list-style:none;}
 .alignright { text-align:right;}
 .aligncenter { text-align:center;}
 
-.wrapper{ width:100%; overflow:hidden;}
+.wrapper{ width:100%; overflow:hidden; text-align:center;}
 .container { width:100%;}
 .column-1, .column-2, .column-3{ float:left;}
 
@@ -117,7 +116,7 @@ p { margin:0; padding:0;}
 	font-size:12px;
 	line-height:14px;
 	text-transform:uppercase;
-	background:url("../images/cart.gif"/*tpa=http://livedemo00.template-help.com/zencart_35883/includes/templates/theme546/images/cart.gif*/) no-repeat left top;
+	background:url("../images/cart.gif") no-repeat left top;
 	padding: 2px 0 2px 51px;
 	margin:87px 0 0 92px;
 }
@@ -208,7 +207,7 @@ p { margin:0; padding:0;}
 	color:#1e1e1e;
 	font-size:14px;
 	line-height:40px;
-	background:url("../images/menu-line.png"/*tpa=http://livedemo00.template-help.com/zencart_35883/includes/templates/theme546/images/menu-line.png*/) no-repeat left 11px;
+	background:url("../images/menu-line.png") no-repeat left 11px;
 	padding: 0 18px 0 18px;
 }
 #header .menu ul li:first-child a{	
@@ -228,7 +227,7 @@ p { margin:0; padding:0;}
 	right:18px;
 	top:26px;
 	z-index:510;
-	background:url("../images/cur.png"/*tpa=http://livedemo00.template-help.com/zencart_35883/includes/templates/theme546/images/cur.png*/) no-repeat left top;
+	background:url("../images/cur.png") no-repeat left top;
 	padding:1px;
 }
 #header .currencies .select.jqTransformHidden{
@@ -245,7 +244,7 @@ p { margin:0; padding:0;}
 	padding-left:8px;
 }
 #header .currencies .jqTransformSelectWrapper{
-	background:url("../images/cur-arrow.gif"/*tpa=http://livedemo00.template-help.com/zencart_35883/includes/templates/theme546/images/cur-arrow.gif*/) no-repeat right top;
+	background:url("../images/cur-arrow.gif") no-repeat right top;
 	border:none;
 	float:left;
 	width:124px!important;
@@ -309,7 +308,7 @@ p { margin:0; padding:0;}
 	line-height:15px;
 	font-weight:normal;
 	padding: 0 0 20px 17px;
-	background:url("../images/marker1.gif"/*tpa=http://livedemo00.template-help.com/zencart_35883/includes/templates/theme546/images/marker1.gif*/) no-repeat 1px 4px;
+	background:url("../images/marker1.gif") no-repeat 1px 4px;
 	border-bottom:1px solid #fafaf7;
 	margin:20px 0 18px 0;
 }
@@ -376,7 +375,7 @@ p { margin:0; padding:0;}
 	overflow:hidden;
 	position:relative;
 	z-index:500;
-	background:url("../images/bottom-bg.jpg"/*tpa=http://livedemo00.template-help.com/zencart_35883/includes/templates/theme546/images/bottom-bg.jpg*/) repeat-x left top #33342f;
+	background:url("../images/bottom-bg.jpg") repeat-x left top #33342f;
 	margin-top:-76px;
 }
 #footer .copyright{
@@ -428,7 +427,7 @@ input:focus, select:focus, textarea:focus{outline:none;}
 	left:0px;
 	padding:0;
 	overflow:hidden;
-	background:url("../images/pagination-bg.png"/*tpa=http://livedemo00.template-help.com/zencart_35883/includes/templates/theme546/images/pagination-bg.png*/) repeat-x left top;
+	background:url("../images/pagination-bg.png") repeat-x left top;
 	width:701px;
 	height:18px;
 	padding: 7px 0 0 9px;
@@ -440,12 +439,12 @@ input:focus, select:focus, textarea:focus{outline:none;}
 	float:left;
 	width:12px;
 	height:12px;
-	background:url("../images/pagination.png"/*tpa=http://livedemo00.template-help.com/zencart_35883/includes/templates/theme546/images/pagination.png*/) no-repeat right top;
+	background:url("../images/pagination.png") no-repeat right top;
 	margin-right:2px;
 }
 #cs-buttons-coin-slider a:hover,
 #cs-buttons-coin-slider a.cs-active{
-	background:url("../images/pagination.png"/*tpa=http://livedemo00.template-help.com/zencart_35883/includes/templates/theme546/images/pagination.png*/) no-repeat left top;
+	background:url("../images/pagination.png") no-repeat left top;
 }
 #cs-navigation-coin-slider{
 	display:block!important;

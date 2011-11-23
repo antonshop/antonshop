@@ -9,7 +9,7 @@
 	line-height:15px;
 	font-weight:normal;
 	padding: 12px 0 20px 17px;
-	background:url("../images/marker1.gif"/*tpa=http://livedemo00.template-help.com/zencart_35883/includes/templates/theme546/images/marker1.gif*/) no-repeat 0px 16px;
+	background:url("../images/marker1.gif") no-repeat 0px 16px;
 	border-bottom:1px solid #251f1a;
 	width:179px;
 	margin: 0 17px 0 17px;
@@ -62,7 +62,7 @@
 
 
 #categories {
-	background:url("../images/cat-bg.jpg"/*tpa=http://livedemo00.template-help.com/zencart_35883/includes/templates/theme546/images/cat-bg.jpg*/) repeat left top;
+	background:url("../images/cat-bg.jpg") repeat left top;
 	padding-bottom:21px;
 }
 #categories ul {padding:10px 0 0 0!important;}
@@ -77,7 +77,7 @@
 	text-decoration:none;
 	border-top:1px solid #bbbb91;
 	display:block;
-	background:url("../images/marker3.gif"/*tpa=http://livedemo00.template-help.com/zencart_35883/includes/templates/theme546/images/marker3.gif*/) no-repeat 19px 10px;
+	background:url("../images/marker3.gif") no-repeat 19px 10px;
 	padding:0 0 0 32px;
 }
 #categories ul li:first-child a{
@@ -88,7 +88,7 @@
 }
 #categories .box-head{
 	color:#fff;
-	background:url("../images/marker2.gif"/*tpa=http://livedemo00.template-help.com/zencart_35883/includes/templates/theme546/images/marker2.gif*/) no-repeat 17px 26px;
+	background:url("../images/marker2.gif") no-repeat 17px 26px;
 	padding: 22px 0 18px 31px;
 	border-bottom:1px solid #fff;
 	width:163px;
@@ -261,6 +261,7 @@
 #specials .desc{
 	text-align:center;
 	padding:10px 0 0 0;
+	line-height:26px;
 }
 #specials .name{
 	color:#000000;
@@ -353,3 +354,6 @@
 #shoppingcart #cartBoxEmpty {text-align:center; padding:20px;}
 #shoppingcart li{ margin:0 17px 0 20px;}
 #shoppingcart .price{ padding-right:15px;}
+
+
+.save_price em{ color:#778260; font-size:14px;}

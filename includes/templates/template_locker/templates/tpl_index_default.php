@@ -14,21 +14,12 @@
  */
 ?>
 <div class="centerColumn" id="indexDefault">
-<h1 id="indexDefaultHeading"><?php echo HEADING_TITLE; ?></h1>
+<!--<h1 id="indexDefaultHeading"><?php echo HEADING_TITLE; ?></h1>
 
 <?php if (SHOW_CUSTOMER_GREETING == 1) { ?>
 <h2 class="greeting"><?php echo zen_customer_greeting(); ?></h2>
 <?php } ?>
 
-<!-- deprecated - to use uncomment this section
-<?php if (TEXT_MAIN) { ?>
-<div id="" class="content"><?php echo TEXT_MAIN; ?></div>
-<?php } ?>-->
-
-<!-- deprecated - to use uncomment this section
-<?php if (TEXT_INFORMATION) { ?>
-<div id="" class="content"><?php echo TEXT_INFORMATION; ?></div>
-<?php } ?>-->
 
 <?php if (DEFINE_MAIN_PAGE_STATUS >= 1 and DEFINE_MAIN_PAGE_STATUS <= 2) { ?>
 <?php
@@ -37,7 +28,7 @@
  */
 ?>
 <div id="indexDefaultMainContent" class="content"><?php require($define_page); ?></div>
-<?php } ?>
+<?php } ?>-->
 
 <?php
   $show_display_category = $db->Execute(SQL_SHOW_PRODUCT_INFO_MAIN);
@@ -53,14 +44,6 @@
 <?php require($template->get_template_dir('tpl_modules_featured_products.php',DIR_WS_TEMPLATE, $current_page_base,'templates'). '/tpl_modules_featured_products.php'); ?>
 <?php } ?>
 
-<?php if ($show_display_category->fields['configuration_key'] == 'SHOW_PRODUCT_INFO_MAIN_SPECIALS_PRODUCTS') { ?>
-<?php
-/**
- * display the Special Products Center Box
- */
-?>
-<?php require($template->get_template_dir('tpl_modules_specials_default.php',DIR_WS_TEMPLATE, $current_page_base,'templates'). '/tpl_modules_specials_default.php'); ?>
-<?php } ?>
 
 <?php if ($show_display_category->fields['configuration_key'] == 'SHOW_PRODUCT_INFO_MAIN_NEW_PRODUCTS') { ?>
 <?php
@@ -78,7 +61,6 @@
  */
 ?>
 <?php include(DIR_WS_MODULES . zen_get_module_directory(FILENAME_UPCOMING_PRODUCTS)); ?><?php } ?>
-
 
 <?php
   $show_display_category->MoveNext();

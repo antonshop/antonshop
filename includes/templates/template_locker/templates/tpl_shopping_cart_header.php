@@ -21,7 +21,9 @@
 
 	$content .= '<img src="' . DIR_WS_TEMPLATE . 'images/cart_car.gif">&nbsp;<a href="' . zen_href_link(FILENAME_SHOPPING_CART, '', 'NONSSL') . '">'. '<span>' . $product_amount . '</span>&nbsp;' . HEADER_PRODUCT_AMOUNT . '</a> '; 
   } else {
-    $content .= '<div id="cartBoxEmpty"><a class="cart" href="' . zen_href_link(FILENAME_SHOPPING_CART, '', 'NONSSL') . '"><img src="' . DIR_WS_TEMPLATE . 'images/cart_car.gif">&nbsp;' . HEADER_SHOPPING_CART_EMPTY . '</a></div>';
+    $content .= '<div id="cartBoxEmpty"><a class="st1" href="index.php?main_page=shopping_cart">Shopping cart</a>
+	<span class="one"> <span class="st3">' . HEADER_SHOPPING_CART_EMPTY . '</span></span>
+	</div>';
   }
 
   if ($_SESSION['cart']->count_contents() > 0) {

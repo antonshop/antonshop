@@ -15,10 +15,10 @@
   }
 //
 ?>
-<!--// bof: <?php echo $box_id; ?> //-->
-<div class="leftBoxContainer" id="<?php echo str_replace('_', '-', $box_id ); ?>" style="width: <?php echo $column_width; ?>">
-<h3 class="leftBoxHeading" id="<?php echo str_replace('_', '-', $box_id) . 'Heading'; ?>"><?php echo $title; ?></h3>
-<?php echo $content; ?>
+<div class="box" id="<?php echo $box_id;?>" style="width:230px;">
+    <div class="box-head"><?php echo $title; ?></div>
+    <div class="box-body"><?php echo $content; ?></div>
 </div>
-<!--// eof: <?php echo $box_id; ?> //-->
+
+
 

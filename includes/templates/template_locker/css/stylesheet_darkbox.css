@@ -33,7 +33,7 @@
     margin:-40px 0 0 -40px;
     width:80px;
     height:80px;
-    background:#000 url("../images/darkbox/spinner.gif"/*tpa=http://livedemo00.template-help.com/zencart_35883/includes/templates/theme546/images/darkbox/spinner.gif*/) 50% 50% no-repeat;
+    background:#000 url("../images/darkbox/spinner.gif") 50% 50% no-repeat;
     opacity:.5;
    }
    .darkbox-canvas img {
@@ -62,7 +62,7 @@
     display:none;
     width:31px;
     height:31px;
-    background:url("../images/darkbox/lightbox-btn-close.png"/*tpa=http://livedemo00.template-help.com/zencart_35883/includes/templates/theme546/images/darkbox/lightbox-btn-close.png*/) no-repeat;
+    background:url("../images/darkbox/lightbox-btn-close.png") no-repeat;
     cursor:pointer;
     z-index:1;
     }

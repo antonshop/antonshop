@@ -48,141 +48,148 @@
   $footer_template = 'tpl_footer.php';
   $left_column_file = 'column_left.php';
   $right_column_file = 'column_right.php';
-  $body_id = ($this_is_home_page) ? 'indexHome' : str_replace('_', '', $_GET['main_page']);
+  $body_id = ($this_is_home_page) ? 'index' : str_replace('_', '', $_GET['main_page']);
 ?>
 <body id="<?php echo $body_id . 'Body'; ?>"<?php if($zv_onload !='') echo ' onload="'.$zv_onload.'"'; ?>>
-<?php
-  if (SHOW_BANNERS_GROUP_SET1 != '' && $banner = zen_banner_exists('dynamic', SHOW_BANNERS_GROUP_SET1)) {
-    if ($banner->RecordCount() > 0) {
-?>
-<div id="bannerOne" class="banners"><?php echo zen_display_banner('static', $banner); ?></div>
-<?php
-    }
-  }
-?>
 
-<div id="mainWrapper">
-<?php
- /**
-  * prepares and displays header output
-  *
-  */
-  if (CUSTOMERS_APPROVAL_AUTHORIZATION == 1 && CUSTOMERS_AUTHORIZATION_HEADER_OFF == 'true' and ($_SESSION['customers_authorization'] != 0 or $_SESSION['customer_id'] == '')) {
-    $flag_disable_header = true;
-  }
-  require($template->get_template_dir('tpl_header.php',DIR_WS_TEMPLATE, $current_page_base,'common'). '/tpl_header.php');?>
+<!-- ========== IMAGE BORDER TOP ========== -->
+<div class="wrapp">
+<div class="main-width">
 
-<table width="100%" border="0" cellspacing="0" cellpadding="0" id="contentMainWrapper">
-  <tr>
-<?php
-if (COLUMN_LEFT_STATUS == 0 || (CUSTOMERS_APPROVAL == '1' and $_SESSION['customer_id'] == '') || (CUSTOMERS_APPROVAL_AUTHORIZATION == 1 && CUSTOMERS_AUTHORIZATION_COLUMN_LEFT_OFF == 'true' and ($_SESSION['customers_authorization'] != 0 or $_SESSION['customer_id'] == ''))) {
-  // global disable of column_left
-  $flag_disable_left = true;
-}
-if (!isset($flag_disable_left) || !$flag_disable_left) {
-?>
+<?php require($template->get_template_dir('tpl_header.php',DIR_WS_TEMPLATE, $current_page_base,'common'). '/tpl_header.php');?>
 
- <td id="navColumnOne" class="columnLeft" style="width: <?php echo COLUMN_WIDTH_LEFT; ?>">
-<?php
- /**
-  * prepares and displays left column sideboxes
-  *
-  */
-?>
-<div id="navColumnOneWrapper" style="width: <?php echo BOX_WIDTH_LEFT; ?>"><?php require(DIR_WS_MODULES . zen_get_module_directory('column_left.php')); ?></div></td>
-<?php
-}
-?>
-    <td valign="top">
-<!-- bof  breadcrumb -->
-<?php if (DEFINE_BREADCRUMB_STATUS == '1' || (DEFINE_BREADCRUMB_STATUS == '2' && !$this_is_home_page) ) { ?>
-    <div id="navBreadCrumb"><?php echo $breadcrumb->trail(BREAD_CRUMBS_SEPARATOR); ?></div>
+
+<div class="extra">
+<table border="0" cellspacing="0" cellpadding="0" width="100%" id="contentMainWrapper">
+	<tbody><tr>
+    
+				
+            <td id="column-left" style="width:230px;">
+				<?php require(DIR_WS_MODULES . zen_get_module_directory('column_left.php')); ?>
+            </td>
+            <td id="column-center" valign="top">
+                <div class="column-center-padding">
+                	<div id="slider">
+					<div class="coin-slider" id="coin-slider-coin-slider"><div id="coin-slider" style="width: 710px; height: 382px; position: relative; background-image: url(http://livedemo00.template-help.com/zencart_35883/images/banner2.jpg); background-position: 0% 0%; ">
+						<a href="http://livedemo00.template-help.com/zencart_35883/index.php?main_page=redirect&action=banner&goto=1"><img src="./Zen Cart!, The Art of E-commerce_files/banner1.jpg" alt="" width="710" height="382" style="display: none; "></a><a href="http://livedemo00.template-help.com/zencart_35883/index.php?main_page=redirect&action=banner&goto=2"><img src="./Zen Cart!, The Art of E-commerce_files/banner2.jpg" alt="" width="710" height="382" style="display: none; "></a><a href="http://livedemo00.template-help.com/zencart_35883/index.php?main_page=redirect&action=banner&goto=3"><img src="./Zen Cart!, The Art of E-commerce_files/banner3.jpg" alt="" width="710" height="382" style="display: none; "></a><a href="http://livedemo00.template-help.com/zencart_35883/index.php?main_page=redirect&action=banner&goto=4"><img src="./Zen Cart!, The Art of E-commerce_files/banner4.jpg" alt="" width="710" height="382" style="display: none; "></a>					<div class="cs-title" id="cs-title-coin-slider" style="position: absolute; bottom: 0px; left: 0px; z-index: 1000; opacity: 0; "></div><a href="http://livedemo00.template-help.com/zencart_35883/index.php?main_page=redirect&action=banner&goto=3" class="cs-coin-slider" id="cs-coin-slider11" style="width: 33px; height: 382px; float: left; position: absolute; left: 0px; top: 0px; background-image: url(http://livedemo00.template-help.com/zencart_35883/images/banner3.jpg); opacity: 1; background-position: 0px 0px; " target=""></a><a href="http://livedemo00.template-help.com/zencart_35883/index.php?main_page=redirect&action=banner&goto=3" class="cs-coin-slider" id="cs-coin-slider12" style="width: 33px; height: 382px; float: left; position: absolute; left: 33px; top: 0px; background-image: url(http://livedemo00.template-help.com/zencart_35883/images/banner3.jpg); opacity: 1; background-position: -33px 0px; " target=""></a><a href="http://livedemo00.template-help.com/zencart_35883/index.php?main_page=redirect&action=banner&goto=3" class="cs-coin-slider" id="cs-coin-slider13" style="width: 33px; height: 382px; float: left; position: absolute; left: 66px; top: 0px; background-image: url(http://livedemo00.template-help.com/zencart_35883/images/banner3.jpg); opacity: 1; background-position: -66px 0px; " target=""></a><a href="http://livedemo00.template-help.com/zencart_35883/index.php?main_page=redirect&action=banner&goto=3" class="cs-coin-slider" id="cs-coin-slider14" style="width: 33px; height: 382px; float: left; position: absolute; left: 99px; top: 0px; background-image: url(http://livedemo00.template-help.com/zencart_35883/images/banner3.jpg); opacity: 1; background-position: -99px 0px; " target=""></a><a href="http://livedemo00.template-help.com/zencart_35883/index.php?main_page=redirect&action=banner&goto=3" class="cs-coin-slider" id="cs-coin-slider15" style="width: 33px; height: 382px; float: left; position: absolute; left: 132px; top: 0px; background-image: url(http://livedemo00.template-help.com/zencart_35883/images/banner3.jpg); opacity: 1; background-position: -132px 0px; " target=""></a><a href="http://livedemo00.template-help.com/zencart_35883/index.php?main_page=redirect&action=banner&goto=3" class="cs-coin-slider" id="cs-coin-slider16" style="width: 33px; height: 382px; float: left; position: absolute; left: 165px; top: 0px; background-image: url(http://livedemo00.template-help.com/zencart_35883/images/banner3.jpg); opacity: 1; background-position: -165px 0px; " target=""></a><a href="http://livedemo00.template-help.com/zencart_35883/index.php?main_page=redirect&action=banner&goto=3" class="cs-coin-slider" id="cs-coin-slider17" style="width: 32px; height: 382px; float: left; position: absolute; left: 198px; top: 0px; background-image: url(http://livedemo00.template-help.com/zencart_35883/images/banner3.jpg); opacity: 1; background-position: -198px 0px; " target=""></a><a href="http://livedemo00.template-help.com/zencart_35883/index.php?main_page=redirect&action=banner&goto=3" class="cs-coin-slider" id="cs-coin-slider18" style="width: 32px; height: 382px; float: left; position: absolute; left: 230px; top: 0px; background-image: url(http://livedemo00.template-help.com/zencart_35883/images/banner3.jpg); opacity: 1; background-position: -230px 0px; " target=""></a><a href="http://livedemo00.template-help.com/zencart_35883/index.php?main_page=redirect&action=banner&goto=3" class="cs-coin-slider" id="cs-coin-slider19" style="width: 32px; height: 382px; float: left; position: absolute; left: 262px; top: 0px; background-image: url(http://livedemo00.template-help.com/zencart_35883/images/banner3.jpg); opacity: 1; background-position: -262px 0px; " target=""></a><a href="http://livedemo00.template-help.com/zencart_35883/index.php?main_page=redirect&action=banner&goto=3" class="cs-coin-slider" id="cs-coin-slider110" style="width: 32px; height: 382px; float: left; position: absolute; left: 294px; top: 0px; background-image: url(http://livedemo00.template-help.com/zencart_35883/images/banner3.jpg); opacity: 1; background-position: -294px 0px; " target=""></a><a href="http://livedemo00.template-help.com/zencart_35883/index.php?main_page=redirect&action=banner&goto=3" class="cs-coin-slider" id="cs-coin-slider111" style="width: 32px; height: 382px; float: left; position: absolute; left: 326px; top: 0px; background-image: url(http://livedemo00.template-help.com/zencart_35883/images/banner3.jpg); opacity: 1; background-position: -326px 0px; " target=""></a><a href="http://livedemo00.template-help.com/zencart_35883/index.php?main_page=redirect&action=banner&goto=3" class="cs-coin-slider" id="cs-coin-slider112" style="width: 32px; height: 382px; float: left; position: absolute; left: 358px; top: 0px; background-image: url(http://livedemo00.template-help.com/zencart_35883/images/banner3.jpg); opacity: 0.9676000000000001; background-position: -358px 0px; " target=""></a><a href="http://livedemo00.template-help.com/zencart_35883/index.php?main_page=redirect&action=banner&goto=3" class="cs-coin-slider" id="cs-coin-slider113" style="width: 32px; height: 382px; float: left; position: absolute; left: 390px; top: 0px; background-image: url(http://livedemo00.template-help.com/zencart_35883/images/banner3.jpg); opacity: 0.8207888888888889; background-position: -390px 0px; " target=""></a><a href="http://livedemo00.template-help.com/zencart_35883/index.php?main_page=redirect&action=banner&goto=3" class="cs-coin-slider" id="cs-coin-slider114" style="width: 32px; height: 382px; float: left; position: absolute; left: 422px; top: 0px; background-image: url(http://livedemo00.template-help.com/zencart_35883/images/banner3.jpg); opacity: 0.6359888888888888; background-position: -422px 0px; " target=""></a><a href="http://livedemo00.template-help.com/zencart_35883/index.php?main_page=redirect&action=banner&goto=3" class="cs-coin-slider" id="cs-coin-slider115" style="width: 32px; height: 382px; float: left; position: absolute; left: 454px; top: 0px; background-image: url(http://livedemo00.template-help.com/zencart_35883/images/banner3.jpg); opacity: 0.3384888888888889; background-position: -454px 0px; " target=""></a><a href="http://livedemo00.template-help.com/zencart_35883/index.php?main_page=redirect&action=banner&goto=3" class="cs-coin-slider" id="cs-coin-slider116" style="width: 32px; height: 382px; float: left; position: absolute; left: 486px; top: 0px; background-image: url(http://livedemo00.template-help.com/zencart_35883/images/banner3.jpg); opacity: 0; background-position: -486px 0px; " target=""></a><a href="http://livedemo00.template-help.com/zencart_35883/index.php?main_page=redirect&action=banner&goto=3" class="cs-coin-slider" id="cs-coin-slider117" style="width: 32px; height: 382px; float: left; position: absolute; left: 518px; top: 0px; background-image: url(http://livedemo00.template-help.com/zencart_35883/images/banner2.jpg); opacity: 1; background-position: -518px 0px; " target=""></a><a href="http://livedemo00.template-help.com/zencart_35883/index.php?main_page=redirect&action=banner&goto=3" class="cs-coin-slider" id="cs-coin-slider118" style="width: 32px; height: 382px; float: left; position: absolute; left: 550px; top: 0px; background-image: url(http://livedemo00.template-help.com/zencart_35883/images/banner2.jpg); opacity: 1; background-position: -550px 0px; " target=""></a><a href="http://livedemo00.template-help.com/zencart_35883/index.php?main_page=redirect&action=banner&goto=3" class="cs-coin-slider" id="cs-coin-slider119" style="width: 32px; height: 382px; float: left; position: absolute; left: 582px; top: 0px; background-image: url(http://livedemo00.template-help.com/zencart_35883/images/banner2.jpg); opacity: 1; background-position: -582px 0px; " target=""></a><a href="http://livedemo00.template-help.com/zencart_35883/index.php?main_page=redirect&action=banner&goto=3" class="cs-coin-slider" id="cs-coin-slider120" style="width: 32px; height: 382px; float: left; position: absolute; left: 614px; top: 0px; background-image: url(http://livedemo00.template-help.com/zencart_35883/images/banner2.jpg); opacity: 1; background-position: -614px 0px; " target=""></a><a href="http://livedemo00.template-help.com/zencart_35883/index.php?main_page=redirect&action=banner&goto=3" class="cs-coin-slider" id="cs-coin-slider121" style="width: 32px; height: 382px; float: left; position: absolute; left: 646px; top: 0px; background-image: url(http://livedemo00.template-help.com/zencart_35883/images/banner2.jpg); opacity: 1; background-position: -646px 0px; " target=""></a><a href="http://livedemo00.template-help.com/zencart_35883/index.php?main_page=redirect&action=banner&goto=3" class="cs-coin-slider" id="cs-coin-slider122" style="width: 32px; height: 382px; float: left; position: absolute; left: 678px; top: 0px; background-image: url(http://livedemo00.template-help.com/zencart_35883/images/banner2.jpg); opacity: 1; background-position: -678px 0px; " target=""></a><div id="cs-navigation-coin-slider" style="display: none; "><a href="http://livedemo00.template-help.com/zencart_35883/#" id="cs-prev-coin-slider" class="cs-prev" style="position: absolute; z-index: 1001; line-height: 30px; ">prev</a><a href="http://livedemo00.template-help.com/zencart_35883/#" id="cs-next-coin-slider" class="cs-next" style="position: absolute; z-index: 1001; line-height: 30px; ">next</a></div></div>
+                        <div id="cs-buttons-coin-slider" class="cs-buttons">
+                        <a href="#" class="cs-button-coin-slider" id="cs-button-coin-slider-1">1</a>
+                        <a href="#" class="cs-button-coin-slider" id="cs-button-coin-slider-2">2</a>
+                        <a href="#" class="cs-button-coin-slider cs-active" id="cs-button-coin-slider-3">3</a>
+                        <a href="#" class="cs-button-coin-slider" id="cs-button-coin-slider-4">4</a>
+                        </div>
+                    </div>
+				</div>
+	<!--content_center-->
+<?php if ((DEFINE_BREADCRUMB_STATUS == '1' || DEFINE_BREADCRUMB_STATUS == '2') && !$this_is_home_page ) { ?>
+<div id="navBreadCrumb"><?php echo $breadcrumb->trail(BREAD_CRUMBS_SEPARATOR); ?></div>
 <?php } ?>
-<!-- eof breadcrumb -->
 
 <?php
-  if (SHOW_BANNERS_GROUP_SET3 != '' && $banner = zen_banner_exists('dynamic', SHOW_BANNERS_GROUP_SET3)) {
-    if ($banner->RecordCount() > 0) {
-?>
-<div id="bannerThree" class="banners"><?php echo zen_display_banner('static', $banner); ?></div>
-<?php
-    }
-  }
-?>
+/**
+* prepares and displays center column
+*
+*/
+require($body_code); ?>                    
+                
+<div class="clear"></div>
+                    
+                    <!--eof content_center-->
+                
+                </div>
+                
+                
+                <!-- BOF- BANNER #4 display -->
+                                <!-- EOF- BANNER #4 display -->
+							               
+            </td>
+			
+		        
+    </tr>
+	<tr>
+		<td colspan="2">
+			<!--bof-navigation display -->
+				<div id="navSuppWrapper">
+					<div id="navSupp">
+															
+<div class="ezpagesFooterCol col1" style="width: 14%">
+<ul>
+  <li><a href="./Zen Cart!, The Art of E-commerce_files/Zen Cart!, The Art of E-commerce.htm" class="activeILPage">Home</a></li>
+</ul>
+</div>
+<div class="ezpagesFooterCol col2" style="width: 14%">
+<ul>
+  <li><a href="http://livedemo00.template-help.com/zencart_35883/index.php?main_page=products_new">New Products</a></li>
+</ul>
+</div>
+<div class="ezpagesFooterCol col3" style="width: 14%">
+<ul>
+  <li><a href="http://livedemo00.template-help.com/zencart_35883/index.php?main_page=specials">Specials</a></li>
+</ul>
+</div>
+<div class="ezpagesFooterCol col4" style="width: 14%">
+<ul>
+  <li><a href="http://livedemo00.template-help.com/zencart_35883/index.php?main_page=products_all">Products All</a></li>
+</ul>
+</div>
+<div class="ezpagesFooterCol col5" style="width: 14%">
+<ul>
+  <li><a href="http://livedemo00.template-help.com/zencart_35883/index.php?main_page=reviews">Reviews</a></li>
+</ul>
+</div>
+<div class="ezpagesFooterCol col6" style="width: 14%">
+<ul>
+  <li><a href="http://livedemo00.template-help.com/zencart_35883/index.php?main_page=contact_us">Contact Us</a></li>
+</ul>
+</div>
+<div class="ezpagesFooterCol col7" style="width: 14%">
+<ul>
+  <li><a href="http://livedemo00.template-help.com/zencart_35883/index.php?main_page=gv_faq">FAQs</a></li>
+</ul>
+</div><br class="clearBoth">										
+				</div>
+			</div>
+			<!--eof-navigation display -->
+		</td>
+	</tr>
+</tbody></table>
+</div>
 
-<!-- bof upload alerts -->
-<?php if ($messageStack->size('upload') > 0) echo $messageStack->output('upload'); ?>
-<!-- eof upload alerts -->
 
-<?php
- /**
-  * prepares and displays center column
-  *
-  */
- require($body_code); ?>
 
-<?php
-  if (SHOW_BANNERS_GROUP_SET4 != '' && $banner = zen_banner_exists('dynamic', SHOW_BANNERS_GROUP_SET4)) {
-    if ($banner->RecordCount() > 0) {
-?>
-<div id="bannerFour" class="banners"><?php echo zen_display_banner('static', $banner); ?></div>
-<?php
-    }
-  }
-?></td>
-
-<?php
-//if (COLUMN_RIGHT_STATUS == 0 || (CUSTOMERS_APPROVAL == '1' and $_SESSION['customer_id'] == '') || (CUSTOMERS_APPROVAL_AUTHORIZATION == 1 && CUSTOMERS_AUTHORIZATION_COLUMN_RIGHT_OFF == 'true' && $_SESSION['customers_authorization'] != 0)) {
-if (COLUMN_RIGHT_STATUS == 0 || (CUSTOMERS_APPROVAL == '1' and $_SESSION['customer_id'] == '') || (CUSTOMERS_APPROVAL_AUTHORIZATION == 1 && CUSTOMERS_AUTHORIZATION_COLUMN_RIGHT_OFF == 'true' and ($_SESSION['customers_authorization'] != 0 or $_SESSION['customer_id'] == ''))) {
-  // global disable of column_right
-  $flag_disable_right = true;
-}
-if (!isset($flag_disable_right) || !$flag_disable_right) {
-?>
-<td id="navColumnTwo" class="columnRight" style="width: <?php echo COLUMN_WIDTH_RIGHT; ?>">
-<?php
- /**
-  * prepares and displays right column sideboxes
-  *
-  */
-?>
-<div id="navColumnTwoWrapper" style="width: <?php echo BOX_WIDTH_RIGHT; ?>"><?php require(DIR_WS_MODULES . zen_get_module_directory('column_right.php')); ?></div></td>
-<?php
-}
-?>
-  </tr>
-</table>
-
-<?php
- /**
-  * prepares and displays footer output
-  *
-  */
-  if (CUSTOMERS_APPROVAL_AUTHORIZATION == 1 && CUSTOMERS_AUTHORIZATION_FOOTER_OFF == 'true' and ($_SESSION['customers_authorization'] != 0 or $_SESSION['customer_id'] == '')) {
-    $flag_disable_footer = true;
-  }
-  require($template->get_template_dir('tpl_footer.php',DIR_WS_TEMPLATE, $current_page_base,'common'). '/tpl_footer.php');
-?>
 
 </div>
-<!--bof- parse time display -->
-<?php
-  if (DISPLAY_PAGE_PARSE_TIME == 'true') {
-?>
-<div class="smallText center">Parse Time: <?php echo $parse_time; ?> - Number of Queries: <?php echo $db->queryCount(); ?> - Query Time: <?php echo $db->queryTime(); ?></div>
-<?php
-  }
-?>
-<!--eof- parse time display -->
-<!--bof- banner #6 display -->
-<?php
-  if (SHOW_BANNERS_GROUP_SET6 != '' && $banner = zen_banner_exists('dynamic', SHOW_BANNERS_GROUP_SET6)) {
-    if ($banner->RecordCount() > 0) {
-?>
-<div id="bannerSix" class="banners"><?php echo zen_display_banner('static', $banner); ?></div>
-<?php
-    }
-  }
-?>
-<!--eof- banner #6 display -->
+<!-- ========== FOOTER ========== -->
+
+
+
+	<div id="footer">
+		<div class="main-width">
+			<div class="wrapper">
+				<div class="copyright">
+					<!-- ========== COPYRIGHT ========== -->
+						Copyright © 2011 <a href="./Zen Cart!, The Art of E-commerce_files/Zen Cart!, The Art of E-commerce.htm" target="_blank">La Prima</a>. Powered by <a href="http://www.zen-cart.com/" target="_blank">Zen Cart</a> <a href="http://livedemo00.template-help.com/zencart_35883/index.php?main_page=privacy">Privacy Notice</a>
+				
+											<!-- =============================== -->
+				</div>
+								<div><!-- {%FOOTER_LINK} --></div>
+							</div>
+		</div>
+	</div>
+
+
+</div>
+
+<!--LIVEDEMO_00 -->
+
+<script type="text/javascript">
+ var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-7078796-5']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();</script>
+
 </body>

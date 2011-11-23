@@ -24,7 +24,7 @@
 
 #navSupp .ezpagesFooterCol li {display: block; text-align: left;}
 
-#navSupp .ezpagesFooterCol a { color: #848484; font-weight: normal; font-size:14px; line-height:14px; text-decoration:none; background:url("../images/footer-separator.jpg"/*tpa=http://livedemo00.template-help.com/zencart_35883/includes/templates/theme546/images/footer-separator.jpg*/) no-repeat left 5px; padding: 0 18px 0 23px}
+#navSupp .ezpagesFooterCol a { color: #848484; font-weight: normal; font-size:14px; line-height:14px; text-decoration:none; background:url("../images/footer-separator.jpg") no-repeat left 5px; padding: 0 18px 0 23px}
 #navSupp .ezpagesFooterCol.col1 a{ background:none; padding:0 18px 0 0;}
 #navSupp .ezpagesFooterCol a:hover{ color:#000;}
 

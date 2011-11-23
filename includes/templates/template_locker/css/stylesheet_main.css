@@ -62,7 +62,7 @@ textarea#enquiry {width:70%; margin:1px 0;}
 
 .image{ display:inline-block; border:solid 1px #eceaea;  padding:2px; position:relative;}
 .image a{ position:relative; display:inline-block;}
-.zoom{ position:absolute; width:29px; height:28px; background:url("../images/icons/zoom-icon.png"/*tpa=http://livedemo00.template-help.com/zencart_35883/includes/templates/theme546/images/icons/zoom-icon.png*/) no-repeat 0 0; bottom:3px; left:3px;}
+.zoom{ position:absolute; width:29px; height:28px; background:url("../images/icons/zoom-icon.png") no-repeat 0 0; bottom:3px; left:3px;}
 
 .description a{ font-weight:bold;}
 .description strong{ color:#000; display:block;}
@@ -128,7 +128,7 @@ legend{ border:solid 1px #eceaea; padding:10px 20px; color:#000; background:#fef
 	line-height:15px;
 	font-weight:normal;
 	padding: 0 0 20px 17px;
-	background:url("../images/marker1.gif"/*tpa=http://livedemo00.template-help.com/zencart_35883/includes/templates/theme546/images/marker1.gif*/) no-repeat 1px 4px;
+	background:url("../images/marker1.gif") no-repeat 1px 4px;
 	border-bottom:1px solid #fafaf7;
 	margin:20px 0 18px 0;}
 
@@ -137,7 +137,7 @@ legend{ border:solid 1px #eceaea; padding:10px 20px; color:#000; background:#fef
 	line-height:15px;
 	font-weight:normal;
 	padding: 0 0 20px 17px;
-	background:url("../images/marker1.gif"/*tpa=http://livedemo00.template-help.com/zencart_35883/includes/templates/theme546/images/marker1.gif*/) no-repeat 1px 4px;
+	background:url("../images/marker1.gif") no-repeat 1px 4px;
 	border-bottom:1px solid #fafaf7;
 	margin:20px 0 18px 0;}
 
@@ -163,7 +163,7 @@ h2.centerBoxHeading {color:#3e3e3e;
 	line-height:15px;
 	font-weight:normal;
 	padding: 0 0 20px 17px;
-	background:url("../images/marker1.gif"/*tpa=http://livedemo00.template-help.com/zencart_35883/includes/templates/theme546/images/marker1.gif*/) no-repeat 1px 4px;
+	background:url("../images/marker1.gif") no-repeat 1px 4px;
 	border-bottom:1px solid #fafaf7;
 	margin:20px 0 18px 0;}
 
@@ -172,7 +172,7 @@ h2.centerBoxHeading {color:#3e3e3e;
 	line-height:15px;
 	font-weight:normal;
 	padding: 0 0 20px 17px;
-	background:url("../images/marker1.gif"/*tpa=http://livedemo00.template-help.com/zencart_35883/includes/templates/theme546/images/marker1.gif*/) no-repeat 1px 4px;
+	background:url("../images/marker1.gif") no-repeat 1px 4px;
 	border-bottom:1px solid #fafaf7;
 	margin:20px 0 18px 0;}
 
@@ -181,7 +181,7 @@ h2.centerBoxHeading {color:#3e3e3e;
 	line-height:15px;
 	font-weight:normal;
 	padding: 0 0 20px 17px;
-	background:url("../images/marker1.gif"/*tpa=http://livedemo00.template-help.com/zencart_35883/includes/templates/theme546/images/marker1.gif*/) no-repeat 1px 4px;
+	background:url("../images/marker1.gif") no-repeat 1px 4px;
 	border-bottom:1px solid #fafaf7;
 	margin:20px 0 18px 0;}
 
@@ -193,7 +193,7 @@ h2.centerBoxHeading {color:#3e3e3e;
 
 #newProductsDefault, #allProductsDefault, #featuredDefault, #specialsListing, #reviewsDefault {}
 
-#newProductsDefault .line, #allProductsDefault .line, #featuredDefault .line {padding:0; line-height:0px; font-size:0px; background:url("../images/line_1.gif"/*tpa=http://livedemo00.template-help.com/zencart_35883/includes/templates/theme546/images/line_1.gif*/) top left repeat-x; height:7px;}
+#newProductsDefault .line, #allProductsDefault .line, #featuredDefault .line {padding:0; line-height:0px; font-size:0px; background:url("../images/line_1.gif") top left repeat-x; height:7px;}
 
 #newProductsDefault td, #allProductsDefault td, #featuredDefault td {padding:10px; border:none;}
 
@@ -210,7 +210,7 @@ h2.centerBoxHeading {color:#3e3e3e;
 	line-height:15px;
 	font-weight:normal;
 	padding: 0 0 20px 17px;
-	background:url("../images/marker1.gif"/*tpa=http://livedemo00.template-help.com/zencart_35883/includes/templates/theme546/images/marker1.gif*/) no-repeat 1px 4px;
+	background:url("../images/marker1.gif") no-repeat 1px 4px;
 	border-bottom:1px solid #fafaf7;
 	margin:20px 0 18px 0;}
 #reviewsDefault .rating, .bold {padding:5px 0px;}
@@ -304,7 +304,7 @@ h2.centerBoxHeading {color:#3e3e3e;
 	line-height:15px;
 	font-weight:normal;
 	padding: 0 0 20px 17px;
-	background:url("../images/marker1.gif"/*tpa=http://livedemo00.template-help.com/zencart_35883/includes/templates/theme546/images/marker1.gif*/) no-repeat 1px 4px;
+	background:url("../images/marker1.gif") no-repeat 1px 4px;
 	border-bottom:1px solid #fafaf7;
 	margin:20px 0 18px 0;}
 #productPrices {color:#000;
@@ -331,7 +331,7 @@ h2.centerBoxHeading {color:#3e3e3e;
 
 #cartInstructionsDisplay {padding:10px; border-bottom:solid 1px #eceaea;}
 
-#cartEmptyText {font-size:17px; color:#fff; background:url("../images/icons/warning2.gif"/*tpa=http://livedemo00.template-help.com/zencart_35883/includes/templates/theme546/images/icons/warning2.gif*/) right 17px no-repeat #f76218; text-transform:uppercase;   font-weight:bold; padding:30px 0 17px 50px; margin-bottom:15px; height:35px;}
+#cartEmptyText {font-size:17px; color:#fff; background:url("../images/icons/warning2.gif") right 17px no-repeat #f76218; text-transform:uppercase;   font-weight:bold; padding:30px 0 17px 50px; margin-bottom:15px; height:35px;}
 
 #cartContentsDisplay {border-left:1px solid #E1E1E1;}
 #cartContentsDisplay th {border:1px solid #E1E1E1; border-left:none; padding:5px; text-align:center;}
@@ -384,7 +384,7 @@ h2.centerBoxHeading {color:#3e3e3e;
 	line-height:15px;
 	font-weight:normal;
 	padding: 0 0 20px 17px;
-	background:url("../images/marker1.gif"/*tpa=http://livedemo00.template-help.com/zencart_35883/includes/templates/theme546/images/marker1.gif*/) no-repeat 1px 4px;
+	background:url("../images/marker1.gif") no-repeat 1px 4px;
 	border-bottom:1px solid #fafaf7;
 	margin:20px 0 18px 0;}
 
@@ -397,7 +397,7 @@ h2.centerBoxHeading {color:#3e3e3e;
 	line-height:15px;
 	font-weight:normal;
 	padding: 0 0 20px 17px;
-	background:url("../images/marker1.gif"/*tpa=http://livedemo00.template-help.com/zencart_35883/includes/templates/theme546/images/marker1.gif*/) no-repeat 1px 4px;
+	background:url("../images/marker1.gif") no-repeat 1px 4px;
 	border-bottom:1px solid #fafaf7;
 	margin:20px 0 18px 0;}
 
@@ -416,7 +416,7 @@ h2.centerBoxHeading {color:#3e3e3e;
 	line-height:15px;
 	font-weight:normal;
 	padding: 0 0 20px 17px;
-	background:url("../images/marker1.gif"/*tpa=http://livedemo00.template-help.com/zencart_35883/includes/templates/theme546/images/marker1.gif*/) no-repeat 1px 4px;
+	background:url("../images/marker1.gif") no-repeat 1px 4px;
 	border-bottom:1px solid #fafaf7;
 	margin:20px 0 18px 0;}
 

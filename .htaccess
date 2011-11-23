@@ -2,7 +2,7 @@
 
 Options +FollowSymLinks
 RewriteEngine On
-RewriteBase /
+RewriteBase /antonshop/
 #RewriteCond %{HTTP_HOST} ^test.com [NC]
 #RewriteRule ^(.*)$ http://www.test.com/$1 [L,R=301]
 
