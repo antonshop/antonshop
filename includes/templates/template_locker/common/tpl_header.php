@@ -49,7 +49,7 @@
 					<!-- ========== NAVIGATION LINKS ========== -->
                     <a href="">Home</a>&nbsp; | &nbsp; 
                     <a href="index.php?main_page=login">Log In</a>&nbsp; | &nbsp;
-					<!--<a href="index.php?main_page=create_account">Register</a>-->
+					<a href="index.php?main_page=create_account">Sign Up</a>
 					<!-- ====================================== -->
 				</div>
 			</div>
@@ -60,11 +60,7 @@
 				<div id="navEZPagesTop"> 
  				<ul>
                     <li class="selected  first"><a href="<?php echo HTTP_SERVER . DIR_WS_CATALOG;?>">Home</a></li>
-                    <li><a href="<?php echo zen_href_link('products_new', '', 'SSL'); ?>">NewsProducts</a></li>
-                    <li><a href="<?php echo zen_href_link('featured_products', '', 'SSL'); ?>">Featured Products</a></li>
-                    <li><a href="<?php echo zen_href_link('specials', '', 'SSL'); ?>">Specials</a></li>
-                    <li><a href="<?php echo zen_href_link('create_account', '', 'SSL'); ?>">Register</a></li>
-                    <li><a href="<?php echo HTTP_SERVER . DIR_WS_CATALOG;?>blog">Blog</a></li>
+        			<?php require($template->get_template_dir('tpl_modules_category_dropdown.php',DIR_WS_TEMPLATE, $current_page_base,'templates'). '/tpl_modules_category_dropdown.php'); ?>
      			</ul> 
 			</div>
 			<!-- ========================== -->

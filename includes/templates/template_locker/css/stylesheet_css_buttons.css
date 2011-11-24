@@ -13,16 +13,17 @@
 /* css buttons */
 .cssButton, .cssButtonHover {
 width : 20em;
-background-color: #F4F4F4;
-color : #000000;
-border: 2px outset #F4F4F4;
+background-color: #000;
+height:20px;
+color : #fff;
+border: none;
+margin:0px 5px;
 font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
 font-size: 1.1em;
 text-align:center;
 white-space: nowrap;
 text-decoration: none;
-font-weight: bold;
-padding: 0.3em;
+padding: 0.4em 0.3em 0.3em;
 /*border-spacing: 1px;*/
 /*margin-left: auto;
 margin-right: auto;*/
@@ -33,8 +34,7 @@ margin-right: auto;*/
 }
 
 .cssButtonHover {
-color: #616161;
-border-style: inset;
+color: #fff;
 text-decoration: none;
 }
 /* adding the styles below might be needed if the default button width is changed */

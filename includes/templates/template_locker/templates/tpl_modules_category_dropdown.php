@@ -16,8 +16,8 @@ while (!$categories->EOF){
 foreach($category_subtemp as $value){
 	$category_sub_byparent[$value['parent_id']][] = $value;
 }
-
-$content = '<ul class="nav">' . "\n";
+$content = '';
+//$content = '<ul class="nav">' . "\n";
 if(count($category_parent)>4){
 	$nav_num = 4;
 }else{
@@ -26,14 +26,14 @@ if(count($category_parent)>4){
 //$category_parent as $item
 for($i=0; $i<$nav_num; $i++){
 	$content .= '<li class="nav_li">';
-	$content .= '<a href="' . zen_href_link(FILENAME_DEFAULT, "cPath=".$category_parent[$i]['categories_id']."") . '" class="nav_a">' . $category_parent[$i]['name'] . '</a>';
+	$content .= '<a href="' . zen_href_link(FILENAME_DEFAULT, "cPath=".$category_parent[$i]['categories_id']."") . '">' . $category_parent[$i]['name'] . '</a>';
 	//if(count($category_sub_byparent[$category_parent[$i]['categories_id']]) > 0){
 		if($i>1){
 			$lic = ' li_' . $i;
 		}else{
 			$lic = '';
 		}
-		$content .= '<div class="li_one' . $lic . '">';
+		/*$content .= '<div class="li_one' . $lic . '">';
 		if($category_sub_byparent[$category_parent[$i]['categories_id']]){
 			$content .= '<ol class="nav_one">';
 			foreach($category_sub_byparent[$category_parent[$i]['categories_id']] as $value){
@@ -42,11 +42,11 @@ for($i=0; $i<$nav_num; $i++){
 			$content .= '</ol>';
 		}
 		
-		$content .= '</div>';
+		$content .= '</div>';*/
 	//}
 }
 
-$content .= '</ul>';
+//$content .= '</ul>';
 
 echo $content;
 ?>

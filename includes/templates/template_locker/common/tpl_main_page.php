@@ -145,41 +145,10 @@ require($body_code); ?>
 </tbody></table>
 </div>
 
-
-
-
 </div>
 <!-- ========== FOOTER ========== -->
-
-
-
-	<div id="footer">
-		<div class="main-width">
-			<div class="wrapper">
-				<div class="copyright">
-					<!-- ========== COPYRIGHT ========== -->
-						Copyright © 2011 <a href="./Zen Cart!, The Art of E-commerce_files/Zen Cart!, The Art of E-commerce.htm" target="_blank">La Prima</a>. Powered by <a href="http://www.zen-cart.com/" target="_blank">Zen Cart</a> <a href="http://localhost/antonshop/index.php?main_page=privacy">Privacy Notice</a>
-				
-											<!-- =============================== -->
-				</div>
-								<div><!-- {%FOOTER_LINK} --></div>
-							</div>
-		</div>
-	</div>
-
+	<?php require($template->get_template_dir('tpl_footer.php',DIR_WS_TEMPLATE, $current_page_base,'common'). '/tpl_footer.php'); ?>
 
 </div>
-
-<!--LIVEDEMO_00 -->
-
-<script type="text/javascript">
- var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-7078796-5']);
-  _gaq.push(['_trackPageview']);
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();</script>
 
 </body>
