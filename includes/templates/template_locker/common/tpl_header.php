@@ -13,7 +13,6 @@
 }
 ?>
 <!-- ========== HEADER ========== -->
-
 	<div id="header">
 		<div class="wrapper">
 			<div class="logo">
@@ -69,23 +68,14 @@
      			</ul> 
 			</div>
 			<!-- ========================== -->
-			</div>
+			</div><script type="text/javascript">
+$(function(){
+   $('.currencies form').jqTransform({imgPath:'jqtransformplugin/img/'});
+});
+</script>
 			<div class="currencies">
-				<!-- ========== CURRENCIES ========= -->
-					<form name="currencies" action="" method="get" class="jqtransformdone">						<div>
-						
-                        <span class="label">Currencies: &nbsp;</span>
-					
-                        <div class="jqTransformSelectWrapper" style="z-index: 10; width: 124px; "><div><span style="width: 122px; ">US Dollar</span><a href="#" class="jqTransformSelectOpen"></a></div><ul style="width: 122px; height: 80px; overflow-x: hidden; overflow-y: hidden; display: none; visibility: visible; "><li><a href="#" index="0" class="selected">US Dollar</a></li><li><a href="#" index="1">Euro</a></li><li><a href="#" index="2">GB Pound</a></li><li><a href="#" index="3">Canadian Dollar</a></li><li><a href="#" index="4">Australian Dollar</a></li></ul><select name="currency" class="select jqTransformHidden" onchange="this.form.submit();" style="">
-      <option value="USD" selected="selected">US Dollar</option>
-      <option value="EUR">Euro</option>
-      <option value="GBP">GB Pound</option>
-      <option value="CAD">Canadian Dollar</option>
-      <option value="AUD">Australian Dollar</option>
-    </select></div>
-    <input type="hidden" name="main_page" value="index">						</div>
-					</form>
-				<!-- ====================================== -->
+				<?php require($template->get_template_dir('tpl_header_currencies.php',DIR_WS_TEMPLATE, $current_page_base,'templates'). '/tpl_header_currencies.php');
+                echo $content;?>
 			</div>
 		</div>
 	</div>

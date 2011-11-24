@@ -218,6 +218,7 @@ p { margin:0; padding:0;}
 #header .menu ul li a:hover{
 	color:#cac663;
 }
+.menu ul li.selected a{}
 #header .currencies{
 	float:left;
 	color:#fff;
@@ -271,7 +272,7 @@ p { margin:0; padding:0;}
 	padding:0;
 	margin:0 0 0 0px;
 	width:123px!important;
-	height:95px!important;
+	height:110px!important;
 	overflow:hidden;
 	background:#fff;
 	border:1px solid #d1d1d1;
@@ -406,19 +407,19 @@ input:focus, select:focus, textarea:focus{outline:none;}
 #slider{
 	overflow:hidden;
 	width:710px;
-	height:382px;
+	height:322px;
 	margin-bottom:10px;
 }
 #coin-slider-coin-slider{
 	width:710px;
-	height:382px;
+	height:322px;
 	position:relative;
 	float:left;
 	overflow:hidden;
 }
 #coin-slider{
 	width:710px!important;
-	height:382px!important;
+	height:322px!important;
 	overflow:hidden!important;	
 }
 #cs-buttons-coin-slider{

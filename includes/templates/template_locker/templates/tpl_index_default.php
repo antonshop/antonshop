@@ -13,6 +13,17 @@
  * @version $Id: tpl_index_default.php 3464 2006-04-19 00:07:26Z ajeh $
  */
 ?>
+<div id="slider">
+					<div class="coin-slider" id="coin-slider-coin-slider">
+                    <div id="coin-slider" style="width: 710px; height: 382px; position: relative; background-position: 0% 0%; ">
+						<a href="#"><img src="images/banner1.jpg" alt="" width="710" height="382" style=""></a>
+                        <a href="#"><img src="images/banner2.jpg" alt="" width="710" height="382" style=""></a>
+                        <a href="#"><img src="images/banner3.jpg" alt="" width="710" height="382" style=""></a>
+                        <a href="#"><img src="images/banner4.jpg" alt="" width="710" height="382" style=""></a>					
+                    </div>
+                    <SCRIPT>$(document).ready(function() { $('#coin-slider').coinslider();});</SCRIPT>
+				</div>
+                </div>
 <div class="centerColumn" id="indexDefault">
 <!--<h1 id="indexDefaultHeading"><?php echo HEADING_TITLE; ?></h1>
 
