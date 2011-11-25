@@ -344,6 +344,7 @@ p { margin:0; padding:0;}
 	text-align:center;
 	padding:19px 0 0 0;
 	margin-left:-10px;
+	line-height:20px;
 }
 .product-col .text{
 	color:#909090;

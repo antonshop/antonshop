@@ -279,11 +279,12 @@
 	line-height:16px;
 	padding:7px 0 17px 0;
 }
-#specials .box-body .normalprice {text-decoration:line-through; color:#000;
+#specials .box-body .normalprice {text-decoration:line-through; color:#b6b6b6;
 	font-family:"Times New Roman", Times, serif;
 	font-size:20px;
 	line-height:20px;
-	font-weight:normal;}
+	font-weight:normal;
+	}
 	
 #specials .box-body .productSpecialPrice, .productSalePrice, .productSpecialPriceSale {color:#778260;
 	font-family:"Times New Roman", Times, serif;
@@ -357,3 +358,4 @@
 
 
 .save_price em{ color:#778260; font-size:14px;}
+.button{ text-align:center; margin-top:6px;}

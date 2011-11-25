@@ -96,7 +96,7 @@ define('BUTTON_SEND_A_GIFT_CERT_ALT', 'Send A Gift Certificate');
 define('BUTTON_SHIPPING_ESTIMATOR_ALT', 'Shipping Estimator');
 define('BUTTON_SOLD_OUT_ALT', 'Sold Out');
 define('BUTTON_SOLD_OUT_SMALL_ALT', 'Sold Out');
-define('BUTTON_SUBMIT_ALT', 'Submit the Information');
+define('BUTTON_SUBMIT_ALT', 'Submit');
 define('BUTTON_TELL_A_FRIEND_ALT', 'Tell a Friend');
 define('BUTTON_TELLAFRIEND_ALT', 'Tell a Friend');
 define('BUTTON_UNSUBSCRIBE', 'Unsubscribe');

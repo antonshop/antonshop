@@ -15,7 +15,16 @@
 
 <div class="centerColumn" id="accountDefault">
 
-<h1 id="accountDefaultHeading"><?php echo HEADING_TITLE; ?></h1>
+<h1 id="accountDefaultHeading">
+	<?php 
+    //订单
+    if(isset($_GET['action']) || $_GET['action'] == 'order'){
+        echo "My Order";
+	}else{
+		echo HEADING_TITLE;
+	}
+    ?>
+</h1>
 <?php if ($messageStack->size('account') > 0) echo $messageStack->output('account'); ?>
 
 <?php
@@ -50,38 +59,49 @@
 ?>
 </table>
 <?php
+  }else{
+	//订单
+	if(isset($_GET['action']) || $_GET['action'] == 'order'){
+		echo '<div style="padding-top:10px; text-align:center;">NO Order List!</div>';
+	}
   }
 ?>
 <br class="clearBoth" />
-<div id="accountLinksWrapper" class="back">
-<h2><?php echo MY_ACCOUNT_TITLE; ?></h2>
-<ul id="myAccountGen" class="list">
-<li><?php echo ' <a href="' . zen_href_link(FILENAME_ACCOUNT_EDIT, '', 'SSL') . '">' . MY_ACCOUNT_INFORMATION . '</a>'; ?></li>
-<li><?php echo ' <a href="' . zen_href_link(FILENAME_ADDRESS_BOOK, '', 'SSL') . '">' . MY_ACCOUNT_ADDRESS_BOOK . '</a>'; ?></li>
-<li><?php echo ' <a href="' . zen_href_link(FILENAME_ACCOUNT_PASSWORD, '', 'SSL') . '">' . MY_ACCOUNT_PASSWORD . '</a>'; ?></li>
-</ul>
 
-
-<?php
-  if (SHOW_NEWSLETTER_UNSUBSCRIBE_LINK !='false' or CUSTOMERS_PRODUCTS_NOTIFICATION_STATUS !='0') {
+<?php 
+//订单
+if(!isset($_GET['action']) || $_GET['action'] != 'order'){
 ?>
-<h2><?php echo EMAIL_NOTIFICATIONS_TITLE; ?></h2>
-<ul id="myAccountNotify" class="list">
-<?php
-  if (SHOW_NEWSLETTER_UNSUBSCRIBE_LINK=='true') {
-?>
-<li><?php echo ' <a href="' . zen_href_link(FILENAME_ACCOUNT_NEWSLETTERS, '', 'SSL') . '">' . EMAIL_NOTIFICATIONS_NEWSLETTERS . '</a>'; ?></li>
-<?php } //endif newsletter unsubscribe ?>
-<?php
-  if (CUSTOMERS_PRODUCTS_NOTIFICATION_STATUS == '1') {
-?>
-<li><?php echo ' <a href="' . zen_href_link(FILENAME_ACCOUNT_NOTIFICATIONS, '', 'SSL') . '">' . EMAIL_NOTIFICATIONS_PRODUCTS . '</a>'; ?></li>
-
-<?php } //endif product notification ?>
-</ul>
-
-<?php } // endif don't show unsubscribe or notification ?>
-</div>
+	<div id="accountLinksWrapper" class="back">
+    <h2><?php echo MY_ACCOUNT_TITLE; ?></h2>
+    <ul id="myAccountGen" class="list">
+    <li><?php echo ' <a href="' . zen_href_link(FILENAME_ACCOUNT_EDIT, '', 'SSL') . '">' . MY_ACCOUNT_INFORMATION . '</a>'; ?></li>
+    <li><?php echo ' <a href="' . zen_href_link(FILENAME_ADDRESS_BOOK, '', 'SSL') . '">' . MY_ACCOUNT_ADDRESS_BOOK . '</a>'; ?></li>
+    <li><?php echo ' <a href="' . zen_href_link(FILENAME_ACCOUNT_PASSWORD, '', 'SSL') . '">' . MY_ACCOUNT_PASSWORD . '</a>'; ?></li>
+    </ul>
+    
+    
+    <?php
+      if (SHOW_NEWSLETTER_UNSUBSCRIBE_LINK !='false' or CUSTOMERS_PRODUCTS_NOTIFICATION_STATUS !='0') {
+    ?>
+    <h2><?php echo EMAIL_NOTIFICATIONS_TITLE; ?></h2>
+    <ul id="myAccountNotify" class="list">
+    <?php
+      if (SHOW_NEWSLETTER_UNSUBSCRIBE_LINK=='true') {
+    ?>
+    <li><?php echo ' <a href="' . zen_href_link(FILENAME_ACCOUNT_NEWSLETTERS, '', 'SSL') . '">' . EMAIL_NOTIFICATIONS_NEWSLETTERS . '</a>'; ?></li>
+    <?php } //endif newsletter unsubscribe ?>
+    <?php
+      if (CUSTOMERS_PRODUCTS_NOTIFICATION_STATUS == '1') {
+    ?>
+    <li><?php echo ' <a href="' . zen_href_link(FILENAME_ACCOUNT_NOTIFICATIONS, '', 'SSL') . '">' . EMAIL_NOTIFICATIONS_PRODUCTS . '</a>'; ?></li>
+    
+    <?php } //endif product notification ?>
+    </ul>
+    
+    <?php } // endif don't show unsubscribe or notification ?>
+    </div>
+<?php } //订单?>
 
 <?php
 // only show when there is a GV balance
