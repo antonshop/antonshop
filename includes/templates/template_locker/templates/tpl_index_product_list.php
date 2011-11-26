@@ -31,7 +31,9 @@ if (PRODUCT_LIST_CATEGORIES_IMAGE_STATUS == 'true') {
 // categories_description
     if ($current_categories_description != '') {
 ?>
-<div id="indexProductListCatDescription" class="content"><?php echo $current_categories_description;  ?></div>
+<div id="indexProductListCatDescription" class="tie3 text2 tie-margin1">
+	<div class="tie3-indent"><?php echo $current_categories_description;  ?></div>
+</div>
 <?php } // categories_description ?>
 
 <?php
@@ -41,12 +43,15 @@ if (PRODUCT_LIST_CATEGORIES_IMAGE_STATUS == 'true') {
   if ($do_filter_list || ($check_for_alpha->RecordCount() > 0 && PRODUCT_LIST_ALPHA_SORTER == 'true')) {
   $form = zen_draw_form('filter', zen_href_link(FILENAME_DEFAULT), 'get') . '<label class="inputLabel">' .TEXT_SHOW . '</label>';
 ?>
+<div class="tie2">
+	<div class="tie2-indent">
+		<?php
+          echo $form;
+          echo zen_draw_hidden_field('main_page', FILENAME_DEFAULT);
+          echo zen_hide_session_id();
+        ?>
 
-<?php
-  echo $form;
-  echo zen_draw_hidden_field('main_page', FILENAME_DEFAULT);
-  echo zen_hide_session_id();
-?>
+
 <?php
   // draw cPath if known
   if (!$getoption_set) {
@@ -84,7 +89,8 @@ if (PRODUCT_LIST_CATEGORIES_IMAGE_STATUS == 'true') {
 </form>
 <?php
   }
-?>
+?>    </div>
+</div>
 <br class="clearBoth" />
 
 <?php

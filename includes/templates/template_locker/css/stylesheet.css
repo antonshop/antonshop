@@ -558,5 +558,6 @@ LABEL#textAreaReviews {
 		margin:0;
 		padding:7px 0;
 }
+.buttonRow a, .buttonRow2 a { text-decoration:none;}
 
 .buttonRow input, .buttonRow2 input, .buttonRow3 input {border:none; padding:0; cursor: pointer;}

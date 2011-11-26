@@ -30,10 +30,11 @@
 				<!-- =================================== -->
 			</div>
 			<div class="header-right">
-				<div class="lang">
-					<!-- ========== LANGUAGES ========== -->
-						<a href="index.php?main_page=index&language=en"><img src="./Zen Cart!, The Art of E-commerce_files/icon.gif" alt="English" title=" English " width="24" height="15" style="vertical-align:middle;"></a>					<!-- =============================== -->
+				<!-- ========== LANGUAGES ========== -->
+                <div class="lang">
+					<a href="index.php?main_page=index&language=en"><img src="./Zen Cart!, The Art of E-commerce_files/icon.gif" alt="English" title=" English " width="24" height="15" style="vertical-align:middle;"></a>					
 				</div>
+                <!-- =============================== -->
 				<div class="search">
 					<!-- ========== SEARCH ========== -->
 							
@@ -46,10 +47,16 @@
 					<!-- ============================ -->
 				</div>
 				<div class="navigation">
-					<!-- ========== NAVIGATION LINKS ========== -->
-                    <a href="">Home</a>&nbsp; | &nbsp; 
-                    <a href="index.php?main_page=login">Log In</a>&nbsp; | &nbsp;
-					<a href="index.php?main_page=create_account">Sign Up</a>
+                <!-- ========== NAVIGATION LINKS ========== -->
+       				<?php if ($_SESSION['customer_id']) { ?>
+						<?php echo(TOP_MENU_HELLO);?> <a class="name_color" href="<?php echo zen_href_link(FILENAME_ACCOUNT, '', 'SSL'); ?>"><?php echo ($_SESSION['customer_first_name'].' '.$_SESSION['customer_last_name']);?></a>&nbsp; | &nbsp;
+                        <a href="<?php echo zen_href_link(FILENAME_ACCOUNT, '', 'SSL'); ?>">My Account</a>&nbsp; | &nbsp;
+                        <a href="<?php echo zen_href_link(FILENAME_LOGOFF, '', 'SSL'); ?>"><?php echo HEADER_TITLE_LOGOFF; ?></a>
+                    <?php }else{?>
+                        <a href="<?php echo HTTP_SERVER . DIR_WS_CATALOG;?>">Home</a>&nbsp; | &nbsp; 
+                        <a href="<?php echo zen_href_link(FILENAME_LOGIN, '', 'SSL'); ?>">Log In</a>&nbsp; | &nbsp;
+                        <a href="<?php echo zen_href_link(FILENAME_CREATE_ACCOUNT, '', 'SSL'); ?>">Sign Up</a>
+                    <?php }?>                
 					<!-- ====================================== -->
 				</div>
 			</div>

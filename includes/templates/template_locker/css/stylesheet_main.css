@@ -165,8 +165,9 @@ h2.centerBoxHeading {color:#3e3e3e;
 	padding: 0 0 20px 17px;
 	background:url("../images/marker1.gif") no-repeat 1px 4px;
 	border-bottom:1px solid #fafaf7;
-	margin:20px 0 18px 0;}
-
+	margin:20px 0 18px 0;
+	border-bottom:1px solid #251F1A;
+}
 #indexCategoriesHeading, #productListHeading {color:#3e3e3e;
 	font-size:15px;
 	line-height:15px;
@@ -253,7 +254,9 @@ h2.centerBoxHeading {color:#3e3e3e;
 
 .tabTable td {border-right:1px solid #E1E1E1; border-bottom:1px solid #E1E1E1; padding:5px;}
 .tabTable td .listingDescription {padding:5px 0px; font-family:Arial, Helvetica, sans-serif; font-size:12px; line-height:17px;}
-.tabTable td a {font-size:17px; text-decoration:none; line-height:20px; font-weight:bold;}
+.tabTable td span a {font-size:17px; text-decoration:none; line-height:20px; font-weight:bold;}
+.tabTable td a{font-size:13px; font-weight:normal; text-decoration:none;}
+.tabTable td span.price{ color:#000;}
 .tabTable td a:hover { color:#cac663;}
 
 /*  ----------------  */
