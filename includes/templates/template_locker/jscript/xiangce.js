@@ -32,10 +32,10 @@ function bili(objbig,holderWidth,holderHeight){
 	}
 }
 
-var tanchu=document.getElementById("tanchu");
-var mask=document.getElementById("mask");
+//var tanchu=document.getElementById("tanchu");
+//var mask=document.getElementById("mask");
 //var hid=document.getElementById("hidde");
-var close=document.getElementById("close");
+//var close=document.getElementById("close");
 var jersey=document.getElementById("jersey_one");
 var change=document.getElementById("change");
 

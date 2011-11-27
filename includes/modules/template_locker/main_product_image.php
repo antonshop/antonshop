@@ -16,7 +16,6 @@ $products_image_extension = substr($products_image, strrpos($products_image, '.'
 $products_image_base = ereg_replace($products_image_extension . '$', '', $products_image);
 $products_image_medium = DIR_WS_IMAGES . 'medium/' . $products_image_base . IMAGE_SUFFIX_MEDIUM . $products_image_extension;
 $products_image_large  = DIR_WS_IMAGES . 'large/' . $products_image_base . IMAGE_SUFFIX_LARGE .  $products_image_extension;
-
   /*
     echo
     'Base ' . $products_image_base . ' - ' . $products_image_extension . '<br>' .

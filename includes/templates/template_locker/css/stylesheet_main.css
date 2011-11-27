@@ -306,10 +306,10 @@ h2.centerBoxHeading {color:#3e3e3e;
 	font-size:15px;
 	line-height:15px;
 	font-weight:normal;
-	padding: 0 0 20px 17px;
+	padding: 0 0 0px 17px;
 	background:url("../images/marker1.gif") no-repeat 1px 4px;
 	border-bottom:1px solid #fafaf7;
-	margin:20px 0 18px 0;}
+	margin:10px 0 10px 0;}
 #productPrices {color:#000;
 	font-family:"Times New Roman", Times, serif;
 	font-size:20px;
@@ -317,7 +317,7 @@ h2.centerBoxHeading {color:#3e3e3e;
 	font-weight:normal;}
 #productDescription {margin:0px; padding:15px 0 0; width:100%; overflow:hidden;}
 
-#cartAdd { margin:0; padding:1em 1em 1em 0; margin:10px 0 0; overflow:hidden;}
+#cartAdd { margin:0; padding:1em 1em 1em 0; overflow:hidden;}
 #cartAdd .qty{ padding:3px; border:solid 1px #E1E1E1; width:50px;}
 #cartAdd .text2{ margin-top:2px;}
 #alsoPurchased {margin:20px 0;}

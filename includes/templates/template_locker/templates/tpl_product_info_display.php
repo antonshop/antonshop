@@ -45,7 +45,7 @@ require($template->get_template_dir('/tpl_modules_category_icon_display.php',DIR
   }
 ?>
 <!--eof Main Product Image-->
-
+<div class="jersey_rg">
 <!--bof Product Name-->
 <h1 id="productName" class="productGeneral"><?php echo $products_name; ?></h1>
 <!--eof Product Name-->
@@ -136,7 +136,7 @@ if (CUSTOMERS_APPROVAL == 3 and TEXT_LOGIN_FOR_PRICE_BUTTON_REPLACE_SHOWROOM == 
   }
 ?>
 <!--eof Quantity Discounts table -->
-
+</div>
  <!--bof Product description -->
 <?php if ($products_description != '') { ?>
 <div id="productDescription" class="productGeneral biggerText"><?php echo stripslashes($products_description); ?></div>
@@ -145,14 +145,6 @@ if (CUSTOMERS_APPROVAL == 3 and TEXT_LOGIN_FOR_PRICE_BUTTON_REPLACE_SHOWROOM == 
 <br class="clearBoth" />
 
 <!--anton-->
-<!--bof Additional Product Images -->
-<?php
-/**
- * display the products additional images
- */
-  require($template->get_template_dir('/tpl_modules_additional_images.php',DIR_WS_TEMPLATE, $current_page_base,'templates'). '/tpl_modules_additional_images.php'); ?>
-<!--eof Additional Product Images -->
-
 
 <!--bof Prev/Next top position -->
 <?php if (PRODUCT_INFO_PREVIOUS_NEXT == 1 or PRODUCT_INFO_PREVIOUS_NEXT == 3) { ?>
