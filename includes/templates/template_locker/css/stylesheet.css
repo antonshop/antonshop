@@ -615,3 +615,6 @@ LABEL#textAreaReviews {
 /* thumbnail */
 .thumbnail{ width:116px; height:116px; margin:10px 0px 5px 10px;; float:left;}
 .thumbnail img { width:116px; height:116px;}
+
+
+h2 .normalprice{ margin-top:-20px;}

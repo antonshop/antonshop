@@ -144,9 +144,9 @@ legend{ border:solid 1px #eceaea; padding:10px 20px; color:#000; background:#fef
 
 
 
-h2 {font-size:14px; font-weight:bold; line-height:normal; color:#363636; padding:3px 0px 5px;}
-h3 {color:#363636; font-size:12px; font-weight:bold; line-height:normal; padding:3px 0px 5px;}
-h4 {color:#363636; font-size:11px; font-weight:bold; line-height:normal; padding:3px 0px 5px;}
+h2 {font-size:14px; font-weight:bold; line-height:normal; color:#363636; }
+h3 {color:#363636; font-size:12px; font-weight:bold; line-height:normal;}
+h4 {color:#363636; font-size:11px; font-weight:bold; line-height:normal;}
 
 
 
@@ -317,7 +317,7 @@ h2.centerBoxHeading {color:#3e3e3e;
 	font-weight:normal;}
 #productDescription {margin:0px; padding:15px 0 0; width:100%; overflow:hidden;}
 
-#cartAdd { margin:0; padding:1em 1em 1em 0; overflow:hidden;}
+#cartAdd { margin:0; padding:0; overflow:hidden;}
 #cartAdd .qty{ padding:3px; border:solid 1px #E1E1E1; width:50px;}
 #cartAdd .text2{ margin-top:2px;}
 #alsoPurchased {margin:20px 0;}
