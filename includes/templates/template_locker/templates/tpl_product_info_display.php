@@ -145,7 +145,7 @@ if (CUSTOMERS_APPROVAL == 3 and TEXT_LOGIN_FOR_PRICE_BUTTON_REPLACE_SHOWROOM == 
 <br class="clearBoth" />
 
 <!--anton-->
-
+<div class="navNextPrevWrapper centeredContent">
 <!--bof Prev/Next top position -->
 <?php if (PRODUCT_INFO_PREVIOUS_NEXT == 1 or PRODUCT_INFO_PREVIOUS_NEXT == 3) { ?>
 <?php
@@ -191,7 +191,7 @@ require($template->get_template_dir('/tpl_products_next_previous.php',DIR_WS_TEM
 }
 ?>
 <!--eof Reviews button and count -->
-
+</div>
 
 <!--bof Product date added/available-->
 <?php
@@ -204,7 +204,7 @@ require($template->get_template_dir('/tpl_products_next_previous.php',DIR_WS_TEM
   } else {
     if ($flag_show_product_info_date_added == 1) {
 ?>
-      <p id="productDateAdded" class="productGeneral centeredContent"><?php echo sprintf(TEXT_DATE_ADDED, zen_date_long($products_date_added)); ?></p>
+     
 <?php
     } // $flag_show_product_info_date_added
   }

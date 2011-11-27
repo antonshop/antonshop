@@ -12,6 +12,7 @@
 
 /* css buttons */
 .cssButton, .cssButtonHover {
+	padding-top:4px;
 width : 20em;
 background-color: #000;
 height:20px;
@@ -24,13 +25,12 @@ font-size: 1.1em;
 text-align:center;
 white-space: nowrap;
 text-decoration: none;
-/*border-spacing: 1px;*/
-/*margin-left: auto;
-margin-right: auto;*/
-/*display: block;*/
-/*vertical-align: top;*/
-/*line-height: 130%;*/
-/*cursor: pointer;*/
+border-spacing: 1px;
+display: block;
+vertical-align:middle;
+font-weight:bold;
+line-height: 130%;
+cursor: pointer;
 }
 
 .cssButtonHover {

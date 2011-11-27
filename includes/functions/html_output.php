@@ -323,14 +323,15 @@
   function zenCssButton($image = '', $text, $type, $sec_class = '', $parameters = '') {
 
     // automatic width setting depending on the number of characters
-    $min_width = 80; // this is the minimum button width, change the value as you like
-    $character_width = 6.5; // change this value depending on font size!
+    $min_width = 100; // this is the minimum button width, change the value as you like
+	$height = 24; // this is the minum button height anton
+    $character_width = 8.5; // change this value depending on font size!
     // end settings
     // added html_entity_decode function to prevent html special chars to be counted as multiple characters (like &amp;)
     $width = strlen(html_entity_decode($text)) * $character_width;
     $width = (int)$width;
     if ($width < $min_width) $width = $min_width;
-    $style = ' style="width: ' . $width . 'px;"';
+    $style = ' style="width: ' . $width . 'px;height:' . $height . 'px"';
     // if no secondary class is set use the image name for the sec_class
     if (empty($sec_class)) $sec_class = basename($image, '.gif');
     if(!empty($sec_class))$sec_class = ' ' . $sec_class;

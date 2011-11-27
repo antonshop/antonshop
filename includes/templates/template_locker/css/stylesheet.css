@@ -177,6 +177,7 @@ HR {
         white-space: nowrap;
         margin:0px 2px 3px 0px;
         list-style-type: none;
+		float:left;
         }
 		
 
@@ -617,4 +618,7 @@ LABEL#textAreaReviews {
 .thumbnail img { width:116px; height:116px;}
 
 
-h2 .normalprice{ margin-top:-20px;}
+.productGeneral .normalprice, .productGeneral .price{ float:left;}
+.productGeneral .save_price{ clear:left;}
+#productTellFriendLink, #productReviewLink{ padding:0px; float:left;}
+#productDetailsList{ margin-left:0px;}
