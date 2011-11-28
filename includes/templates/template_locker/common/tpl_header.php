@@ -32,7 +32,7 @@
 			<div class="header-right">
 				<!-- ========== LANGUAGES ========== -->
                 <div class="lang">
-					<a href="index.php?main_page=index&language=en"><img src="./Zen Cart!, The Art of E-commerce_files/icon.gif" alt="English" title=" English " width="24" height="15" style="vertical-align:middle;"></a>					
+					<!--<a href="index.php?main_page=index&language=en"><img src="" alt="English" title=" English "></a>-->					
 				</div>
                 <!-- =============================== -->
 				<div class="search">

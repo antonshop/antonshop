@@ -108,7 +108,7 @@ p { margin:0; padding:0;}
 }
 #header .logo{
 	float:left;
-	padding:46px 0 0 14px;
+	padding:46px 0 0 6px;
 }
 #header .cart{
 	float:left;
@@ -118,7 +118,7 @@ p { margin:0; padding:0;}
 	text-transform:uppercase;
 	background:url("../images/cart.gif") no-repeat left top;
 	padding: 2px 0 2px 51px;
-	margin:87px 0 0 92px;
+	margin:87px 0 0 60px;
 }
 *+html #header .cart{
 	padding:3px 0 2px 51px;

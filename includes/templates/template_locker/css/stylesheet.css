@@ -105,12 +105,13 @@ HR {
 /*warnings, errors, messages*/
 .messageStackWarning, .messageStackError, .messageStackSuccess, .messageStackCaution {
         line-min-height: 1.8em;
-        padding: 0.2em;
-        
+        padding: 0.6em 0.2em 0.2em;
+        background:#f76218;
+		vertical-align:bottom;
         }
-
+.messageStackError img{ margin:-5px 10px 0px;}
 .messageStackWarning, .messageStackError {
-        color:#FF0000; 
+        color:#fff; 
         }
 
 .messageStackSuccess {
@@ -615,7 +616,7 @@ LABEL#textAreaReviews {
 
 /* thumbnail */
 .thumbnail{ width:116px; height:116px; margin:10px 10px 5px 5px;; float:left;}
-.thumbnail img { width:116px; height:116px;}
+.thumbnail img { width:118px; height:116px;}
 .thumbone{max-width: 270px; height:auto; background:none;}
 .thumbone img { max-width:260px;}
 
@@ -624,3 +625,5 @@ LABEL#textAreaReviews {
 .productGeneral .save_price{ clear:left;}
 #productTellFriendLink, #productReviewLink{ padding:0px; float:left;}
 #productDetailsList{ margin-left:0px;}
+.zhuce table tr{ height:32px;}
+.zhuce_tit{ height:26px;}

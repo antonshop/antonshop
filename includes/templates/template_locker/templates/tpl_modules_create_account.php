@@ -62,8 +62,8 @@
                 <td><?php echo zen_draw_input_field('telephone', '', zen_set_field_length(TABLE_CUSTOMERS, 'customers_telephone', '40') . ' id="telephone"') . (zen_not_null(ENTRY_TELEPHONE_NUMBER_TEXT) ? '<span class="alert"><em>' . ENTRY_TELEPHONE_NUMBER_TEXT . '</em></span>': ''); ?></td>
             </tr>
         </table>
-        <input class="zhuce_sub" type="submit" value=""/>
-    </form>
 </div>
+<div class="buttonRow forward"><?php echo zen_image_submit(BUTTON_IMAGE_SUBMIT, BUTTON_SUBMIT_ALT); ?></div>
+</form>
 <script type="text/javascript">update_zone(document.create_account);</script>
 

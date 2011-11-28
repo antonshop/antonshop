@@ -26,6 +26,5 @@
 
 </fieldset>
 
-<div class="buttonRow forward"><?php echo zen_image_submit(BUTTON_IMAGE_SUBMIT, BUTTON_SUBMIT_ALT); ?></div>
-</form>
+
 </div>
