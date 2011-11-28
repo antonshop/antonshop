@@ -10,11 +10,7 @@
  */
 ?>
 <?php require(DIR_WS_MODULES . zen_get_module_directory(FILENAME_MAIN_PRODUCT_IMAGE)); ?>
-<?php require(DIR_WS_MODULES . zen_get_module_directory('sam_product_images.php'));
-/*echo "<pre>";
-print_r($images_array_contain_all);
-echo "</pre>";*/
- ?>
+<?php require(DIR_WS_MODULES . zen_get_module_directory('sam_product_images.php'));?>
 
 <script type="text/javascript" src="<?php echo DIR_WS_TEMPLATE;?>jscript/lytebox.js"></script>
 <div class="jersey_pic">
@@ -42,7 +38,7 @@ echo "</pre>";*/
 					for($i=0;$i<count($images_array_contain_all);$i++){
 						$arrimgsize=getimagesize($images_array_contain_all[$i]); 
 						if($i == 0){
-							echo '<div class="thumbnail"><a href="' . DIR_WS_CATALOG . $images_array_contain_all[$i].'" rel="lyteshow[vacation]"><img src="' . DIR_WS_CATALOG . $images_array_contain_all[$i].'" style="' . $one_img_style . '" /></a></div>';
+							echo '<div class="thumbone"><a href="' . DIR_WS_CATALOG . $images_array_contain_all[$i].'" rel="lyteshow[vacation]"><img src="' . DIR_WS_CATALOG . $images_array_contain_all[$i].'" /></a></div>';
 						}else{
 							echo '<div class="thumbnail"><a href="' . DIR_WS_CATALOG . $images_array_contain_all[$i].'" rel="lyteshow[vacation]"><img src="' . DIR_WS_CATALOG . $images_array_contain_all[$i].'" w="'.$arrimgsize[0].'" h="'.$arrimgsize[1].'" /></a></div>';
 						}

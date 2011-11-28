@@ -565,12 +565,12 @@ LABEL#textAreaReviews {
 
 /* product lightbox */
 .con_right .jersey_pro {overflow:hidden;zoom:1;}
-.jersey_pic {float:left;width:281px;}
+.jersey_pic {float:left;max-width:281px;}
 
 .top_one {width:279px;height:246px;border:1px solid #c0c0c0;overflow:hidden;line-height:246px;vertical-align:middle;display:table-cell;}
 .top_one img {display:none;}
 .top_one .top_pic {display:block;margin:auto;_margin-top: expression_r(( 246 - this.height ) / 2);}
-.bottom_one { background:#434341;width:265px;margin:7px 0;overflow:hidden;zoom:1;padding:5px 7px;}
+.bottom_one { background:#434341;max-width:265px;margin:7px 0;overflow:hidden;zoom:1;padding:7px 7px 5px 7px;}
 .bottom_one .out_one {width:235px;height:62px;float:left;overflow:hidden;}
 .out_one  img {width:53px;height:50px;filter:alpha(opacity=40);opacity: 0.4;display:block;}
 .out_one .special_img {filter:alpha(opacity=100);opacity: 1;border:1px black solid;}
@@ -614,8 +614,10 @@ LABEL#textAreaReviews {
 .top_one img { width:230px; height:270px;}
 
 /* thumbnail */
-.thumbnail{ width:116px; height:116px; margin:10px 0px 5px 10px;; float:left;}
+.thumbnail{ width:116px; height:116px; margin:10px 10px 5px 5px;; float:left;}
 .thumbnail img { width:116px; height:116px;}
+.thumbone{max-width: 270px; height:auto; background:none;}
+.thumbone img { max-width:260px;}
 
 
 .productGeneral .normalprice, .productGeneral .price{ float:left;}
