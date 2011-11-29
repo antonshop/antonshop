@@ -253,6 +253,8 @@ if($action == 'export'){
 
 			zen_db_perform(TABLE_PRODUCTS, $product_info);
 			$insert_id = $db->Insert_ID();
+			
+			
 			$product_desc = array(
 				'products_id' => $insert_id,
 				'language_id' => $item[35],
@@ -261,11 +263,25 @@ if($action == 'export'){
 				'products_url' => $item[38],
 				'products_viewed' => $item[39]
 			);
-			zen_db_perform(TABLE_PRODUCTS_DESCRIPTION, $product_desc);
+			$insert_desc = zen_db_perform(TABLE_PRODUCTS_DESCRIPTION, $product_desc);
+			
+			$products_to_categories = array(
+				'products_id' => $insert_id,
+				'categories_id' => $product_info['master_categories_id']
+			);
+			$insert_ptoc = zen_db_perform(TABLE_PRODUCTS_TO_CATEGORIES, $products_to_categories);
+			//$desc_insert_id = $db->Insert_ID();
+			//var_dump($insert_desc);
+			//echo "<br>***".$insert_id."<br>***". $insert_desc . '<br>***' . $insert_ptoc;
+			//print_r($product_info);exit;
 		}
-		
-		$messageStack->add_session('导入成功', 'success');
-		zen_redirect(zen_href_link('product_batch'));
+		if($insert_id && $insert_desc && $insert_ptoc){
+			$messageStack->add_session('导入成功', 'success');
+			zen_redirect(zen_href_link('product_batch'));	
+		} else {
+			$messageStack->acc_session('导入失败', 'error');
+			zen_redirect(zen_href_link('product_batch'));
+		}
 	}
 }
 ?>
@@ -340,7 +356,17 @@ if($action == 'export'){
                     </tr>
                     <tr>
                     	<td>导入已有文件</td>
-                        <td><input name="csvfilename" value="">(<?php echo $csvdir;?>)</td>
+                        <td>
+                        <?php $temp_csvfiles = scandir($csvdir);?>
+                        <select name="csvfilename">
+                        	<?php foreach($temp_csvfiles as $value) {
+								if($value !='.' && $value != '..') {
+									echo '<option value="' . $value . '">' . $value . '</option>';
+								}
+							}?>
+                        	
+                        </select>
+                        </td>
                     </tr>
                     <tr>
                         <td class="txtright">编码格式：</td>
