@@ -1,0 +1,9 @@
+.maincontent{ padding:10px 8px 0px;}
+.maincontent .content_title{ color:#333; font-size:14px; padding:5px 0px; font-weight:bold;}
+.product_export{ line-height:22px; padding:10px 0px 0px 20px;}
+.product_export td{ line-height:26px;}
+.left{ float:left;}
+.right{ float:right;}
+.txtleft{ text-align:left;}
+.txtright{ text-align:right;}
+.txtcenter{ text-align:center;}
