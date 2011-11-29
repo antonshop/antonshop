@@ -54,7 +54,7 @@
   define('DB_SERVER', 'localhost');
   define('DB_SERVER_USERNAME', 'root');
   define('DB_SERVER_PASSWORD', 'root');
-  define('DB_DATABASE', 'sunwinningshop');
+  define('DB_DATABASE', 'antonshop');
   define('USE_PCONNECT', 'false');
   define('STORE_SESSIONS', 'db');
   // for STORE_SESSIONS, use 'db' for best support, or '' for file-based storage

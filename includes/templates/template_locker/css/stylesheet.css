@@ -617,9 +617,9 @@ LABEL#textAreaReviews {
 /* thumbnail */
 .thumbnail{ width:116px; height:116px; margin:10px 10px 5px 5px;; float:left;}
 .thumbnail img { width:118px; height:116px;}
-.thumbone{max-width: 270px; height:auto; background:none;}
+.thumbone{max-width: 270px; height:auto; background:none; z-index:1000;}
 .thumbone img { max-width:260px;}
-
+.thumbone .smallzoomimg{ position:relative; z-index:3; top:-20; left:-20; background:url("../images/icon/small_zomm.gif");}
 
 .productGeneral .normalprice, .productGeneral .price{ float:left;}
 .productGeneral .save_price{ clear:left;}
