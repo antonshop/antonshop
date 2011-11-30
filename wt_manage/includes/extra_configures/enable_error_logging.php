@@ -40,7 +40,7 @@
   if (in_array('*', $pages_to_debug) || in_array($current_page_base, $pages_to_debug)) {
     @ini_set('log_errors', 1);          // store to file
     @ini_set('log_errors_max_len', 0);  // unlimited length of message output
-    @ini_set('display_errors', 0);      // do not output errors to screen/browser/client
+    @ini_set('display_errors', 1);      // do not output errors to screen/browser/client
     @ini_set('error_log', $debug_logfile_path);  // the filename to log errors into
     @ini_set('error_reporting', $errors_to_log ); // log only errors according to defined rules
   }
