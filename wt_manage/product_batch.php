@@ -20,10 +20,11 @@ if($action == 'export'){
 		require('includes/classes/phpzip.php');
 		$zip = new PHPZip;
 		
-		$sql = "select p.* ,pd.*
+		$sql = "select p.*, pd.*, mate.*
 			  from " . TABLE_PRODUCTS . " p, " .
-					   TABLE_PRODUCTS_DESCRIPTION . " pd
-			  where    p.products_id = pd.products_id";
+					   TABLE_PRODUCTS_DESCRIPTION . " pd, " .
+					   TABLE_META_TAGS_PRODUCTS_DESCRIPTION . " mate 
+			  where    p.products_id = pd.products_id AND mate.products_id = p.products_id";
 		$product_info = $db->Execute($sql);
 		
 		$replace_foundarr = array("\r",'"',"\n");
@@ -69,7 +70,10 @@ if($action == 'export'){
 			'products_name' => '""',
 			'products_description' => '""',
 			'products_url' => '""',
-			'products_viewed' => 0
+			'products_viewed' => 0,
+			'metatags_title' => '""',
+			'metatags_keywords' => '""',
+			'metatags_description' => '""'
 		);
 		
 		$content = '"' . implode('","', array_keys($product_arr)) . "\"\n";
@@ -119,6 +123,9 @@ if($action == 'export'){
 			$product_arr['products_description'] = '"' . str_replace($replace_foundarr,$replace_arr,"{$row['products_description']}") . '"';
 			$product_arr['products_url'] = '"' . $row['products_url'] . '"';
 			$product_arr['products_viewed'] = '"' . $row['products_viewed'] . '"';
+			$product_arr['metatags_title'] = '"' . $row['metatags_title'] . '"';
+			$product_arr['metatags_keywords'] = '"' . $row['metatags_keywords'] . '"';
+			$product_arr['metatags_description'] = '"' . $row['metatags_description'] . '"';
 	
 			$content .= implode(",", $product_arr) . "\n";
 			
@@ -270,12 +277,20 @@ if($action == 'export'){
 				'categories_id' => $product_info['master_categories_id']
 			);
 			$insert_ptoc = zen_db_perform(TABLE_PRODUCTS_TO_CATEGORIES, $products_to_categories);
+			$products_mate = array(
+				'products_id' => $insert_id,
+				'language_id' => $product_desc['language_id'],
+				'metatags_title' => $item[40],
+				'metatags_keywords' => $item[41],
+				'metatags_description' => $item[42],
+			);
+			$insert_mate = zen_db_perform(TABLE_META_TAGS_PRODUCTS_DESCRIPTION, $products_mate);
 			//$desc_insert_id = $db->Insert_ID();
 			//var_dump($insert_desc);
 			//echo "<br>***".$insert_id."<br>***". $insert_desc . '<br>***' . $insert_ptoc;
 			//print_r($product_info);exit;
 		}
-		if($insert_id && $insert_desc && $insert_ptoc){
+		if($insert_id && $insert_desc && $insert_ptoc && $insert_mate){
 			$messageStack->add_session('导入成功', 'success');
 			zen_redirect(zen_href_link('product_batch'));	
 		} else {
