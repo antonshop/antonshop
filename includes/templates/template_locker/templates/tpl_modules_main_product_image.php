@@ -41,7 +41,7 @@
 						$arrimgsize=getimagesize($images_array_contain_all[$i]); 
 						if(count($images_array_contain_all) == 1){
 						/*if($i == 0){*/
-							echo '<div class="thumbone"><a href="' . DIR_WS_CATALOG . $images_array_contain_all[$i].'"><img src="' . DIR_WS_CATALOG . $images_array_contain_all[$i].'" /></a></div>';
+							echo '<div class="thumbone"><a href="' . DIR_WS_CATALOG . $images_array_contain_all[$i].'" rel="lytebox[plants]"><img src="' . DIR_WS_CATALOG . $images_array_contain_all[$i].'" /></a></div>';
 						}else{
 							echo '<div class="thumbnail"><a href="' . DIR_WS_CATALOG . $images_array_contain_all[$i].'" rel="lyteshow[vacation]"><img src="' . DIR_WS_CATALOG . $images_array_contain_all[$i].'" w="'.$arrimgsize[0].'" h="'.$arrimgsize[1].'" class="latest_img" /></a><span class="smallzoomimg"></span></div>';
 						}

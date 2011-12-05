@@ -40,7 +40,7 @@ function LyteBox() {
 	/*** End Global Configuration ***/
 	
 	/*** Configure Slideshow Options ***/
-		this.slideInterval		= 3000;		// Change value (milliseconds) to increase/decrease the time between "slides" (10000 = 10 seconds)
+		this.slideInterval		= 4000;		// Change value (milliseconds) to increase/decrease the time between "slides" (10000 = 10 seconds)
 		this.showNavigation		= true;		// true to display Next/Prev buttons/text during slideshow, false to hide
 		this.showClose			= true;		// true to display the Close button, false to hide
 		this.showDetails		= true;		// true to display image details (caption, count), false to hide
