@@ -18,8 +18,8 @@ foreach($category_subtemp as $value){
 }
 $content = '';
 //$content = '<ul class="nav">' . "\n";
-if(count($category_parent)>4){
-	$nav_num = 4;
+if(count($category_parent)>6){
+	$nav_num = 6;
 }else{
 	$nav_num = count($category_parent);
 }

@@ -8,17 +8,17 @@
  */
 
 // page title
-define('TITLE', 'Zen Cart!');
+define('TITLE', 'cashmere pants, wholesale stockings, 30% off free shipping on www.accessorieslocker.com.');
 
 // Site Tagline
-define('SITE_TAGLINE', 'The Art of E-commerce');
+define('SITE_TAGLINE', '');
 
 // Custom Keywords
-define('CUSTOM_KEYWORDS', 'ecommerce, open source, shop, online shopping');
+define('CUSTOM_KEYWORDS', 'cashmere pants, wholesale stockings');
 
 // Home Page Only:
-  define('HOME_PAGE_META_DESCRIPTION', '');
-  define('HOME_PAGE_META_KEYWORDS', '');
+  define('HOME_PAGE_META_DESCRIPTION', 'we offer cashmere pants, wholesale stockings, besides 7*24h service for you with the unconditional return!');
+  define('HOME_PAGE_META_KEYWORDS', 'cashmere pants, wholesale stockings');
 
   // NOTE: If HOME_PAGE_TITLE is left blank (default) then TITLE and SITE_TAGLINE will be used instead.
   define('HOME_PAGE_TITLE', ''); // usually best left blank

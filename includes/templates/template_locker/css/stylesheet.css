@@ -167,9 +167,9 @@ HR {
 
 .navSplitPagesResult { margin:5px 10px 17px 20px;}
 .navSplitPagesLinks{ margin:0 0 10px 0;}
-.navSplitPagesLinks a {display:inline-block; background:#ebede5; padding:5px 10px; color:#3e3e3e;  text-decoration:none;}
+.navSplitPagesLinks a {display:inline-block; background:#ebede5; padding:0px 10px; color:#3e3e3e;  text-decoration:none;}
 	.navSplitPagesLinks a:hover{ background:#bbbb91;}
-	.navSplitPagesLinks strong{  display:inline-block; background:#393733; padding:5px 10px; color:#fff;  }
+	.navSplitPagesLinks strong{  display:inline-block; background:#393733; padding:0px 10px; color:#fff;  }
 
 .navSplitPagesResult a {color:#161616;}
 

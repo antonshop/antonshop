@@ -87,7 +87,7 @@ define('BUTTON_LOGIN_ALT', 'Sign In');
 define('BUTTON_NEXT_ALT', 'Next');
 define('BUTTON_PREVIOUS_ALT', 'Previous');
 define('BUTTON_REDEEM_ALT', 'Redeem');
-define('BUTTON_RETURN_TO_PROD_LIST_ALT', 'Return to the Product List');
+define('BUTTON_RETURN_TO_PROD_LIST_ALT', 'Product List');
 define('BUTTON_REVIEWS_ALT', 'Go to the Reviews Page');
 define('BUTTON_SEARCH_ALT', 'Search');
 define('BUTTON_SEND_ALT', 'Send Now');

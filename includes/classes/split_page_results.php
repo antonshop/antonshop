@@ -115,7 +115,7 @@ class splitPageResults extends base {
     // page nn button
     for ($jump_to_page = 1 + (($cur_window_num - 1) * $max_page_links); ($jump_to_page <= ($cur_window_num * $max_page_links)) && ($jump_to_page <= $this->number_of_pages); $jump_to_page++) {
       if ($jump_to_page == $this->current_page_number) {
-        $display_links_string .= '&nbsp;' . $jump_to_page;
+        $display_links_string .= '&nbsp;<strong class="current">' . $jump_to_page . '</strong>';
       } else {
         $display_links_string .= '&nbsp;<a href="' . zen_href_link($_GET['main_page'], $parameters . $this->page_name . '=' . $jump_to_page, $request_type) . '" title=" ' . sprintf(PREVNEXT_TITLE_PAGE_NO, $jump_to_page) . ' "><span>' . $jump_to_page . '</span></a>';
       }
