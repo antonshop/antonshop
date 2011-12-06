@@ -11,6 +11,7 @@
   $content = "";
   
   $content .= '<div id="categoriesContent" class="sideBoxContent"><ul>' . "\n";
+  
   for ($i=0;$i<sizeof($box_categories_array);$i++) {
     switch(true) {
 // to make a specific category stand out define a new class in the stylesheet example: A.category-holiday

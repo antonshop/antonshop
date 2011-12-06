@@ -16,10 +16,10 @@ while (!$categories->EOF){
 foreach($category_subtemp as $value){
 	$category_sub_byparent[$value['parent_id']][] = $value;
 }
-$content = '';
-//$content = '<ul class="nav">' . "\n";
-if(count($category_parent)>6){
-	$nav_num = 6;
+
+$content = '<ul class="nav">' . "\n";
+if(count($category_parent)> 6){
+	$nav_num =  6;
 }else{
 	$nav_num = count($category_parent);
 }

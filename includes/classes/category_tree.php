@@ -137,11 +137,52 @@ class category_tree extends base {
       }
     }
     $row = 0;
-    return $this->zen_show_category($first_element, $row);
+	//if(defined('INDEX_CATEGORY_TREE')){
+	//	return $this->zen_show_category_tree($categories);
+	//} else {
+		return $this->zen_show_category($first_element, $row);
+	//}
+    
+  }
+  
+  function zen_show_category_tree($categories) {
+	  global $db, $cPath, $cPath_array;
+  	
+	$subcategory_query = "SELECT cd.categories_id AS categories_id, cd.categories_name, c.parent_id, c.categories_image
+                             from " . TABLE_CATEGORIES . " c, " . TABLE_CATEGORIES_DESCRIPTION . " cd 
+                             WHERE c.parent_id != 0
+                             AND c.categories_id = cd.categories_id
+                             AND cd.language_id=" . (int)$_SESSION['languages_id'] ."
+                             AND c.categories_status= 1
+                             order by sort_order, cd.categories_name";
+	$subcategory = $db->Execute($subcategory_query);
+//	echo $subcategory_query;
+//	print_r($subcategory);
+	$subcategory_array = array();
+	while (!$subcategory->EOF)  {
+		$subcategory_array[$subcategory->fields['parent_id']][] = $subcategory->fields;
+		$subcategory->MoveNext();
+	}
+	$new_category_tree = array();
+	foreach($categories as $value) {
+		$new_category_tree[] = $value;
+		$subcategory_id = substr($value['path'], -1, 1);
+		if(isset($subcategory_array[$subcategory_id])) {
+			$temp_array = array();
+			foreach($subcategory_array[$subcategory_id] as $item) {
+				$temp_array['top'] = false;
+				$temp_array['name'] = CATEGORIES_SUBCATEGORIES_INDENT . $item['categories_name'];
+				echo $temp_array['cPath'] = 'cPath=' . $item['parent_id'] . '_' . $item['categories_id'];
+				$new_category_tree[] = $temp_array;
+			}			
+		}
+	}
+	print_r($new_category_tree);
+	return $new_category_tree;
   }
 
   function zen_show_category($counter,$ii) {
-    global $cPath_array;
+    global $cPath_array, $body_id, $cPath;
 
     $this->categories_string = "";
 
@@ -193,6 +234,10 @@ class category_tree extends base {
       $ii++;
       $this->zen_show_category($this->tree[$counter]['next_id'], $ii);
     }
+	if(defined('INDEX_CATEGORY_TREE') && $body_id == 'index' && $cPath == ""){
+		return $this->zen_show_category_tree($this->box_categories_array);
+	}
+	print_r($this->box_categories_array);
     return $this->box_categories_array;
   }
 }

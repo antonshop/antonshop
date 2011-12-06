@@ -9,9 +9,13 @@
  * @version $Id: categories.php 2718 2005-12-28 06:42:39Z drbyte $
  */
 
-    $main_category_tree = new category_tree;
+    $main_category_tree = new category_tree();
     $row = 0;
     $box_categories_array = array();
+	/*echo '<pre>';
+	print_r($main_category_tree->zen_category_tree('all'));
+	echo '</pre>';
+	exit;*/
 
 // don't build a tree when no categories
     $check_categories = $db->Execute("select categories_id from " . TABLE_CATEGORIES . " where categories_status=1 limit 1");
