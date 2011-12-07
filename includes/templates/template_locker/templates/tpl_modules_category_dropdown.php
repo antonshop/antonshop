@@ -25,7 +25,12 @@ if(count($category_parent)> 6){
 }
 //$category_parent as $item
 for($i=0; $i<$nav_num; $i++){
-	$content .= '<li class="nav_li">';
+	if($body_id == 'index' && $cPath ==  $category_parent[$i]['categories_id']) {
+		$nav_class = 'selected nav_li';
+	} else {
+		$nav_class = 'nav_li';
+	}
+	$content .= '<li class="' . $nav_class . '">';
 	$content .= '<a href="' . zen_href_link(FILENAME_DEFAULT, "cPath=".$category_parent[$i]['categories_id']."") . '">' . $category_parent[$i]['name'] . '</a>';
 	//if(count($category_sub_byparent[$category_parent[$i]['categories_id']]) > 0){
 		if($i>1){

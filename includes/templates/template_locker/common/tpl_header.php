@@ -66,7 +66,7 @@
 				<!-- ========== MENU ========== -->
 				<div id="navEZPagesTop"> 
  				<ul>
-                    <li class="selected  first"><a href="<?php echo HTTP_SERVER . DIR_WS_CATALOG;?>">Home</a></li>
+                    <li class="<?php if($body_id == 'index' && $cPath == ""){echo 'selected';}?> first"><a href="<?php echo HTTP_SERVER . DIR_WS_CATALOG;?>">Home</a></li>
         			<?php require($template->get_template_dir('tpl_modules_category_dropdown.php',DIR_WS_TEMPLATE, $current_page_base,'templates'). '/tpl_modules_category_dropdown.php'); ?>
      			</ul> 
 			</div>

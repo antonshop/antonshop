@@ -21,15 +21,8 @@ $how_many = 0;
 $zc_col_count_description = 0;
 $lc_align = '';
 
-/*$lc_text = '<table id="cat1Table" class="tabTable" width="100%" cellspacing="0" cellpadding="0" border="0">
-<tbody><tr class="productListing-rowheading">
-   <th align="center" id="listCell0-0" scope="col" class="productListing-heading">Product Image</th>
-   <th id="listCell0-1" scope="col" class="productListing-heading"><a class="productListing-heading" title="Sort products descendingly by Item Name" href="http://www.accessorieslocker.com/bedding-c-1.html?sort=2a&amp;page=1">Item Name-</a></th>
-   <th width="125" align="right" id="listCell0-2" scope="col" class="productListing-heading"><a class="productListing-heading" title="Sort products ascendingly by Price" href="http://www.accessorieslocker.com/bedding-c-1.html?sort=3a&amp;page=1">Price</a></th>
-  </tr>';*/
-  
-?>
 
+?>
 
 <?php
 	if ($listing_split->number_of_rows > 0) {
@@ -39,22 +32,22 @@ $lc_align = '';
 	  while (!$listing->EOF) {
 		$rows++;
 		$lc_price = zen_get_products_display_price($listing->fields['products_id']) . '<br />';
+		//echo "<pre>";print_r($listing->fields);echo "</pre>";exit;
 		$rows == 1 ? $mav_special = 'mav_special' : $mav_special = '' ;
-        $lc_text .= '<tr><td>
-        <a class="mav_list_pic" href="' . zen_href_link(zen_get_info_page($listing->fields['products_id']), 'cPath=' . (($_GET['manufacturers_id'] > 0 and $_GET['filter_id'] > 0) ?  zen_get_generated_category_path_rev($_GET['filter_id']) : ($_GET['cPath'] > 0 ? zen_get_generated_category_path_rev($_GET['cPath']) : zen_get_generated_category_path_rev($listing->fields['master_categories_id']))) . '&products_id=' . $listing->fields['products_id']) . '">' .zen_image(DIR_WS_IMAGES . $listing->fields['products_image'], $listing->fields['products_name'], IMAGE_PRODUCT_LISTING_WIDTH, IMAGE_PRODUCT_LISTING_HEIGHT, '') . '</a></td>
-        <td><div class="mav_list_words">
+        $lc_text .= '<div class="mav_list ' . $mav_special . '">
+        <a class="mav_list_pic" href="' . zen_href_link(zen_get_info_page($listing->fields['products_id']), 'cPath=' . (($_GET['manufacturers_id'] > 0 and $_GET['filter_id'] > 0) ?  zen_get_generated_category_path_rev($_GET['filter_id']) : ($_GET['cPath'] > 0 ? zen_get_generated_category_path_rev($_GET['cPath']) : zen_get_generated_category_path_rev($listing->fields['master_categories_id']))) . '&products_id=' . $listing->fields['products_id']) . '">' .zen_image(DIR_WS_IMAGES . $listing->fields['products_image'], $listing->fields['products_name'], IMAGE_PRODUCT_LISTING_WIDTH, IMAGE_PRODUCT_LISTING_HEIGHT, '') . '</a>
+        <div class="mav_list_words">
             <h3 class="mav_list_tit"><a href="' . zen_href_link(zen_get_info_page($listing->fields['products_id']), 'cPath=' . (($_GET['manufacturers_id'] > 0 and $_GET['filter_id'] > 0) ?  zen_get_generated_category_path_rev($_GET['filter_id']) : ($_GET['cPath'] > 0 ? zen_get_generated_category_path_rev($_GET['cPath']) : zen_get_generated_category_path_rev($listing->fields['master_categories_id']))) . '&products_id=' . $listing->fields['products_id']) . '">' . $listing->fields['products_name'] . '</a></h3>
             <p class="mav_inf">'. zen_trunc_string(zen_clean_html(stripslashes(zen_get_products_description($listing->fields['products_id'], $_SESSION['languages_id']))), PRODUCT_LIST_DESCRIPTION) . '</p>
             <a class="big_cart" href="' . zen_href_link(zen_get_info_page($listing->fields['products_id']), 'cPath=' . (($_GET['manufacturers_id'] > 0 and $_GET['filter_id'] > 0) ?  zen_get_generated_category_path_rev($_GET['filter_id']) : ($_GET['cPath'] > 0 ? zen_get_generated_category_path_rev($_GET['cPath']) : zen_get_generated_category_path_rev($listing->fields['master_categories_id']))) . '&products_id=' . $listing->fields['products_id']) . '">Add this to Cart</a> 
-        </div></td>
-        <td><div class="mav_price">
+        </div>
+        <div class="mav_price">
             '. $lc_price .'
-        </div></td>
-    </tr>';
+        </div>
+    </div>';
 	
 		$listing->MoveNext();
 	  }
-	  //$lc_text .= '';
 	}else {
   $list_box_contents = array();
   $lc_text = '<div style="text-align:center;padding:10px 0px;">No Product List</div>';

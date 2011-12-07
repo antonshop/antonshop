@@ -145,8 +145,9 @@ class category_tree extends base {
     
   }
   
+  /*  */
   function zen_show_category_tree($categories) {
-	  global $db, $cPath, $cPath_array;
+	global $db, $cPath, $cPath_array;
   	
 	$subcategory_query = "SELECT cd.categories_id AS categories_id, cd.categories_name, c.parent_id, c.categories_image
                              from " . TABLE_CATEGORIES . " c, " . TABLE_CATEGORIES_DESCRIPTION . " cd 
@@ -156,8 +157,7 @@ class category_tree extends base {
                              AND c.categories_status= 1
                              order by sort_order, cd.categories_name";
 	$subcategory = $db->Execute($subcategory_query);
-//	echo $subcategory_query;
-//	print_r($subcategory);
+	
 	$subcategory_array = array();
 	while (!$subcategory->EOF)  {
 		$subcategory_array[$subcategory->fields['parent_id']][] = $subcategory->fields;
@@ -172,12 +172,11 @@ class category_tree extends base {
 			foreach($subcategory_array[$subcategory_id] as $item) {
 				$temp_array['top'] = false;
 				$temp_array['name'] = CATEGORIES_SUBCATEGORIES_INDENT . $item['categories_name'];
-				echo $temp_array['cPath'] = 'cPath=' . $item['parent_id'] . '_' . $item['categories_id'];
+				$temp_array['path'] = 'cPath=' . $item['parent_id'] . '_' . $item['categories_id'];
 				$new_category_tree[] = $temp_array;
 			}			
 		}
 	}
-	print_r($new_category_tree);
 	return $new_category_tree;
   }
 
@@ -237,7 +236,6 @@ class category_tree extends base {
 	if(defined('INDEX_CATEGORY_TREE') && $body_id == 'index' && $cPath == ""){
 		return $this->zen_show_category_tree($this->box_categories_array);
 	}
-	print_r($this->box_categories_array);
     return $this->box_categories_array;
   }
 }

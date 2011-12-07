@@ -627,3 +627,7 @@ LABEL#textAreaReviews {
 #productDetailsList{ margin-left:0px;}
 .zhuce table tr{ height:32px;}
 .zhuce_tit{ height:26px;}
+.right_list{ padding:5px; margin:5px 0px 10px; border:1px solid #E1E1E1;}
+.right_list {border:2px solid #e1e1e1;margin-bottom:10px;}
+.right_list .child_list {padding:0px;overflow:hidden;zoom:1;}
+.right_list .child_list li {line-height:26px;width:220px;padding-left:22px;float:left;}
