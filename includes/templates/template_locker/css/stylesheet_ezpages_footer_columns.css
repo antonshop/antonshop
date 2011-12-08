@@ -22,10 +22,11 @@
 
 .ezpagesFooterCol ul {float: left; margin:0;}
 
-#navSupp .ezpagesFooterCol li {display: block; text-align: left;}
+#navSupp .ezpagesFooterCol li {display: block; float:left; text-align: left;}
 
 #navSupp .ezpagesFooterCol a { color: #848484; font-weight: normal; font-size:14px; line-height:14px; text-decoration:none; background:url("../images/footer-separator.jpg") no-repeat left 5px; padding: 0 18px 0 23px}
 #navSupp .ezpagesFooterCol.col1 a{ background:none; padding:0 18px 0 0;}
+#navSupp .ezpagesFooterCol .cone a{ background:none;}
 #navSupp .ezpagesFooterCol a:hover{ color:#000;}
 
 #navSupp a.activeEZPage, #navSupp a.activeILPage {color: #000;}

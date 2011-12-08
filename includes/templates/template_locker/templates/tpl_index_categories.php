@@ -53,7 +53,7 @@
 <table id="cat1Table" class="tabTable" width="100%" cellspacing="0" cellpadding="0" border="0">
 <tbody><tr class="productListing-rowheading">
    <th align="center" id="listCell0-0" scope="col" class="productListing-heading">Product Image</th>
-   <th id="listCell0-1" scope="col" class="productListing-heading"><a class="productListing-heading" title="Sort products descendingly by Item Name" href="http://www.accessorieslocker.com/bedding-c-1.html?sort=2a&amp;page=1">Item Name-</a></th>
+   <th id="listCell0-1" scope="col" class="productListing-heading"><a class="productListing-heading" title="Sort products descendingly by Item Name" href="http://www.accessorieslocker.com/bedding-c-1.html?sort=2a&amp;page=1">Item Name</a></th>
    <th width="125" align="right" id="listCell0-2" scope="col" class="productListing-heading"><a class="productListing-heading" title="Sort products ascendingly by Price" href="http://www.accessorieslocker.com/bedding-c-1.html?sort=3a&amp;page=1">Price</a></th>
   </tr>
     <?php

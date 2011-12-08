@@ -24,7 +24,7 @@ require(DIR_WS_MODULES . zen_get_module_directory('footer.php'));
         <div class="wrapper">
             <div class="copyright">
                 <!-- ========== COPYRIGHT ========== -->
-                Copyright © 2011 <a href="<?php echo HTTP_SERVER . '';?>">Accessorieslocker</a>. Powered by <a href="http://www.zen-cart.com/">Accessorieslocker</a>
+                Copyright © 2011 <a href="<?php echo HTTP_SERVER . DIR_WS_CATALOG;?>">cashmere pants</a>. Powered by Accessorieslocker.com
             </div>
         	<div><!-- {%FOOTER_LINK} --></div>
         </div>

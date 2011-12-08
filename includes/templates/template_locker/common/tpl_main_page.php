@@ -102,41 +102,23 @@ require($body_code); ?>
 				<div id="navSuppWrapper">
 					<div id="navSupp">
 															
-<div class="ezpagesFooterCol col1" style="width: 14%">
-<ul>
-  <li><a href="./Zen Cart!, The Art of E-commerce_files/Zen Cart!, The Art of E-commerce.htm" class="activeILPage">Home</a></li>
-</ul>
+<div class="ezpagesFooterCol">
+    <ul>
+      <li class="cone"><a href="<?php zen_href_link('index');?>"<?php if($body_id == 'index'){?> class="activeILPage"<?php }?>>Home</a></li>
+
+      <li><a href="<?php echo zen_href_link(FILENAME_CONDITIONS);?>"<?php if($body_id == 'conditions'){?> class="activeILPage"<?php }?>>Conditions of Use</a></li>
+
+      <li><a href="<?php echo zen_href_link(FILENAME_SHIPPING);?>"<?php if($body_id == 'shippinginfo'){?> class="activeILPage"<?php }?>>Shipping & Returns</a></li>
+
+      <li><a href="<?php echo zen_href_link(FILENAME_CONTACT_US);?>"<?php if($body_id == 'contactus'){?> class="activeILPage"<?php }?>>Contact Us</a></li>
+
+      <li><a href="<?php echo zen_href_link('page', '&id=8&chapter=0' . '');?>"<?php if($body_id == 'page'){?> class="activeILPage"<?php }?>>About Us</a></li>
+    </ul>
 </div>
-<div class="ezpagesFooterCol col2" style="width: 14%">
-<ul>
-  <li><a href="http://localhost/antonshop/index.php?main_page=products_new">New Products</a></li>
-</ul>
-</div>
-<div class="ezpagesFooterCol col3" style="width: 14%">
-<ul>
-  <li><a href="http://localhost/antonshop/index.php?main_page=specials">Specials</a></li>
-</ul>
-</div>
-<div class="ezpagesFooterCol col4" style="width: 14%">
-<ul>
-  <li><a href="http://localhost/antonshop/index.php?main_page=products_all">Products All</a></li>
-</ul>
-</div>
-<div class="ezpagesFooterCol col5" style="width: 14%">
-<ul>
-  <li><a href="http://localhost/antonshop/index.php?main_page=reviews">Reviews</a></li>
-</ul>
-</div>
-<div class="ezpagesFooterCol col6" style="width: 14%">
-<ul>
-  <li><a href="http://localhost/antonshop/index.php?main_page=contact_us">Contact Us</a></li>
-</ul>
-</div>
-<div class="ezpagesFooterCol col7" style="width: 14%">
-<ul>
-  <li><a href="http://localhost/antonshop/index.php?main_page=gv_faq">FAQs</a></li>
-</ul>
-</div><br class="clearBoth">										
+<br class="clearBoth">		
+<div>
+	<img src="<?php echo DIR_WS_TEMPLATE;?>images/footer_icon.jpg" />
+</div>								
 				</div>
 			</div>
 			<!--eof-navigation display -->
