@@ -8,11 +8,12 @@
 #navSuppWrapper {
 	background:#fff;
 	border-top:1px solid #dcdbda;
-	padding-bottom:33px;
+	padding-bottom:20px;
 	width:680px;
 	float:right;
 	margin-right:47px;
 }
+.bottom_img{ margin-top:15px;}
 #navSupp{
 
 }

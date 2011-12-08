@@ -116,7 +116,7 @@ require($body_code); ?>
     </ul>
 </div>
 <br class="clearBoth">		
-<div>
+<div class="bottom_img">
 	<img src="<?php echo DIR_WS_TEMPLATE;?>images/footer_icon.jpg" />
 </div>								
 				</div>
