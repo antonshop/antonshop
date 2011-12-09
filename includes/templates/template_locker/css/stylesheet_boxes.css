@@ -248,11 +248,12 @@
 }
 #specials .img{
 	text-align:center;
+	margin-top:20px;
 }
 #specials .img img{
 	border:1px solid #eaead9;
 	width:172px;
-	height:209px;
+	height:129px;
 	padding:4px;
 }
 #specials .img:hover img{
