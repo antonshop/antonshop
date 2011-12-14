@@ -8,7 +8,7 @@
 #navSuppWrapper {
 	background:#fff;
 	padding-bottom:20px;
-	width:680px;
+	width:780px;
 	margin:0px auto;
 }
 .bottom_img{ margin-top:15px;}
@@ -36,3 +36,8 @@
 
 .ezpagesFooterColComment {font-size: 0.9em; color: #aabbcc; display: block;}
 .ezpagesFooterCol{ width:auto!important;}
+.footLinks{ padding-bottom:0px; width:780px; clear:both;}
+.footLinks a{ color:#848484; font-size:14px; text-decoration:none;}
+.footLinks a:hover{ color:#333; text-decoration:underline;}
+.footLinks ul{ width:180px; float:left;}
+.footLinks ul li{ text-align:left;}

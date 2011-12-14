@@ -16,10 +16,9 @@
 <div id="slider">
 					<div class="coin-slider" id="coin-slider-coin-slider">
                     <div id="coin-slider" style="width: 710px; height: 382px; position: relative; background-position: 0% 0%; ">
-						<a href="#"><img src="images/banner1.jpg" alt="" width="710" height="382" style=""></a>
-                        <a href="#"><img src="images/banner2.jpg" alt="" width="710" height="382" style=""></a>
-                        <a href="#"><img src="images/banner3.jpg" alt="" width="710" height="382" style=""></a>
-                        <a href="#"><img src="images/banner4.jpg" alt="" width="710" height="382" style=""></a>					
+						<a href="<?php echo HTTP_SERVER . DIR_WS_CATALOG;?>scarf-c-5.html"><img src="images/banner6.jpg" alt="scarf" width="710" height="320" style=""></a>
+                        <a href="<?php echo HTTP_SERVER . DIR_WS_CATALOG;?>sweater-c-2.html"><img src="images/banner7.jpg" alt="sweater" width="710" height="320" style=""></a>
+                        <a href="<?php echo HTTP_SERVER . DIR_WS_CATALOG;?>bedding-c-1.html"><img src="images/banner8.jpg" alt="bedding" width="710" height="320" style=""></a>
                     </div>
                     <SCRIPT>$(document).ready(function() { $('#coin-slider').coinslider();});</SCRIPT>
 				</div>

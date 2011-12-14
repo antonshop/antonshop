@@ -115,6 +115,28 @@ require($body_code); ?>
       <li><a href="<?php echo zen_href_link('page', '&id=8&chapter=0' . '');?>"<?php if($body_id == 'page'){?> class="activeILPage"<?php }?>>About Us</a></li>
     </ul>
 </div>
+<div class="footLinks">
+	<ul>
+    	<li><a href="http://www.accessorieslocker.com">cashmere pants</a></li>
+        <li><a href="http://www.accessorieslocker.com">wholesale stocking</a></li>
+        <li><a href="http://www.accessorieslocker.com">twin bed sheet</a></li>
+    </ul>
+    <ul>
+    	<li><a href="http://www.accessorieslocker.com">cheap gloves</a></li>
+        <li><a href="http://www.accessorieslock.com">twin bed sheet</a></li>
+        <li><a href="http://www.accessorieslock.com">cheap mens sweater</a></li>
+    </ul>
+    <ul>
+    	<li><a href="http://www.accessorieslock.com">blanket suppliers</a></li>
+        <li><a href="http://www.accessorieslock.com">fully fashion stockings</a></li>
+        <li><a href="http://www.accessoriessell.com">Accessories Sell</a></li>
+    </ul>
+    <ul>
+    	<li><a href="http://www.accessoriessell.com">Wholesale Accessories Sell</a></li>
+        <li><a href="http://www.accessoriessell.com">Wholesale store</a></li>
+        <li><a href="http://www.accessoriessell.com">Wholesale Accessories</a></li>
+    </ul>
+</div>
 <br class="clearBoth">		
 <div class="bottom_img">
 	<img src="<?php echo DIR_WS_TEMPLATE;?>images/footer_icon.jpg" />
