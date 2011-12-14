@@ -25,7 +25,7 @@ div:hover{
 }
 </style>
 <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
-<script type="text/javascript" src="js/jquery.zclip.js"></script>
+
 <script>
 function copyToClipboard(str){
 	var obj=document.getElementById("tempurl");
@@ -92,15 +92,15 @@ function copyallwindows() {
 
 $("#createUrl").click(function(){
 	
-	list = $("#tempurl").val();
+	list = $("#tempurl").val().split("\n");
+	for(var i=0;i<list.length;i++){
 	chrome.tabs.create( { 
-		url:list,
-		index:(S.tab.index+1),
-		selected:false } ,
-		function(){
-			alert(12);
-		}
+		url:list[i],
+		index:(chrome.tabs.index),
+		selected:false } 
 	);
+	}
+	
 });
 $("#copyUrl").click(function(){
 	var defaut = 'text';
