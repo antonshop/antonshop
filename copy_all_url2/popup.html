@@ -85,7 +85,7 @@ function copyallwindows() {
 <body>
 <form>
 	<textarea style="display:'';" id="tempurl"></textarea>
-    <input type="button" id="copyurl" value="copy">
+    <input type="button" id="copyUrl" value="copy">
     <input type="button" id="createUrl" value="create">
 </form>
 <script type="text/javascript">
@@ -93,12 +93,34 @@ function copyallwindows() {
 $("#createUrl").click(function(){
 	
 	list = $("#tempurl").val();
-	alert(list);
 	chrome.tabs.create( { 
 		url:list,
 		index:(S.tab.index+1),
-		selected:false } 
+		selected:false } ,
+		function(){
+			alert(12);
+		}
 	);
+});
+$("#copyUrl").click(function(){
+	var defaut = 'text';
+	var format = localStorage["format"];
+	if(!format){
+		tmp = defaut;
+	}
+	
+	win = chrome.windows.getCurrent(function(win) {
+		chrome.tabs.getAllInWindow(win.id, function(tabs) {
+			
+			if(format == 'html')
+				var s = copy_html(tabs);
+			else
+				var s = copy_text(tabs);
+			
+			copyToClipboard(s);
+			//window.close();
+		})
+	});
 });
 </script>
 </body>
