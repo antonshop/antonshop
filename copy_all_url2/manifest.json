@@ -1,0 +1,17 @@
+{
+   "browser_action": {
+      "default_icon": "images/copyurl_19.png",
+      "default_title": "Create Url...",
+      "popup": "popup.html"
+   },
+   "description": "Copy all openned tabs URL into clipboard",
+   "icons": {
+      "128": "images/copyurl_128.png"
+   },
+   "name": "Create Url",
+   "options_page": "options.html",
+   "permissions": [ "tabs", "http://*/*", "https://*/*" ],
+   "update_url": "http://clients2.google.com/service/update2/crx",
+   "version": "1.0"
+}
+

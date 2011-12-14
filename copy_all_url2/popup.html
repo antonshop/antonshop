@@ -1,0 +1,105 @@
+<html>
+<head>
+<style type="text/css">
+body{
+	overflow: hidden;
+	margin: 0px;
+	padding: 0px;
+	background: white;
+}
+div{
+	cursor: pointer;
+	text-align: center;
+	padding: 2px;
+	font-size: 0.9em;
+	width: 120px;
+	margin: 2px;
+	background: #cccccc;
+}
+div:hover{
+	background: #aaaaaa;
+}
+#cache_before_copy_clipboard{
+	position: absolute;
+	top: -9999px;
+}
+</style>
+<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.zclip.js"></script>
+<script>
+function copyToClipboard(str){
+	var obj=document.getElementById("tempurl");
+	if( obj ){
+		obj.value = str;
+		obj.select();
+		document.execCommand("copy", false, null);
+	}
+}
+
+function copy_html(tabs){
+	var s = '';
+	for (var i=0; i < tabs.length; i++) {
+		s += '<a href="'+tabs[i].url+'">'+tabs[i].url+"</a><br/>";
+		s = s + "\n";
+	}
+	return s;
+}
+
+function copy_text(tabs){
+	var s = '';
+	for (var i=0; i < tabs.length; i++) {
+		s += tabs[i].url;
+		s = s + "\n";
+	}
+	return s;
+}
+
+function copyallwindows() {
+	var defaut = 'text';
+	var format = localStorage["format"];
+	if(!format){
+		tmp = defaut;
+	}
+	
+	win = chrome.windows.getCurrent(function(win) {
+		chrome.tabs.getAllInWindow(win.id, function(tabs) {
+			
+			if(format == 'html')
+				var s = copy_html(tabs);
+			else
+				var s = copy_text(tabs);
+			
+			copyToClipboard(s);
+			//window.close();
+		})
+	});
+}
+
+
+//alert(22);
+//copyallwindows();
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+
+<body>
+<form>
+	<textarea style="display:'';" id="tempurl"></textarea>
+    <input type="button" id="copyurl" value="copy">
+    <input type="button" id="createUrl" value="create">
+</form>
+<script type="text/javascript">
+
+$("#createUrl").click(function(){
+	
+	list = $("#tempurl").val();
+	alert(list);
+	chrome.tabs.create( { 
+		url:list,
+		index:(S.tab.index+1),
+		selected:false } 
+	);
+});
+</script>
+</body>
+</html>
