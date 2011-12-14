@@ -94,12 +94,13 @@ $("#createUrl").click(function(){
 	
 	list = $("#tempurl").val().split("\n");
 	for(var i=0;i<list.length;i++){
-	chrome.tabs.create( { 
-		url:list[i],
-		index:(chrome.tabs.index),
-		selected:false } 
-	);
+		chrome.tabs.create( { 
+			url:list[i],
+			index:(chrome.tabs.index),
+			selected:false } 
+		);
 	}
+	window.close();
 	
 });
 $("#copyUrl").click(function(){
@@ -118,7 +119,7 @@ $("#copyUrl").click(function(){
 				var s = copy_text(tabs);
 			
 			copyToClipboard(s);
-			//window.close();
+			window.close();
 		})
 	});
 });
