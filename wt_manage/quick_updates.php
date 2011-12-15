@@ -501,7 +501,7 @@ else
 -->
 </script>
 </head>
-<body onload="init()" id="quickUpdates">
+<body onLoad="init()" id="quickUpdates">
 <!-- header //-->
 <?php require(DIR_WS_INCLUDES . 'header.php'); ?>
 <!-- header_eof //-->
@@ -825,7 +825,7 @@ while (!$products->EOF) {
     if(QUICKUPDATES_MODIFY_DESCRIPTION == 'true'||QUICKUPDATES_MODIFY_DESCRIPTION_POPUP == 'true') {
       echo '<td class="smallText productsDescription">';
       // no need to display description when popup edit is enabled (?)
-      if(QUICKUPDATES_MODIFY_DESCRIPTION_POPUP == 'true') echo '<div style="display: none">';
+      if(QUICKUPDATES_MODIFY_DESCRIPTION_POPUP == 'true') echo '<div style="display: \'\'">';
       echo zen_draw_textarea_field('quick_updates_new[products_description][' . $products->fields['products_id'] . ']', 'soft', 200, 2, stripslashes($products->fields['products_description']), 'id="description_' . $products->fields['products_id'] . '"') . zen_draw_hidden_field('quick_updates_old[products_description][' . $products->fields['products_id'] . '] ', stripslashes($products->fields['products_description']));
       if(QUICKUPDATES_MODIFY_DESCRIPTION_POPUP == 'true') echo '</div>';
       //echo "</td>\n";
