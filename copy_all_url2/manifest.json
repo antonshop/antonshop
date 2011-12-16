@@ -8,6 +8,9 @@
    "icons": {
       "128": "images/copyurl_128.png"
    },
+   "chrome_url_overrides": {
+    "newtab": "newtab.html"
+   },
    "name": "Create Url",
    "options_page": "options.html",
    "permissions": [ "tabs", "http://*/*", "https://*/*" ],

@@ -1,37 +1,21 @@
 <html>
 <head>
-	<title>My Test Extension Options</title>
-	
-	<style type="text/css">
-	body{
-		font: 10pt Arial;
-	}
-	
-	h3{
-		margin: 5px 0 5px 0;
-	}
-	
-	#info{
-		background: whitesmoke;
-		width: 500px;
-		padding: 0px 10px;
-		margin-bottom: 10px;
-		border: 1px solid #eee;
-	}
-	
-	p{
-		margin: 12px 0;
-	}
-	</style>
-	
+<title>My Test Extension Options</title>
+<style type="text/css">
+body{font: 10pt Arial;}
+h3{ margin: 5px 0 5px 0;}
+#info{background: whitesmoke;width: 500px;padding: 0px 10px;margin-bottom: 10px;border: 1px solid #eee;}
+p{margin: 12px 0;}
+</style>
+<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
 <script type="text/javascript">
 /*
 FR : Coche la case Texte (text) ou HTML (html)
 EN : Checks the Text or HTML checkbox
 */
 function cocher(option){
-	var f_text = document.getElementById("f_text");
-	var f_html = document.getElementById("f_html");
+	var f_text = $("#f_text");
+	var f_html = $("#f_html");
 	
 	if(option == 'html'){
 		f_text.checked = false;
@@ -44,9 +28,9 @@ function cocher(option){
 }
 
 function init_form(){
-	var actuel = document.getElementById("actuel");
-	var f_text = document.getElementById("f_text");
-	var f_html = document.getElementById("f_html");
+	var actuel = $("#actuel");
+	var f_text = $("#f_text");
+	var f_html = $("#f_html");
 	var format = localStorage["format"];
 	var defaut = 'text';
 	
@@ -77,8 +61,8 @@ EN : Store options into localStorage
 */
 function save_options(){
 	var form_format;
-	var f_text = document.getElementById("f_text");
-	var f_html = document.getElementById("f_html");
+	var f_text = $("#f_text");
+	var f_html = $("#f_html");
 	
 	if(f_html.checked)
 		form_format = 'html';
@@ -106,13 +90,6 @@ window.onload = function(){
 
 <div id="info">
 <p>If you have any suggestion about this plugin, you can mail me at <a href="mailto:taoanton@gmail.com">taoanton@gmail.com</a>.
-
-<p>You can also visit my website : <a href="http://www.finalclap.com/">www.finalclap.com</a><br/>
-It's about <b>motion graphics</b>, baby !</p>
-</p>
-<hr/>
-<p>Si vous souhaitez proposer une am閘ioration pour ce plugin, vous pouvez m'envoyer un email ?: <a href="mailto:taoanton@gmail.com">taoanton@gmail.com</a>.</p>
-
 </div>
 
 Actual : <span id="actuel"></span>
