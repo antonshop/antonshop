@@ -5,7 +5,7 @@
 <title>Anton Extension Options</title>
 <link rel="stylesheet" type="text/css" href="css/style.css" />
 <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
-<script type="text/javascript" src="js/options.js"></script>
+
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head>
 <body>
@@ -21,12 +21,13 @@ Actual : <span id="actuel"></span>
 <input type="radio" name="format" id="f_html" value="html" checked="checked" /> HTML
 </div>
 <div class="addoption">
-<button>Add Option</button>
-<input type="text" name="options">
+<input type="button" id="addtextinput" value="Add Option Input">
+<input type="button" id="addarea" value="Add Option Area">
+    <div id="options"></div>
 </div>
-
+<input type="button" value="inputsum" id="inputsum">
 <button onClick="save_options()">Save</button>
 <button onClick="reset_options()">Reset</button>
-
+<script type="text/javascript" src="js/options.js"></script>
 </body>
 </html>

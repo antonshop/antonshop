@@ -59,13 +59,42 @@ function save_options(){
 		form_format = 'text';
 	
 	localStorage["format"] = form_format;
+	save_addoptions();
 	
 	init_form();
 }
 
-$(".addoption").click(function(){
-	
+$("#addtextinput").click(function(){
+	var inputsum = $("#options input").length;
+	var num = inputsum / 2;
+	var addinfo = '<input type="text" id="optionname' + num + '" size="10"><input type="text" id="optionvalue' + num + '"><br>';
+	$("#options").append(addinfo);
 });
+
+$("#addarea").click(function(){
+	var inputsum = $("#options input").length;
+	var num = inputsum / 2;
+	var addinfo = '<input type="text" id="optionname' + num + '" size="10"><textarea id="optionvalue' + num + '"></textarea><input type="hidden" "><br>';
+	$("#options").append(addinfo);
+});
+
+$("#inputsum").click(function(){
+	var inputsum = $("#options input").length;
+	var num = inputsum / 2;	
+	alert(num);
+});
+
+function save_addoptions(){
+	var inputsum = $("#options input").length;
+	var num = inputsum / 2;
+	for(var i=0; i<num; i++){
+		localStorage[$("#optionname" + i).val()] = $("#optionvalue" + i).val();
+	}
+	
+}
+for(var i=0;i<localStorage.length;i++){
+	alert(localStorage.key(i) + '**' + localStorage.getItem(localStorage.key(i)));
+}
 
 window.onload = function(){
 	init_form();

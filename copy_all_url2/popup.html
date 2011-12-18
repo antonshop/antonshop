@@ -68,6 +68,7 @@ function copyallwindows() {
 	<textarea style="display:'';" id="tempurl"></textarea>
     <input type="button" id="copyUrl" value="copy">
     <input type="button" id="createUrl" value="create">
+    <input type="button" onclick="change_selected()" value="change color" />
 </form>
 <script type="text/javascript">
 
@@ -104,6 +105,28 @@ $("#copyUrl").click(function(){
 		})
 	});
 });
+
+function change_color() {
+  chrome.tabs.executeScript(null,
+      {code:"document.body.style.backgroundColor='#ccc'"});
+  window.close();
+}
+
+function change_selected(){
+	chrome.tabs.get(null,function(tabId){
+		alert(tabId);
+	});
+	chrome.tabs.getSelected(null, function(tab) {
+		lastTabId = tab.id;
+		alert(tab.title);
+		//chrome.pageAction.show(lastTabId);
+	});
+	/*chrome.tabs.update(
+		{tabId:1},
+		{selected:true},
+		function(){}
+	);*/
+}
 </script>
 </body>
 </html>
