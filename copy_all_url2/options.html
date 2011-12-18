@@ -1,106 +1,29 @@
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>My Test Extension Options</title>
-<style type="text/css">
-body{font: 10pt Arial;}
-h3{ margin: 5px 0 5px 0;}
-#info{background: whitesmoke;width: 500px;padding: 0px 10px;margin-bottom: 10px;border: 1px solid #eee;}
-p{margin: 12px 0;}
-</style>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Anton Extension Options</title>
+<link rel="stylesheet" type="text/css" href="css/style.css" />
 <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
-<script type="text/javascript">
-/*
-FR : Coche la case Texte (text) ou HTML (html)
-EN : Checks the Text or HTML checkbox
-*/
-function cocher(option){
-	var f_text = $("#f_text");
-	var f_html = $("#f_html");
-	
-	if(option == 'html'){
-		f_text.checked = false;
-		f_html.checked = true;
-	}
-	else{
-		f_html.checked = false;
-		f_text.checked = true;
-	}
-}
-
-function init_form(){
-	var actuel = $("#actuel");
-	var f_text = $("#f_text");
-	var f_html = $("#f_html");
-	var format = localStorage["format"];
-	var defaut = 'text';
-	
-	actuel.innerHTML = '';
-	actuel.innerHTML = format;
-	
-	if(!format){
-		tmp = defaut;
-	}
-	else{
-		tmp = format;
-	}
-	cocher(tmp);
-}
-
-/*
-FR : Efface vos pr閒閞ences (format)
-EN : Delete options
-*/
-function reset_options(){
-	delete(localStorage["format"]);
-	init_form();
-}
-
-/*
-FR : Sauvegarde les pr閒閞ences
-EN : Store options into localStorage
-*/
-function save_options(){
-	var form_format;
-	var f_text = $("#f_text");
-	var f_html = $("#f_html");
-	
-	if(f_html.checked)
-		form_format = 'html';
-	else
-		form_format = 'text';
-	
-	localStorage["format"] = form_format;
-	
-	init_form();
-}
-
-window.onload = function(){
-	init_form();
-}
-</script>
-	
+<script type="text/javascript" src="js/options.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head>
-
-
-
 <body>
-
-<h1>Copy All URLs for Google Chrome - preferences panel</h1>
-
+<h1>Copy All URLs and Create Url for Google Chrome - preferences panel</h1>
 <div id="info">
-<p>If you have any suggestion about this plugin, you can mail me at <a href="mailto:taoanton@gmail.com">taoanton@gmail.com</a>.
+	If you have any suggestion about this plugin, you can mail me at <a href="mailto:taoanton@gmail.com">taoanton@gmail.com</a>.
 </div>
 
 Actual : <span id="actuel"></span>
-
-<br/>
-
+<div class="format">
 <h3>Format :</h3>
-<input type="radio" name="format" id="f_text" value="text" /> Text<br/>
-<input type="radio" name="format" id="f_html" value="html" checked="checked" /> HTML<br/>
-
-<br/>
+<input type="radio" name="format" id="f_text" value="text" /> Text
+<input type="radio" name="format" id="f_html" value="html" checked="checked" /> HTML
+</div>
+<div class="addoption">
+<button>Add Option</button>
+<input type="text" name="options">
+</div>
 
 <button onClick="save_options()">Save</button>
 <button onClick="reset_options()">Reset</button>

@@ -1,0 +1,7 @@
+body{background: white;	color:#333;	font-size:12px;	line-height:16px;}
+#cache_before_copy_clipboard{position: absolute;top: -9999px;}
+h3{ margin: 5px 0 5px 0;}
+#info{ padding:5px 10px; width: 600px; background:#f3f3f3;margin-bottom: 10px;border: 1px solid #eee;}
+.format{ padding:10px;}
+
+.addoption{}
