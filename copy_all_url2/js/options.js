@@ -88,13 +88,21 @@ function save_addoptions(){
 	var inputsum = $("#options input").length;
 	var num = inputsum / 2;
 	for(var i=0; i<num; i++){
-		localStorage[$("#optionname" + i).val()] = $("#optionvalue" + i).val();
+		localStorage["an_" + $("#optionname" + i).val()] = $("#optionvalue" + i).val();
 	}
 	
 }
 for(var i=0;i<localStorage.length;i++){
-	alert(localStorage.key(i) + '**' + localStorage.getItem(localStorage.key(i)));
+	//alert(localStorage.key(i).substr(0,3));
+	//var option_info = '';
+	if(localStorage.key(i).substr(0,3) == 'an_'){
+		$("#options").append('<input type="text" id="optionname' + i + '" size="10" value='+localStorage.key(i).substr(3)+'><input type="text" id="optionvalue' + i + '" value='+localStorage.getItem(localStorage.key(i))+'><br>');
+	}
 }
+
+$("#clear").click(function(){
+	localStorage.clear();
+})
 
 window.onload = function(){
 	init_form();

@@ -68,6 +68,8 @@ function copyallwindows() {
 	<textarea style="display:'';" id="tempurl"></textarea>
     <input type="button" id="copyUrl" value="copy">
     <input type="button" id="createUrl" value="create">
+    <input type="button" id="write" value="Write">
+    <input type="button" id="submit" value="Submit">
     <input type="button" onclick="change_selected()" value="change color" />
 </form>
 <script type="text/javascript">
@@ -112,8 +114,44 @@ function change_color() {
   window.close();
 }
 
+$("#write").click(function(){
+	writeForm();
+  	//window.close();
+});
+
+$("#submit").click(function(){
+	
+	for(var i=0;i<localStorage.length;i++){
+		if(localStorage.key(i).substr(0,3) == 'an_'){
+			var child_name = localStorage.key(i).substr(3);
+			break;
+			//chrome.tabs.executeScript(null,{code:"document.getElementsByName('"+localStorage.key(i).substr(3)+"')[0].value='"+localStorage.getItem(localStorage.key(i))+"'"});
+		}
+	}
+	if(child_name != "undefined"){
+		//alert(child_name);
+		//alert(document.getElementsByName(child_name)[0].value);
+		chrome.tabs.executeScript(null,{code:"document.getElementsByName('"+localStorage.key(i).substr(3)+"')[0].parentNode.submit()"});
+	}
+});
+
+function submitForm(){
+	$();
+}
+
+function writeForm(){
+	for(var i=0;i<localStorage.length;i++){
+		if(localStorage.key(i).substr(0,3) == 'an_'){
+			chrome.tabs.executeScript(null,{code:"document.getElementsByName('"+localStorage.key(i).substr(3)+"')[0].value='"+localStorage.getItem(localStorage.key(i))+"'"});
+		}
+	}
+}
+
 function change_selected(){
-	chrome.tabs.get(null,function(tabId){
+	for(var i=0;i<localStorage.length;i++){
+		alert(localStorage.key(i) + '**' + localStorage.getItem(localStorage.key(i)));
+	}
+	/*chrome.tabs.get(null,function(tabId){
 		alert(tabId);
 	});
 	chrome.tabs.getSelected(null, function(tab) {
@@ -121,7 +159,7 @@ function change_selected(){
 		alert(tab.title);
 		//chrome.pageAction.show(lastTabId);
 	});
-	/*chrome.tabs.update(
+	chrome.tabs.update(
 		{tabId:1},
 		{selected:true},
 		function(){}

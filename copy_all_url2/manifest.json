@@ -14,6 +14,10 @@
    "name": "Create Url",
    "options_page": "options.html",
    "permissions": [ "tabs", "http://*/*", "https://*/*" ],
+    "content_scripts": [{
+      "matches": ["http://*/*", "https://*/*"],                
+      "js": ["js/jquery-1.7.1.min.js"] 
+    }],
    "update_url": "http://clients2.google.com/service/update2/crx",
    "version": "1.0"
 }
