@@ -66,13 +66,15 @@ function copyallwindows() {
 <body>
 <form>
 	<textarea style="display:'';" id="tempurl"></textarea>
-    <input type="button" id="copyUrl" value="copy">
-    <input type="button" id="createUrl" value="create">
-    <input type="button" id="write" value="Write">
-    <input type="button" id="submit" value="Submit">
-    <input type="button" onclick="change_selected()" value="change color" />
+    <input type="button" id="copyUrl" value="Copy">
+    <input type="button" id="createUrl" value="Create">
+    <!--<input type="button" id="write" value="Write">
+    <input type="button" id="submit" value="Submit">-->
+    <input type="button" id="writeAllTabs" value="WriteAllTabs" />
+    <select name="submitType"><option value="id"></option><option value="name"></option></select>
 </form>
 <script type="text/javascript">
+var prefix = 'an_';
 
 $("#createUrl").click(function(){
 	
@@ -120,50 +122,56 @@ $("#write").click(function(){
 });
 
 $("#submit").click(function(){
-	
 	for(var i=0;i<localStorage.length;i++){
-		if(localStorage.key(i).substr(0,3) == 'an_'){
+		if(localStorage.key(i).substr(0,3) == prefix){
 			var child_name = localStorage.key(i).substr(3);
 			break;
-			//chrome.tabs.executeScript(null,{code:"document.getElementsByName('"+localStorage.key(i).substr(3)+"')[0].value='"+localStorage.getItem(localStorage.key(i))+"'"});
 		}
 	}
 	if(child_name != "undefined"){
-		//alert(child_name);
-		//alert(document.getElementsByName(child_name)[0].value);
 		chrome.tabs.executeScript(null,{code:"document.getElementsByName('"+localStorage.key(i).substr(3)+"')[0].parentNode.submit()"});
 	}
 });
 
-function submitForm(){
-	$();
+function submitForm(child_name,key){
+	
 }
 
+$("#writeAllTabs").click(function(){
+	writeAllForm();
+});
+
 function writeForm(){
-	for(var i=0;i<localStorage.length;i++){
+	chrome.tabs.getAllInWindow(null, function(all) {
+		for (var i = 0; i < all.length; i++) {
+			for(var j=0;j<localStorage.length;j++){
+				chrome.tabs.executeScript(all[i].id,{code:"document.getElementsByName('"+localStorage.key(j).substr(3)+"')[0].value='"+localStorage.getItem(localStorage.key(j))+"'"});
+			}
+		}
+	});
+	/*for(var i=0;i<localStorage.length;i++){
 		if(localStorage.key(i).substr(0,3) == 'an_'){
 			chrome.tabs.executeScript(null,{code:"document.getElementsByName('"+localStorage.key(i).substr(3)+"')[0].value='"+localStorage.getItem(localStorage.key(i))+"'"});
 		}
-	}
+	}*/
 }
 
-function change_selected(){
-	for(var i=0;i<localStorage.length;i++){
-		alert(localStorage.key(i) + '**' + localStorage.getItem(localStorage.key(i)));
-	}
-	/*chrome.tabs.get(null,function(tabId){
-		alert(tabId);
+function writeAllForm(){
+	chrome.tabs.getAllInWindow(null, function(all) {
+		var keyname = null;
+		for (var i = 0; i < all.length; i++) {
+			for(var j=0;j<localStorage.length;j++){
+				if(localStorage.key(j).substr(0,3) == prefix){
+					keyname = localStorage.key(j).substr(3);
+					chrome.tabs.executeScript(all[i].id,{code:"document.getElementsByName('"+ keyname +"')[0].value='"+localStorage.getItem(localStorage.key(j))+"'"});
+				}
+			}
+			if(keyname != "undefined"){
+				chrome.tabs.executeScript(all[i].id,{code:"document.getElementsByName('"+keyname+"')[0].focus()"});
+				chrome.tabs.executeScript(all[i].id,{code:"document.getElementsByName('"+keyname+"')[0].parentNode.submit()"});
+			}
+		}
 	});
-	chrome.tabs.getSelected(null, function(tab) {
-		lastTabId = tab.id;
-		alert(tab.title);
-		//chrome.pageAction.show(lastTabId);
-	});
-	chrome.tabs.update(
-		{tabId:1},
-		{selected:true},
-		function(){}
-	);*/
 }
 </script>
 </body>

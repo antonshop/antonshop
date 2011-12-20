@@ -84,6 +84,11 @@ $("#inputsum").click(function(){
 	alert(num);
 });
 
+$("#addsubmit").click(function(){
+	var addinfo = '<select name="submitType"><option value="id">id</option><option value="name">name</option></select>';
+	addinfo += '<input type="text" id="submitValue' + num + '" size="10">';
+});
+
 function save_addoptions(){
 	var inputsum = $("#options input").length;
 	var num = inputsum / 2;
