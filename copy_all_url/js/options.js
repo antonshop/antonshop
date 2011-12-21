@@ -164,14 +164,14 @@ $("#inputsum").click(function(){
 });
 
 function changeType(){
-	alert($("submitoption option:selected").text);
+	$("#submitType").val($('#submitoption option:selected').val());
 }
 
 /*
  添加submit
 */
 $("#addsubmit").click(function(){
-	var addinfo = '<select id="submitoption" onchange="changeType()"><option value="id" selected="selected">id</option><option value="name">name</option></select>&nbsp;&nbsp;<input type="text" id="submitValue" size="10"><input type="" value="id" id="submitType">';
+	var addinfo = '<select id="submitoption" style="width:96px;" onchange="changeType()"><option value="id" selected="selected">id</option><option value="name">name</option></select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="submitValue"><input type="hidden" value="id" id="submitType">';
 	$("#options").append(addinfo);
 });
 

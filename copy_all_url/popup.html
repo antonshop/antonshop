@@ -68,7 +68,6 @@ function copyallwindows() {
     <!--<input type="button" id="write" value="Write">-->
     <input type="button" id="submit" value="Submit">
     <input type="button" id="writeAllTabs" value="WriteAllTabs" />
-    <select name="submitType"><option value="id"></option><option value="name"></option></select>
 </form>
 <script type="text/javascript">
 var prefix = 'an_';
@@ -165,10 +164,13 @@ function writeAllForm(){
 					chrome.tabs.executeScript(all[i].id,{code:"document.getElementsByName('"+ keyname +"')[0].value='"+decodeURIComponent(localStorage.getItem(localStorage.key(j)))+"'"});
 				}
 			}
-			if(keyname != "undefined"){
+			if(localStorage.key(j).substr(3) == "submitType"){
+				alert(localStorage.getItem(prefix + "submitType"));
+			}
+			/*if(keyname != "undefined"){
 				chrome.tabs.executeScript(all[i].id,{code:"document.getElementsByName('"+keyname+"')[0].focus()"});
 				chrome.tabs.executeScript(all[i].id,{code:"document.getElementsByName('"+keyname+"')[0].parentNode.submit()"});
-			}
+			}*/
 		}
 	});
 }
