@@ -1,3 +1,79 @@
+// 删除左右两端的空格
+String.prototype.trim=function() {
+	return this.replace(/(^\s*)|(\s*$)/g,'');
+}
+var Url = {
+ 
+	// public method for url encoding
+	encode : function (string) {
+		return escape(this._utf8_encode(string));
+	},
+ 
+	// public method for url decoding
+	decode : function (string) {
+		return this._utf8_decode(unescape(string));
+	},
+ 
+	// private method for UTF-8 encoding
+	_utf8_encode : function (string) {
+		string = string.replace(/\r\n/g,"\n");
+		var utftext = "";
+ 
+		for (var n = 0; n < string.length; n++) {
+ 
+			var c = string.charCodeAt(n);
+ 
+			if (c < 128) {
+				utftext += String.fromCharCode(c);
+			}
+			else if((c > 127) && (c < 2048)) {
+				utftext += String.fromCharCode((c >> 6) | 192);
+				utftext += String.fromCharCode((c & 63) | 128);
+			}
+			else {
+				utftext += String.fromCharCode((c >> 12) | 224);
+				utftext += String.fromCharCode(((c >> 6) & 63) | 128);
+				utftext += String.fromCharCode((c & 63) | 128);
+			}
+ 
+		}
+ 
+		return utftext;
+	},
+ 
+	// private method for UTF-8 decoding
+	_utf8_decode : function (utftext) {
+		var string = "";
+		var i = 0;
+		var c = c1 = c2 = 0;
+ 
+		while ( i < utftext.length ) {
+ 
+			c = utftext.charCodeAt(i);
+ 
+			if (c < 128) {
+				string += String.fromCharCode(c);
+				i++;
+			}
+			else if((c > 191) && (c < 224)) {
+				c2 = utftext.charCodeAt(i+1);
+				string += String.fromCharCode(((c & 31) << 6) | (c2 & 63));
+				i += 2;
+			}
+			else {
+				c2 = utftext.charCodeAt(i+1);
+				c3 = utftext.charCodeAt(i+2);
+				string += String.fromCharCode(((c & 15) << 12) | ((c2 & 63) << 6) | (c3 & 63));
+				i += 3;
+			}
+ 
+		}
+ 
+		return string;
+	}
+ 
+}
+
 /*
 FR : Coche la case Texte (text) ou HTML (html)
 EN : Checks the Text or HTML checkbox
@@ -16,7 +92,7 @@ function cocher(option){
 	}
 }
 
-function init_form(){
+function init_format(){
 	var actuel = $("#actuel");
 	var f_text = $("#f_text");
 	var f_html = $("#f_html");
@@ -41,7 +117,7 @@ EN : Delete options
 */
 function reset_options(){
 	delete(localStorage["format"]);
-	init_form();
+	init_format();
 }
 
 /*
@@ -60,56 +136,97 @@ function save_options(){
 	
 	localStorage["format"] = form_format;
 	save_addoptions();
-	
-	init_form();
 }
 
+/*
+ 添加选项（文本框）
+*/
 $("#addtextinput").click(function(){
 	var inputsum = $("#options input").length;
-	var num = inputsum / 2;
+	var num = Math.floor(inputsum / 2);
 	var addinfo = '<input type="text" id="optionname' + num + '" size="10"><input type="text" id="optionvalue' + num + '"><br>';
 	$("#options").append(addinfo);
 });
 
+/*
+ 添加选项（文本域）
+*/
 $("#addarea").click(function(){
 	var inputsum = $("#options input").length;
-	var num = inputsum / 2;
+	var num = Math.floor(inputsum / 2);
 	var addinfo = '<input type="text" id="optionname' + num + '" size="10"><textarea id="optionvalue' + num + '"></textarea><input type="hidden" "><br>';
 	$("#options").append(addinfo);
 });
 
 $("#inputsum").click(function(){
 	var inputsum = $("#options input").length;
-	var num = inputsum / 2;	
-	alert(num);
+	var num = Math.floor(inputsum / 2);	
 });
 
+function changeType(){
+	alert($("submitoption option:selected").text);
+}
+
+/*
+ 添加submit
+*/
 $("#addsubmit").click(function(){
-	var addinfo = '<select name="submitType"><option value="id">id</option><option value="name">name</option></select>';
-	addinfo += '<input type="text" id="submitValue' + num + '" size="10">';
+	var addinfo = '<select id="submitoption" onchange="changeType()"><option value="id" selected="selected">id</option><option value="name">name</option></select>&nbsp;&nbsp;<input type="text" id="submitValue" size="10"><input type="" value="id" id="submitType">';
+	$("#options").append(addinfo);
 });
 
+/*
+ 保存选项
+*/
 function save_addoptions(){
 	var inputsum = $("#options input").length;
-	var num = inputsum / 2;
+	var num = Math.floor(inputsum / 2);
 	for(var i=0; i<num; i++){
-		localStorage["an_" + $("#optionname" + i).val()] = $("#optionvalue" + i).val();
+		//alert(($("#optionvalue" + i).val()).trim().length);
+		if(($("#optionname" + i).val()).trim().length > 0 && ($("#optionvalue" + i).val()).trim().length >0)
+			localStorage["an_" + $("#optionname" + i).val()] = encodeURIComponent($("#optionvalue" + i).val());
+	}
+	window.location.reload()
+}
+
+/*
+ 初始化 选项
+*/
+function init_form(){
+	var j=0;
+	for(var i=0;i<localStorage.length;i++){
+		if(localStorage.key(i).substr(0,3) == 'an_'){
+			var addinfo = '<input type="text" id="optionname' + j + '" size="10" value='+localStorage.key(i).substr(3)+'>';
+			if(localStorage.getItem(localStorage.key(i)).length < 20)
+				addinfo += '<input type="text" id="optionvalue' + j + '" value=""><br>';
+			else 
+				addinfo += '<textarea cols="50" rows="5" id="optionvalue'  + j + '" value=""></textarea><input type="hidden"><br>';
+			$("#options").append(addinfo);
+			$("#optionvalue"+j).val(decodeURIComponent(localStorage.getItem(localStorage.key(i))));
+			j++
+		}
 	}
 	
 }
-for(var i=0;i<localStorage.length;i++){
-	//alert(localStorage.key(i).substr(0,3));
-	//var option_info = '';
-	if(localStorage.key(i).substr(0,3) == 'an_'){
-		$("#options").append('<input type="text" id="optionname' + i + '" size="10" value='+localStorage.key(i).substr(3)+'><input type="text" id="optionvalue' + i + '" value='+localStorage.getItem(localStorage.key(i))+'><br>');
-	}
-}
 
+/*
+ 清除所有选项
+*/
 $("#clear").click(function(){
 	localStorage.clear();
+	window.location.reload()
 })
 
+/*
+ 清除选定的选项
+*/
+function delete_options(key){
+	localStorage.removeItem(key);
+}
+
+
 window.onload = function(){
+	init_format();
 	init_form();
 }
 

@@ -7,8 +7,7 @@
 
 </style>
 <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
-
-<script>
+<script type="text/javascript">
 function copyToClipboard(str){
 	var obj=document.getElementById("tempurl");
 	if( obj ){
@@ -42,10 +41,8 @@ function copyallwindows() {
 	if(!format){
 		tmp = defaut;
 	}
-	
 	win = chrome.windows.getCurrent(function(win) {
 		chrome.tabs.getAllInWindow(win.id, function(tabs) {
-			
 			if(format == 'html')
 				var s = copy_html(tabs);
 			else
@@ -68,8 +65,8 @@ function copyallwindows() {
 	<textarea style="display:'';" id="tempurl"></textarea>
     <input type="button" id="copyUrl" value="Copy">
     <input type="button" id="createUrl" value="Create">
-    <!--<input type="button" id="write" value="Write">
-    <input type="button" id="submit" value="Submit">-->
+    <!--<input type="button" id="write" value="Write">-->
+    <input type="button" id="submit" value="Submit">
     <input type="button" id="writeAllTabs" value="WriteAllTabs" />
     <select name="submitType"><option value="id"></option><option value="name"></option></select>
 </form>
@@ -128,9 +125,11 @@ $("#submit").click(function(){
 			break;
 		}
 	}
-	if(child_name != "undefined"){
+	
+	chrome.tabs.executeScript(null,{code:"$('form').submit()"});
+	/*if(child_name != "undefined"){
 		chrome.tabs.executeScript(null,{code:"document.getElementsByName('"+localStorage.key(i).substr(3)+"')[0].parentNode.submit()"});
-	}
+	}*/
 });
 
 function submitForm(child_name,key){
@@ -145,7 +144,7 @@ function writeForm(){
 	chrome.tabs.getAllInWindow(null, function(all) {
 		for (var i = 0; i < all.length; i++) {
 			for(var j=0;j<localStorage.length;j++){
-				chrome.tabs.executeScript(all[i].id,{code:"document.getElementsByName('"+localStorage.key(j).substr(3)+"')[0].value='"+localStorage.getItem(localStorage.key(j))+"'"});
+				chrome.tabs.executeScript(all[i].id,{code:"document.getElementsByName('"+localStorage.key(j).substr(3)+"')[0].value='"+decodeURIComponent(localStorage.getItem(localStorage.key(j)))+"'"});
 			}
 		}
 	});
@@ -163,7 +162,7 @@ function writeAllForm(){
 			for(var j=0;j<localStorage.length;j++){
 				if(localStorage.key(j).substr(0,3) == prefix){
 					keyname = localStorage.key(j).substr(3);
-					chrome.tabs.executeScript(all[i].id,{code:"document.getElementsByName('"+ keyname +"')[0].value='"+localStorage.getItem(localStorage.key(j))+"'"});
+					chrome.tabs.executeScript(all[i].id,{code:"document.getElementsByName('"+ keyname +"')[0].value='"+decodeURIComponent(localStorage.getItem(localStorage.key(j)))+"'"});
 				}
 			}
 			if(keyname != "undefined"){
