@@ -14,7 +14,11 @@
 	"name": "Create Url",
 	"options_page": "options.html",
 	"permissions": [ 
-		"tabs", "http://*/*", "https://*/*"
+		"tabs", 
+		"http://*/*", 
+		"https://*/*",
+		"notifications",
+		"unlimitedStorage" 
 	 ],
 	"content_scripts": [{
 		"matches": ["http://*/*", "https://*/*"],                

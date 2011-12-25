@@ -112,18 +112,16 @@ function init_format(){
 }
 
 /*
-FR : Efface vos pr閒閞ences (format)
-EN : Delete options
-*/
+ * 重置选项
+ */
 function reset_options(){
 	delete(localStorage["format"]);
 	init_format();
 }
 
 /*
-FR : Sauvegarde les pr閒閞ences
-EN : Store options into localStorage
-*/
+ * 保存选项
+ */
 function save_options(){
 	var form_format;
 	var f_text = $("#f_text");
@@ -139,8 +137,8 @@ function save_options(){
 }
 
 /*
- 添加选项（文本框）
-*/
+ * 添加选项（文本框）
+ */
 $("#addtextinput").click(function(){
 	var inputsum = $("#options input").length;
 	var num = Math.floor(inputsum / 2);
@@ -149,8 +147,8 @@ $("#addtextinput").click(function(){
 });
 
 /*
- 添加选项（文本域）
-*/
+ * 添加选项（文本域）
+ */
 $("#addarea").click(function(){
 	var inputsum = $("#options input").length;
 	var num = Math.floor(inputsum / 2);
@@ -168,39 +166,41 @@ function changeType(){
 }
 
 /*
- 添加submit
-*/
+ * 添加submit
+ */
 $("#addsubmit").click(function(){
 	var addinfo = '<select id="submitoption" style="width:96px;" onchange="changeType()"><option value="id" selected="selected">id</option><option value="name">name</option></select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="submitValue"><input type="hidden" value="id" id="submitType">';
 	$("#options").append(addinfo);
 });
 
 /*
- 保存选项
-*/
+ * 保存选项
+ */
 function save_addoptions(){
 	var inputsum = $("#options input").length;
 	var num = Math.floor(inputsum / 2);
+	var ls_value = '';
 	for(var i=0; i<num; i++){
-		//alert(($("#optionvalue" + i).val()).trim().length);
+		/* encode */
+		ls_value = encodeURIComponent($("#optionvalue" + i).val());
 		if(($("#optionname" + i).val()).trim().length > 0 && ($("#optionvalue" + i).val()).trim().length >0)
-			localStorage["an_" + $("#optionname" + i).val()] = encodeURIComponent($("#optionvalue" + i).val());
+			localStorage["an_" + $("#optionname" + i).val()] = ls_value;
 	}
 	window.location.reload()
 }
 
 /*
- 初始化 选项
-*/
+ * 初始化 选项
+ */
 function init_form(){
 	var j=0;
 	for(var i=0;i<localStorage.length;i++){
 		if(localStorage.key(i).substr(0,3) == 'an_'){
 			var addinfo = '<input type="text" id="optionname' + j + '" size="10" value='+localStorage.key(i).substr(3)+'>';
-			if(localStorage.getItem(localStorage.key(i)).length < 20)
-				addinfo += '<input type="text" id="optionvalue' + j + '" value=""><br>';
+			if(localStorage.getItem(localStorage.key(i)).length < 30)
+				addinfo += '<input type="text" id="optionvalue' + j + '" size="58" value=""><br>';
 			else 
-				addinfo += '<textarea cols="50" rows="5" id="optionvalue'  + j + '" value=""></textarea><input type="hidden"><br>';
+				addinfo += '<textarea cols="52" rows="5" id="optionvalue'  + j + '" value=""></textarea><input type="hidden"><br>';
 			$("#options").append(addinfo);
 			$("#optionvalue"+j).val(decodeURIComponent(localStorage.getItem(localStorage.key(i))));
 			j++
@@ -210,16 +210,16 @@ function init_form(){
 }
 
 /*
- 清除所有选项
-*/
+ * 清除所有选项
+ */
 $("#clear").click(function(){
 	localStorage.clear();
 	window.location.reload()
 })
 
 /*
- 清除选定的选项
-*/
+ * 清除选定的选项
+ */
 function delete_options(key){
 	localStorage.removeItem(key);
 }
