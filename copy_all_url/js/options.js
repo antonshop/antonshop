@@ -161,17 +161,37 @@ $("#inputsum").click(function(){
 	var num = Math.floor(inputsum / 2);	
 });
 
-function changeType(){
-	$("#submitType").val($('#submitoption option:selected').val());
+function changeType(optionid){
+	$("#"+optionid).val($('#submitoption option:selected').val());
 }
 
 /*
  * 添加submit
  */
 $("#addsubmit").click(function(){
-	var addinfo = '<select id="submitoption" style="width:96px;" onchange="changeType()"><option value="id" selected="selected">id</option><option value="name">name</option></select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="submitValue"><input type="hidden" value="id" id="submitType">';
+	var inputsum = $("#options input").length;
+	var num = Math.floor(inputsum / 2);
+	var addinfo = '<select id="submitoption" style="width:96px;" onchange="changeType(\'optionvalue'+num+'\')"><option value="id" selected="selected">id</option><option value="name">name</option></select><input type="hidden" id="optionname' + num + '" value="submittype"><input type="hidden" value="id" id="optionvalue' + num + '">';
+	addinfo += '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="hidden" value="submitvalue" id="optionname' + (num+1) + '"><input type="text" value="" id="optionvalue' + (num+1) + '">';
 	$("#options").append(addinfo);
 });
+
+/*
+ * 添加focus
+ */
+$("#addfocus").click(function(){
+	addOptions("focus");
+});
+
+function addOptions(type){
+	var addcontent = '';
+	var inputsum = $("#options input").length;
+	var num = Math.floor(inputsum / 2);
+	if(type == 'focus'){
+		addcontent = '<input type="text" id="optionname' + num + '" size="10"><input type="text" id="optionvalue' + num + '"><br>';
+	}
+	$("#options").append(addinfo);
+}
 
 /*
  * 保存选项
