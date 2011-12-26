@@ -140,10 +140,11 @@ function save_options(){
  * 添加选项（文本框）
  */
 $("#addtextinput").click(function(){
-	var inputsum = $("#options input").length;
+	addOptions('input');
+	/*var inputsum = $("#options input").length;
 	var num = Math.floor(inputsum / 2);
 	var addinfo = '<input type="text" id="optionname' + num + '" size="10"><input type="text" id="optionvalue' + num + '"><br>';
-	$("#options").append(addinfo);
+	$("#options").append(addinfo);*/
 });
 
 /*
@@ -169,11 +170,12 @@ function changeType(optionid){
  * 添加submit
  */
 $("#addsubmit").click(function(){
-	var inputsum = $("#options input").length;
+	addOptions("submit");
+	/*var inputsum = $("#options input").length;
 	var num = Math.floor(inputsum / 2);
 	var addinfo = '<select id="submitoption" style="width:96px;" onchange="changeType(\'optionvalue'+num+'\')"><option value="id" selected="selected">id</option><option value="name">name</option></select><input type="hidden" id="optionname' + num + '" value="submittype"><input type="hidden" value="id" id="optionvalue' + num + '">';
 	addinfo += '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="hidden" value="submitvalue" id="optionname' + (num+1) + '"><input type="text" value="" id="optionvalue' + (num+1) + '">';
-	$("#options").append(addinfo);
+	$("#options").append(addinfo);*/
 });
 
 /*
@@ -184,13 +186,17 @@ $("#addfocus").click(function(){
 });
 
 function addOptions(type){
-	var addcontent = '';
 	var inputsum = $("#options input").length;
 	var num = Math.floor(inputsum / 2);
-	if(type == 'focus'){
-		addcontent = '<input type="text" id="optionname' + num + '" size="10"><input type="text" id="optionvalue' + num + '"><br>';
+	var addcontent = '<select id="type' + num + '" onchange="changeType(\'optionvalue'+num+'\')"><option value="id" selected="selected">id</option><option value="name">name</option></select>&nbsp;&nbsp;';
+	if(type == 'input'){
+		addcontent += '<input type="text" id="optionname' + num + '"><input size="10" type="text" id="optionvalue' + num + '"><br>';
+	}else if(type == 'focus'){
+		addcontent += '<input type="text" id="optionname' + num + '" value="focus" readonly="readonly"><input size="10" type="text" id="optionvalue' + num + '"><br>';
+	}else if(type == 'submit'){
+		addcontent += '<input type="text" id="optionname' + num + '" value="submit" readonly="readonly"><input size="10" type="text" id="optionvalue' + num + '"><br>';
 	}
-	$("#options").append(addinfo);
+	$("#options").append(addcontent);
 }
 
 /*
@@ -200,13 +206,19 @@ function save_addoptions(){
 	var inputsum = $("#options input").length;
 	var num = Math.floor(inputsum / 2);
 	var ls_value = '';
+	var optionObj = new Object()
 	for(var i=0; i<num; i++){
+		optionObj.value = $("#optionvalue" + i).val();
+		optionObj.value = replacestr(optionObj.value);
+		//alert($("#type"+i).find('option:selected').text());
+		optionObj.type = $("#type" + i + " option:selected").val();
+		alert(JSON(optionObj));
 		/* encode */
-		ls_value = encodeURIComponent($("#optionvalue" + i).val());
-		if(($("#optionname" + i).val()).trim().length > 0 && ($("#optionvalue" + i).val()).trim().length >0)
-			localStorage["an_" + $("#optionname" + i).val()] = ls_value;
+		//ls_value = encodeURIComponent(ls_value);
+		if(($("#optionname" + i).val()).trim().length > 0 && optionObj.value.trim().length >0)
+			localStorage["an_" + $("#optionname" + i).val()] = encodeURIComponent(ls_value);
 	}
-	window.location.reload()
+	//window.location.reload()
 }
 
 /*
@@ -227,6 +239,14 @@ function init_form(){
 		}
 	}
 	
+}
+
+/*
+ * 替换特殊字符
+ */
+function replacestr(str){
+	str = str.replace("'", "&rsquo;");
+	return str;
 }
 
 /*

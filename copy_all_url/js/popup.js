@@ -137,7 +137,7 @@ function writeAllForm(){
 				if(localStorage.key(j).substr(0,3) == prefix){
 					keyname = localStorage.key(j).substr(3);
 					/* 替换空格，encode */
-					ls_value = encodeURIComponent(localStorage.getItem(localStorage.key(j)).replace(/\n/g,"<br>"));
+					ls_value = (decodeURIComponent(localStorage.getItem(localStorage.key(j)))).replace(/\n/g,"<br>");
 					chrome.tabs.executeScript(all[i].id,{code:"document.getElementsByName('"+ keyname +"')[0].value='"+ls_value+"'"});
 				}
 			}
