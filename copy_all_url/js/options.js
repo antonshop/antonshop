@@ -188,13 +188,14 @@ $("#addfocus").click(function(){
 function addOptions(type){
 	var inputsum = $("#options input").length;
 	var num = Math.floor(inputsum / 2);
-	var addcontent = '<select id="type' + num + '" onchange="changeType(\'optionvalue'+num+'\')"><option value="id" selected="selected">id</option><option value="name">name</option></select>&nbsp;&nbsp;';
+	var addcontent = '';
+	var typecontent = '<select id="type' + num + '"><option value="id" selected="selected">id</option><option value="name">name</option></select>';
 	if(type == 'input'){
-		addcontent += '<input type="text" id="optionname' + num + '"><input size="10" type="text" id="optionvalue' + num + '"><br>';
+		addcontent += '<input type="text" id="optionname' + num + '">'+ typecontent +'<input size="10" type="text" id="optionvalue' + num + '"><br>';
 	}else if(type == 'focus'){
-		addcontent += '<input type="text" id="optionname' + num + '" value="focus" readonly="readonly"><input size="10" type="text" id="optionvalue' + num + '"><br>';
+		addcontent += '<input type="text" id="optionname' + num + '" value="FOCUS" readonly="readonly">'+ typecontent +'<input size="10" type="text" id="optionvalue' + num + '"><br>';
 	}else if(type == 'submit'){
-		addcontent += '<input type="text" id="optionname' + num + '" value="submit" readonly="readonly"><input size="10" type="text" id="optionvalue' + num + '"><br>';
+		addcontent += '<input type="text" id="optionname' + num + '" value="SUBMIT" readonly="readonly">'+ typecontent +'<input size="10" type="text" id="optionvalue' + num + '"><br>';
 	}
 	$("#options").append(addcontent);
 }
@@ -206,19 +207,18 @@ function save_addoptions(){
 	var inputsum = $("#options input").length;
 	var num = Math.floor(inputsum / 2);
 	var ls_value = '';
-	var optionObj = new Object()
+	var optionObj = new Object();
 	for(var i=0; i<num; i++){
 		optionObj.value = $("#optionvalue" + i).val();
 		optionObj.value = replacestr(optionObj.value);
-		//alert($("#type"+i).find('option:selected').text());
 		optionObj.type = $("#type" + i + " option:selected").val();
-		alert(JSON(optionObj));
+		//alert(typeof(JSON.stringify(optionObj)));
 		/* encode */
 		//ls_value = encodeURIComponent(ls_value);
 		if(($("#optionname" + i).val()).trim().length > 0 && optionObj.value.trim().length >0)
-			localStorage["an_" + $("#optionname" + i).val()] = encodeURIComponent(ls_value);
+			localStorage["an_" + $("#optionname" + i).val()] = encodeURIComponent(JSON.stringify(optionObj));
 	}
-	//window.location.reload()
+	window.location.reload()
 }
 
 /*
@@ -226,15 +226,22 @@ function save_addoptions(){
  */
 function init_form(){
 	var j=0;
+	var optionObj = '';
 	for(var i=0;i<localStorage.length;i++){
 		if(localStorage.key(i).substr(0,3) == 'an_'){
+			optionObj = JSON.parse(decodeURIComponent(localStorage.getItem(localStorage.key(i))));
 			var addinfo = '<input type="text" id="optionname' + j + '" size="10" value='+localStorage.key(i).substr(3)+'>';
-			if(localStorage.getItem(localStorage.key(i)).length < 30)
+			addinfo += '<select id="type' + j + '"><option value="id">id</option><option value="name">name</option></select>';
+			
+			if(optionObj.value.length < 30)
 				addinfo += '<input type="text" id="optionvalue' + j + '" size="58" value=""><br>';
 			else 
 				addinfo += '<textarea cols="52" rows="5" id="optionvalue'  + j + '" value=""></textarea><input type="hidden"><br>';
+			
 			$("#options").append(addinfo);
-			$("#optionvalue"+j).val(decodeURIComponent(localStorage.getItem(localStorage.key(i))));
+			//alert(optionObj.type);
+			$("#optionvalue"+j).val(optionObj.value);
+			$("#type"+j).attr("value",optionObj.type);
 			j++
 		}
 	}

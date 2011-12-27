@@ -114,13 +114,15 @@ $("#writeAllTabs").click(function(){
 });
 
 function writeForm(){
-	chrome.tabs.getAllInWindow(null, function(all) {
+	chrome.tabs.executeScript(null,{code:"$('input[@name=body]').val('123')"});
+	
+	/*chrome.tabs.getAllInWindow(null, function(all) {
 		for (var i = 0; i < all.length; i++) {
 			for(var j=0;j<localStorage.length;j++){
 				chrome.tabs.executeScript(all[i].id,{code:"document.getElementsByName('"+localStorage.key(j).substr(3)+"')[0].value='"+decodeURIComponent(localStorage.getItem(localStorage.key(j)))+"'"});
 			}
 		}
-	});
+	});*/
 	/*for(var i=0;i<localStorage.length;i++){
 		if(localStorage.key(i).substr(0,3) == 'an_'){
 			chrome.tabs.executeScript(null,{code:"document.getElementsByName('"+localStorage.key(i).substr(3)+"')[0].value='"+localStorage.getItem(localStorage.key(i))+"'"});
@@ -128,26 +130,72 @@ function writeForm(){
 	}*/
 }
 
+function writeOption(id, key, data){
+	
+	var codetxt = '';
+	if(data.type == 'id'){
+		codetxt = "$('#"+ key +"').val('"+ data.value +"')";
+	}else if(data.type == 'name'){
+		codetxt = "document.getElementsByName('"+key+"')[0].value = '"+ data.value + "'";//"$('input[@name="+ key +"]').val('"+ data.value +"')";
+	}
+	chrome.tabs.executeScript(id,{code:""+codetxt+""});
+	
+}
+
+function focuscode(key, data){
+	if(data.type == 'id'){
+		return "$('#"+ data.value +"').focus()";
+	}else if(data.type == 'name'){
+		return "document.getElementsByName('"+data.value+"')[0].focus()";
+	}
+}
+
+function submitcode(key, data){
+	if(data.type == 'id'){
+		return "$('#"+ data.value +"').submit()";
+	}else if(data.type == 'name'){
+		return "document.getElementsByName('"+data.value+"')[0].submit()";
+	}
+}
+
 function writeAllForm(){
 	chrome.tabs.getAllInWindow(null, function(all) {
-		var keyname = null;
-		var ls_value = '';
+		var key = '';
+		var submittxt = '';
+		var focustxt = '';
+		var data = '';
 		for (var i = 0; i < all.length; i++) {
 			for(var j=0;j<localStorage.length;j++){
 				if(localStorage.key(j).substr(0,3) == prefix){
-					keyname = localStorage.key(j).substr(3);
+					data = JSON.parse(decodeURIComponent(localStorage.getItem(localStorage.key(j))).replace(/\n/g,"<br>"));
+					key = localStorage.key(j).substr(3);
+					if(key == 'FOCUS'){
+						var focustxt = focuscode(key, data);
+					}else if(key == 'SUBMIT'){
+						var submittxt = submitcode(key, data);
+					}
 					/* 替换空格，encode */
-					ls_value = (decodeURIComponent(localStorage.getItem(localStorage.key(j)))).replace(/\n/g,"<br>");
-					chrome.tabs.executeScript(all[i].id,{code:"document.getElementsByName('"+ keyname +"')[0].value='"+ls_value+"'"});
+					//ls_value = localStorage.getItem(localStorage.key(j));
+					//alert(localStorage.key(j).substr(3)+"**"+localStorage.getItem(localStorage.key(j)));
+					writeOption(all[i].id, localStorage.key(j).substr(3), data);
+					//chrome.tabs.executeScript(all[i].id,{code:"document.getElementsByName('"+ keyname +"')[0].value='"+ls_value+"'"});
 				}
+			}
+			if(focustxt != ''){
+				chrome.tabs.executeScript(all[i].id,{code:""+focustxt+""});
+				focustxt = '';
+			}
+			if(submittxt != ''){
+				chrome.tabs.executeScript(all[i].id,{code:""+submittxt+""});
+				submittxt = '';
 			}
 			/*if(localStorage.key(j).substr(3) == "submitType"){
 				//alert(localStorage.getItem(prefix + "submitType"));
 			}*/
-			if(keyname != "undefined"){
+			/*if(keyname != "undefined"){
 				chrome.tabs.executeScript(all[i].id,{code:"document.getElementsByName('"+keyname+"')[0].focus()"});
 				chrome.tabs.executeScript(all[i].id,{code:"document.getElementsByName('"+keyname+"')[0].parentNode.submit()"});
-			}/**/
+			}*/
 		}
 	});
 }
