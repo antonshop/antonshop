@@ -3,5 +3,8 @@ body{background: white;	color:#333;	font-size:12px;	line-height:16px;}
 h3{ margin: 5px 0 5px 0;}
 #info{ padding:5px 10px; width: 600px; background:#f3f3f3;margin-bottom: 10px;border: 1px solid #eee;}
 .format{ padding:10px;}
-#options input{ vertical-align:top; line-height:18px; width:150px;}
+#options{ list-style:none; padding-left:5px;}
+#options li{ line-height:24px;}
+#options input{ vertical-align:top; border:1px #aaa solid; line-height:18px; width:150px;}
 #options select{ vertical-align:top; margin:3px 30px 0px;}
+.del_icon{ margin:3px 0px 0px 20px;}

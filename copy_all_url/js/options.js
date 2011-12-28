@@ -141,41 +141,14 @@ function save_options(){
  */
 $("#addtextinput").click(function(){
 	addOptions('input');
-	/*var inputsum = $("#options input").length;
-	var num = Math.floor(inputsum / 2);
-	var addinfo = '<input type="text" id="optionname' + num + '" size="10"><input type="text" id="optionvalue' + num + '"><br>';
-	$("#options").append(addinfo);*/
 });
 
-/*
- * 添加选项（文本域）
- */
-$("#addarea").click(function(){
-	var inputsum = $("#options input").length;
-	var num = Math.floor(inputsum / 2);
-	var addinfo = '<input type="text" id="optionname' + num + '" size="10"><textarea id="optionvalue' + num + '"></textarea><input type="hidden" "><br>';
-	$("#options").append(addinfo);
-});
-
-$("#inputsum").click(function(){
-	var inputsum = $("#options input").length;
-	var num = Math.floor(inputsum / 2);	
-});
-
-function changeType(optionid){
-	$("#"+optionid).val($('#submitoption option:selected').val());
-}
 
 /*
  * 添加submit
  */
 $("#addsubmit").click(function(){
 	addOptions("submit");
-	/*var inputsum = $("#options input").length;
-	var num = Math.floor(inputsum / 2);
-	var addinfo = '<select id="submitoption" style="width:96px;" onchange="changeType(\'optionvalue'+num+'\')"><option value="id" selected="selected">id</option><option value="name">name</option></select><input type="hidden" id="optionname' + num + '" value="submittype"><input type="hidden" value="id" id="optionvalue' + num + '">';
-	addinfo += '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="hidden" value="submitvalue" id="optionname' + (num+1) + '"><input type="text" value="" id="optionvalue' + (num+1) + '">';
-	$("#options").append(addinfo);*/
 });
 
 /*
@@ -185,6 +158,9 @@ $("#addfocus").click(function(){
 	addOptions("focus");
 });
 
+/*
+ * 添加选项
+ */
 function addOptions(type){
 	var inputsum = $("#options input").length;
 	var num = Math.floor(inputsum / 2);
@@ -197,7 +173,15 @@ function addOptions(type){
 	}else if(type == 'submit'){
 		addcontent += '<input type="text" id="optionname' + num + '" value="SUBMIT" readonly="readonly">'+ typecontent +'<input size="10" type="text" id="optionvalue' + num + '"><br>';
 	}
-	$("#options").append(addcontent);
+	$("#options").append("<li>"+addcontent+"</li>");
+}
+
+/*
+ * 删除选项
+ */
+function del_option(key){
+	localStorage.removeItem("an_"+key);
+	window.location.reload();
 }
 
 /*
@@ -212,13 +196,10 @@ function save_addoptions(){
 		optionObj.value = $("#optionvalue" + i).val();
 		optionObj.value = replacestr(optionObj.value);
 		optionObj.type = $("#type" + i + " option:selected").val();
-		//alert(typeof(JSON.stringify(optionObj)));
-		/* encode */
-		//ls_value = encodeURIComponent(ls_value);
 		if(($("#optionname" + i).val()).trim().length > 0 && optionObj.value.trim().length >0)
 			localStorage["an_" + $("#optionname" + i).val()] = encodeURIComponent(JSON.stringify(optionObj));
 	}
-	window.location.reload()
+	window.location.reload();
 }
 
 /*
@@ -234,18 +215,16 @@ function init_form(){
 			addinfo += '<select id="type' + j + '"><option value="id">id</option><option value="name">name</option></select>';
 			
 			if(optionObj.value.length < 30)
-				addinfo += '<input type="text" id="optionvalue' + j + '" size="58" value=""><br>';
+				addinfo += '<input type="text" id="optionvalue' + j + '" size="58" value="">';
 			else 
-				addinfo += '<textarea cols="52" rows="5" id="optionvalue'  + j + '" value=""></textarea><input type="hidden"><br>';
-			
-			$("#options").append(addinfo);
-			//alert(optionObj.type);
+				addinfo += '<textarea cols="52" rows="5" id="optionvalue'  + j + '" value=""></textarea><input type="hidden">';
+			addinfo += '<img src="images/del.gif" class="del_icon" onclick="del_option(\''+ localStorage.key(i).substr(3) +'\')"><br>';			
+			$("#options").append("<li>"+addinfo+"</li>");
 			$("#optionvalue"+j).val(optionObj.value);
 			$("#type"+j).attr("value",optionObj.type);
 			j++
 		}
 	}
-	
 }
 
 /*
