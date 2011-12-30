@@ -159,6 +159,13 @@ $("#addfocus").click(function(){
 });
 
 /*
+ * 添加form
+ */
+$("#addform").click(function(){
+	addOptions("form");
+});
+
+/*
  * 添加选项
  */
 function addOptions(type){
@@ -170,6 +177,8 @@ function addOptions(type){
 		addcontent += '<input type="text" id="optionname' + num + '">'+ typecontent +'<input size="10" type="text" id="optionvalue' + num + '"><br>';
 	}else if(type == 'focus'){
 		addcontent += '<input type="text" id="optionname' + num + '" value="FOCUS" readonly="readonly">'+ typecontent +'<input size="10" type="text" id="optionvalue' + num + '"><br>';
+	}else if(type == 'form'){
+		addcontent += '<input type="text" id="optionname' + num + '" value="FORM" readonly="readonly">'+ typecontent +'<input size="10" type="text" id="optionvalue' + num + '"><br>';
 	}else if(type == 'submit'){
 		addcontent += '<input type="text" id="optionname' + num + '" value="SUBMIT" readonly="readonly">'+ typecontent +'<input size="10" type="text" id="optionvalue' + num + '"><br>';
 	}

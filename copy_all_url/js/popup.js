@@ -86,10 +86,6 @@ function change_color() {
   window.close();
 }
 
-$("#write").click(function(){
-	writeForm();
-  	//window.close();
-});
 
 $("#submit").click(function(){
 	for(var i=0;i<localStorage.length;i++){
@@ -98,7 +94,6 @@ $("#submit").click(function(){
 			break;
 		}
 	}
-	
 	/*chrome.tabs.executeScript(null,{code:"$('form').submit()"});*/
 	if(child_name != "undefined"){
 		chrome.tabs.executeScript(null,{code:"document.getElementsByName('"+localStorage.key(i).substr(3)+"')[0].parentNode.submit()"});
@@ -115,19 +110,6 @@ $("#writeAllTabs").click(function(){
 
 function writeForm(){
 	chrome.tabs.executeScript(null,{code:"$('input[@name=body]').val('123')"});
-	
-	/*chrome.tabs.getAllInWindow(null, function(all) {
-		for (var i = 0; i < all.length; i++) {
-			for(var j=0;j<localStorage.length;j++){
-				chrome.tabs.executeScript(all[i].id,{code:"document.getElementsByName('"+localStorage.key(j).substr(3)+"')[0].value='"+decodeURIComponent(localStorage.getItem(localStorage.key(j)))+"'"});
-			}
-		}
-	});*/
-	/*for(var i=0;i<localStorage.length;i++){
-		if(localStorage.key(i).substr(0,3) == 'an_'){
-			chrome.tabs.executeScript(null,{code:"document.getElementsByName('"+localStorage.key(i).substr(3)+"')[0].value='"+localStorage.getItem(localStorage.key(i))+"'"});
-		}
-	}*/
 }
 
 function writeOption(id, key, data){
@@ -136,7 +118,7 @@ function writeOption(id, key, data){
 	if(data.type == 'id'){
 		codetxt = "$('#"+ key +"').val('"+ data.value +"')";
 	}else if(data.type == 'name'){
-		codetxt = "document.getElementsByName('"+key+"')[0].value = '"+ data.value + "'";//"$('input[@name="+ key +"]').val('"+ data.value +"')";
+		codetxt = "document.getElementsByName('"+key+"')[0].value = '"+ data.value + "'";/*"$('input[@name="+ key +"]').val('"+ data.value +"')";*/
 	}
 	chrome.tabs.executeScript(id,{code:""+codetxt+""});
 	
@@ -152,9 +134,17 @@ function focuscode(key, data){
 
 function submitcode(key, data){
 	if(data.type == 'id'){
+		return "$('#"+ data.value +"').click()";
+	}else if(data.type == 'name'){
+		return "document."+data.value+".click()";
+	}
+}
+
+function formcode(key, data){
+	if(data.type == 'id'){
 		return "$('#"+ data.value +"').submit()";
 	}else if(data.type == 'name'){
-		return "document.getElementsByName('"+data.value+"')[0].submit()";
+		return "document."+data.value+".submit()";
 	}
 }
 
@@ -163,6 +153,7 @@ function writeAllForm(){
 		var key = '';
 		var submittxt = '';
 		var focustxt = '';
+		var formtxt = '';
 		var data = '';
 		for (var i = 0; i < all.length; i++) {
 			for(var j=0;j<localStorage.length;j++){
@@ -170,15 +161,13 @@ function writeAllForm(){
 					data = JSON.parse(decodeURIComponent(localStorage.getItem(localStorage.key(j))).replace(/\n/g,"<br>"));
 					key = localStorage.key(j).substr(3);
 					if(key == 'FOCUS'){
-						var focustxt = focuscode(key, data);
+						focustxt = focuscode(key, data);
 					}else if(key == 'SUBMIT'){
-						var submittxt = submitcode(key, data);
+						submittxt = submitcode(key, data);
+					}else if(key == 'FORM'){
+						formtxt = formcode(key, data);
 					}
-					/* 替换空格，encode */
-					//ls_value = localStorage.getItem(localStorage.key(j));
-					//alert(localStorage.key(j).substr(3)+"**"+localStorage.getItem(localStorage.key(j)));
 					writeOption(all[i].id, localStorage.key(j).substr(3), data);
-					//chrome.tabs.executeScript(all[i].id,{code:"document.getElementsByName('"+ keyname +"')[0].value='"+ls_value+"'"});
 				}
 			}
 			if(focustxt != ''){
@@ -189,13 +178,10 @@ function writeAllForm(){
 				chrome.tabs.executeScript(all[i].id,{code:""+submittxt+""});
 				submittxt = '';
 			}
-			/*if(localStorage.key(j).substr(3) == "submitType"){
-				//alert(localStorage.getItem(prefix + "submitType"));
-			}*/
-			/*if(keyname != "undefined"){
-				chrome.tabs.executeScript(all[i].id,{code:"document.getElementsByName('"+keyname+"')[0].focus()"});
-				chrome.tabs.executeScript(all[i].id,{code:"document.getElementsByName('"+keyname+"')[0].parentNode.submit()"});
-			}*/
+			if(formtxt != ''){
+				chrome.tabs.executeScript(all[i].id,{code:""+formtxt+""});
+				formtxt = '';
+			}
 		}
 	});
 }
