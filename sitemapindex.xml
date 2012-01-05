@@ -6,7 +6,15 @@
         xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <!-- generator="Zen-Cart SitemapXML" v 2.1.0 30.04.2009 10:35 -->
  <sitemap>
-  <loc>http://localhost/sunwinningshop/sitemapezpages.xml</loc>
-  <lastmod>2011-09-05</lastmod>
+  <loc>http://localhost/antonshop/sitemapcategories.xml</loc>
+  <lastmod>2011-12-31</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>http://localhost/antonshop/sitemapezpages.xml</loc>
+  <lastmod>2011-12-31</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>http://localhost/antonshop/sitemapproducts.xml</loc>
+  <lastmod>2011-12-31</lastmod>
  </sitemap>
 </sitemapindex>

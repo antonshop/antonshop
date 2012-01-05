@@ -14,7 +14,13 @@
 <div class="centerColumn" id="productInfoNoProduct">
 
 <div id="productInfoNoProductMainContent" class="content"><?php echo TEXT_PRODUCT_NOT_FOUND; ?></div>
-
+<?php 
+if(PRODUCTS_MISSING_PAGE_CHECK == '1'){
+	echo '<script type="text/javascript">window.location="'. HTTP_SERVER . DIR_WS_CATALOG .'"</script>';
+}else if(PRODUCTS_MISSING_PAGE_CHECK == '2'){
+	echo '<script type="text/javascript">window.location="'. zen_href_link('page_not_found', '', 'SSL') .'"</script>';
+}
+?>
 <div class="buttonRow back"><?php zen_back_link() . zen_image_button(BUTTON_IMAGE_CONTINUE, BUTTON_CONTINUE_ALT) . '</a>'; ?></div>
 
 <?php
