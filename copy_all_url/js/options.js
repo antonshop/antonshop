@@ -240,7 +240,8 @@ function init_form(){
  * 替换特殊字符
  */
 function replacestr(str){
-	str = str.replace("'", "&rsquo;");
+	var reg=new RegExp("'","g");  
+	str = str.replace(reg, "&rsquo;");
 	return str;
 }
 
