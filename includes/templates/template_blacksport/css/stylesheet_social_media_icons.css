@@ -1,4 +1,4 @@
-#socialIcons { text-align:right; width:100%; margin:15px 0; position:relative; }
+#socialIcons { text-align:right;  width:100%; margin:15px 0;}
 #socialIcons a img{ width:24px; height:24px;}
 #easyTooltip{
 	background:#fff;
@@ -8,6 +8,4 @@
 	line-height:12px;
 	font-family:Tahoma, Geneva, sans-serif;
 	color:#666666;
-	position:relative;
-	z-index:510;
 }

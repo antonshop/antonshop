@@ -5,39 +5,26 @@
  * Ezpages Footer Columns by Glenn Herbert (gjh42) 2010-12-08
  */
  
-#navSuppWrapper {
-	background:#fff;
-	padding-bottom:20px;
-	width:780px;
-	margin:0px auto;
-}
-.bottom_img{ margin-top:15px;}
-#navSupp{
+#navSupp {}
 
-}
 .ezpagesFooterCol {float: left; padding: 0;}
 
 .ezpagesFooterCol h4 {color: #996633; text-align: center;}
 
-.ezpagesFooterCol ul {float: left; margin:0;}
+.ezpagesFooterCol ul {float: left; margin: 0; padding: 0!important;}
 
-#navSupp .ezpagesFooterCol li {display: block; float:left; text-align: left;}
+#navSupp .ezpagesFooterCol li {display: block; text-align: left; margin-right:19px;}
 
-#navSupp .ezpagesFooterCol a { color: #848484; font-weight: normal; font-size:14px; line-height:14px; text-decoration:none; background:url("../images/footer-separator.jpg") no-repeat left 5px; padding: 0 18px 0 23px}
-#navSupp .ezpagesFooterCol.col1 a{ background:none; padding:0 18px 0 0;}
-#navSupp .ezpagesFooterCol .cone a{ background:none;}
-#navSupp .ezpagesFooterCol a:hover{ color:#000;}
+#navSupp .ezpagesFooterCol a { color: #fff; text-decoration:none; font-weight:bold; font-size:11px; line-height:20px;}
+#navSupp .ezpagesFooterCol a:hover{color: #bf0000;}
 
-#navSupp a.activeEZPage, #navSupp a.activeILPage {color: #000;}
+#navSupp a.activeEZPage, #navSupp a.activeILPage {color: #bf0000;}
 
 .ezpagesFooterCol a:hover {text-decoration: underline; color: #00aa44;}
 
-#navSupp ul {border: none; padding:28px 0 0 0!important;}
+#navSupp .col1 ul {border: none;}
 
-.ezpagesFooterColComment {font-size: 0.9em; color: #aabbcc; display: block;}
-.ezpagesFooterCol{ width:auto!important;}
-.footLinks{ padding-bottom:0px; width:780px; clear:both;}
-.footLinks a{ color:#848484; font-size:14px; text-decoration:none;}
-.footLinks a:hover{ color:#333; text-decoration:underline;}
-.footLinks ul{ width:180px; float:left;}
-.footLinks ul li{ text-align:left;}
+.ezpagesFooterColComment { color: #aabbcc; display: block;}
+.ezpagesFooterCol{
+	width:auto!important;
+}
