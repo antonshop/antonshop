@@ -1,0 +1,57 @@
+/* ============================= slider ====================== */
+#slider{
+	overflow:hidden;
+	width:710px;
+	height:322px;
+	margin-bottom:10px;
+}
+#coin-slider-coin-slider{
+	width:710px;
+	height:322px;
+	position:relative;
+	float:left;
+	overflow:hidden;
+}
+#coin-slider{
+	width:710px!important;
+	height:322px!important;
+	overflow:hidden!important;	
+}
+#cs-buttons-coin-slider{
+	position:absolute;
+	bottom:0px;
+	left:0px;
+	padding:0;
+	overflow:hidden;
+	background:url("images/pagination-bg.png") repeat-x left top;
+	width:701px;
+	height:18px;
+	padding: 7px 0 0 9px;
+}
+
+#cs-buttons-coin-slider a{
+	display:block;
+	text-indent:-10000px;
+	float:left;
+	width:12px;
+	height:12px;
+	background:url("images/pagination.png") no-repeat right top;
+	margin-right:2px;
+}
+#cs-buttons-coin-slider a:hover,
+#cs-buttons-coin-slider a.cs-active{
+	background:url("images/pagination.png") no-repeat left top;
+}
+#cs-navigation-coin-slider{
+	display:block!important;
+	position:absolute;
+	top:0;
+	left:0;
+}
+#cs-prev-coin-slider{
+	display:none;
+}
+
+#cs-next-coin-slider{
+	display:none;
+}

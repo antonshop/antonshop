@@ -1,7 +1,7 @@
 /* CSS Document */
 
 * { margin:0; padding:0;}
-body { background:url(../images/body-bg.gif) repeat left top; font-family:Arial, Helvetica, sans-serif; font-size:12px; line-height:17px; color:#4d5255;}
+body { background:url("../images/body-bg.gif") repeat left top; font-family:Arial, Helvetica, sans-serif; font-size:12px; line-height:17px; color:#4d5255;}
 table, td {border-collapse:collapse; font-size:100%;}
 table, td, img {border:0;}
 form, td {margin:0; padding:0;}
@@ -55,7 +55,7 @@ p { margin:0; padding:0;}
 	position:relative;
 }
 #header .box1{
-	background:url(../images/top-shine.png) no-repeat center top;
+	background:url("../images/top-shine.png") no-repeat center top;
 	height:58px;
 }
 #header .currencies{
@@ -82,7 +82,7 @@ p { margin:0; padding:0;}
 	line-height:20px;
 }
 #header .currencies .jqTransformSelectWrapper{
-	background:url(../images/cur-arrow.gif) no-repeat right top;
+	background:url("../images/cur-arrow.gif") no-repeat right top;
 	border:none;
 	float:left;
 	width:109px!important;
@@ -92,7 +92,7 @@ p { margin:0; padding:0;}
 #header .currencies .jqTransformSelectWrapper div{
 	height:24px!important;
 	overflow:hidden;
-	background:url(../images/cur-bg.gif) no-repeat left top;
+	background:url("../images/cur-bg.gif") no-repeat left top;
 }
 #header .currencies .jqTransformSelectWrapper div span{
 	font-size:11px;
@@ -154,7 +154,7 @@ p { margin:0; padding:0;}
 #header .search .input1{
 	float:left;
 	padding:0 3px;
-	background:url(../images/search-bg.gif) no-repeat left top;
+	background:url("../images/search-bg.gif") no-repeat left top;
 	border:none;
 	height:20px;
 	width:150px;
@@ -170,7 +170,7 @@ p { margin:0; padding:0;}
 	color:#686868;
 	font-size:11px;
 	line-height:20px;
-	background:url(../images/cart.png) no-repeat left 3px;
+	background:url("../images/cart.png") no-repeat left 3px;
 	padding:0 19px 0 28px;
 	margin:17px 0 0 0;
 }
@@ -205,7 +205,7 @@ p { margin:0; padding:0;}
 #header .box2{
 	border-top:1px solid #3a3a3a;
 	border-bottom:1px solid #303030;
-	background:url(../images/menu-bg.gif) repeat-x left top;
+	background:url("../images/menu-bg.gif") repeat-x left top;
 }
 #header .logo{	
 	float:left;
@@ -233,7 +233,7 @@ p { margin:0; padding:0;}
 	text-decoration:none;
 	padding:12px 9px 13px 10px;
 	font-family: 'Quattrocento Sans', sans-serif;
-	background:url(../images/menu-bg.gif) repeat-x left top;
+	background:url("../images/menu-bg.gif") repeat-x left top;
 	border-left:1px solid #3d3d3d;
 	border-right:1px solid #212121;
 }
@@ -246,7 +246,7 @@ p { margin:0; padding:0;}
 
 #header .menu ul li.selected a,
 #header .menu ul li a:hover{
-	background:url(../images/menu-bg-act.gif) repeat-x left top;
+	background:url("../images/menu-bg-act.gif") repeat-x left top;
 	border-left:1px solid #872a2a;
 	border-right:1px solid #4f0303;
 	
@@ -386,11 +386,11 @@ input:focus, select:focus, textarea:focus{outline:none;}
 	height:11px;
 	display:block;
 	text-indent:-10000px;
-	background:url(../images/pagination.png) no-repeat right top;
+	background:url("../images/pagination.png") no-repeat right top;
 }
 #faded .pagination li.current a,
 #faded .pagination li a:hover{
-	background:url(../images/pagination.png) no-repeat left top;
+	background:url("../images/pagination.png") no-repeat left top;
 }
 .bot-banners{
 	width:100%;
@@ -399,3 +399,17 @@ input:focus, select:focus, textarea:focus{outline:none;}
 .bot-banners div{
 	float:left;
 }
+
+/* ============================= slider ====================== */
+#slider{	overflow:hidden;	width:670px;	height:322px;	margin-bottom:10px;}
+#coin-slider-coin-slider{	width:670px;	height:322px;	position:relative;	float:left;	overflow:hidden;}
+#coin-slider{	width:670px!important;	height:322px!important;	overflow:hidden!important;	
+}
+#cs-buttons-coin-slider{	position:absolute;	bottom:0px;	left:0px;	padding:0;	overflow:hidden;	background:url("../images/pagination-bg.png") repeat-x left top;	width:701px;	height:18px;	padding: 7px 0 0 9px;}
+#cs-buttons-coin-slider a{	display:block;	text-indent:-10000px;	float:left;	width:12px;	height:12px;	background:url("../images/pagination.png") no-repeat right top;	margin-right:2px;}
+#cs-buttons-coin-slider a:hover,
+#cs-buttons-coin-slider a.cs-active{	background:url("../images/pagination.png") no-repeat left top;}
+#cs-navigation-coin-slider{	display:block!important;	position:absolute;	top:0;	left:0;}
+#cs-prev-coin-slider{	display:none;}
+#cs-next-coin-slider{	display:none;}
+.product-col .img img{ width:190px; height:130px;}

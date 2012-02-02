@@ -462,7 +462,7 @@
 	
 	// default values
 	$.fn.coinslider.defaults = {	
-		width: 710, // width of slider panel
+		width: 670, // width of slider panel
 		height: 322, // height of slider panel
 		spw: 22, // squares per width
 		sph: 1, // squares per height

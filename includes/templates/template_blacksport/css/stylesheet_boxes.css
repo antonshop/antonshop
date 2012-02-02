@@ -257,7 +257,7 @@
 #search .input1{
 	float:left;
 	padding:0 3px;
-	background:url(../images/search-bg.gif) no-repeat left top;
+	background:url("../images/search-bg.gif") no-repeat left top;
 	border:none;
 	height:20px;
 	width:150px;

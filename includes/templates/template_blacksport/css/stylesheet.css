@@ -168,7 +168,7 @@ HR {
 .navSplitPagesLinks{ margin:0 0 10px 0;}
 .navSplitPagesLinks a {display:inline-block; background:#e0e0e0; padding:5px 10px; color:#3e3e3e;  text-decoration:none;}
 	.navSplitPagesLinks a:hover{ background:#262626; color:#fff;}
-	.navSplitPagesLinks strong{  display:inline-block; background:url(../images/menu-bg-act.gif) repeat-x left top; padding:5px 10px; color:#fff;  }
+	.navSplitPagesLinks strong{  display:inline-block; background:url("../images/menu-bg-act.gif") repeat-x left top; padding:5px 10px; color:#fff;  }
 
 .navSplitPagesResult a {color:#161616;}
 

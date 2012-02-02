@@ -53,7 +53,7 @@
 <body id="<?php echo $body_id . 'Body'; ?>"<?php if($zv_onload !='') echo ' onload="'.$zv_onload.'"'; ?>>
 
 <!-- ========== IMAGE BORDER TOP ========== -->
-<div class="wrapp">
+<div class="extra-main">
 <div class="main-width">
 
 <?php require($template->get_template_dir('tpl_header.php',DIR_WS_TEMPLATE, $current_page_base,'common'). '/tpl_header.php');?>
