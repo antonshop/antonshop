@@ -83,9 +83,9 @@ if ($num_products_count > 0) {
   if ($featured_products->RecordCount() > 0) {
     if (isset($new_products_category_id) && $new_products_category_id !=0) {
       $category_title = zen_get_categories_name((int)$new_products_category_id);
-      $title = '<h2 class="centerBoxHeading">' . TABLE_HEADING_FEATURED_PRODUCTS . ($category_title != '' ? ' - ' . $category_title : '') . '</h2>';
+      $title = '<h2 class="centerBoxHeading firstWord">' . TABLE_HEADING_FEATURED_PRODUCTS . ($category_title != '' ? ' - ' . $category_title : '') . '</h2>';
     } else {
-      $title = '<h2 class="centerBoxHeading">' . TABLE_HEADING_FEATURED_PRODUCTS . '</h2>';
+      $title = '<h2 class="centerBoxHeading firstWord">' . TABLE_HEADING_FEATURED_PRODUCTS . '</h2>';
     }
     $zc_show_featured = true;
   }
