@@ -4,7 +4,7 @@
 .box {margin-bottom:30px;}
 
 .box-head {
-	font-size:23px;
+	font-size:18px;
 	line-height:25px;
 	color:#fff;
 	text-transform:uppercase;
@@ -192,7 +192,7 @@
 	background:#fff;
 }
 #specials .box-head a{
-	color:#737373;
+	color:#333;
 }
 #specials .box-body{
 	text-align:center;
@@ -211,8 +211,9 @@
 	text-decoration:none;
 	color:#000;
 }
-#specials .box-body .normalprice {text-decoration:line-through; color:#181818;
-	font-size:22px;
+.desc .name{ color:#F40606;}
+#specials .box-body .normalprice {text-decoration:line-through; color:#979797;
+	font-size:14px;
 	line-height:24px;
 	font-weight:normal;}
 #specials .box-body .productSpecialPrice, .productSalePrice, .productSpecialPriceSale {color:#181818;

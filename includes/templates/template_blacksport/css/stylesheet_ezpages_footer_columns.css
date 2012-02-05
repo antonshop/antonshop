@@ -28,3 +28,8 @@
 .ezpagesFooterCol{
 	width:auto!important;
 }
+.footLinks{ padding-bottom:0px; width:700px; clear:both; background:#fff;}
+.footLinks a{ color:#646464; font-size:14px; text-decoration:none;}
+.footLinks a:hover{ color:#333; text-decoration:underline;}
+.footLinks ul{ width:180px; float:left; margin:5 10px;}
+.footLinks ul li{ text-align:left;}

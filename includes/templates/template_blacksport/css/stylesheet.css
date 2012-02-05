@@ -528,12 +528,13 @@ LABEL#textAreaReviews {
 		
 .normalprice {
 	color:#979797;
-	font-size:18px;
+	font-size:14px;
 	line-height:24px;
 	font-weight:normal;
 	text-decoration:line-through;
 	padding-right:15px;
 }
+.save_price{ color:#F40606; font-size:14px;}
 
 .productSpecialPrice, .productSalePrice, .productSpecialPriceSale {color:#181818;
 	font-size:22px;

@@ -85,7 +85,27 @@ require($body_code); ?>
 <div class="clear"></div>
                     
                     <!--eof content_center-->
-                
+                <div class="footLinks">
+                    <ul>
+                        <li><a href="http://www.accessorieslocker.com">cashmere pants</a></li>
+                        <li><a href="http://www.accessorieslocker.com">wholesale stocking</a></li>
+                        <li><a href="http://www.accessorieslocker.com">twin bed sheet</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="http://www.accessorieslocker.com">cheap gloves</a></li>
+                        <li><a href="http://www.accessorieslock.com">twin bed sheet</a></li>
+                        <li><a href="http://www.accessorieslock.com">cheap mens sweater</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="http://www.accessorieslock.com">blanket suppliers</a></li>
+                        <li><a href="http://www.accessorieslock.com">fully fashion stockings</a></li>
+                        <li><a href="http://www.accessoriessell.com">Accessories Sell</a></li>
+                    </ul>
+                </div>
+                <br class="clearBoth">		
+               <!-- <div class="bottom_img">
+                    <img src="<?php echo DIR_WS_TEMPLATE;?>images/footer_icon.jpg" />
+                </div>	-->
                 </div>
                 
                 
@@ -102,45 +122,8 @@ require($body_code); ?>
 				<div id="navSuppWrapper">
 					<div id="navSupp">
 															
-<div class="ezpagesFooterCol">
-    <ul>
-      <li class="cone"><a href="<?php zen_href_link('index');?>"<?php if($body_id == 'index'){?> class="activeILPage"<?php }?>>Home</a></li>
 
-      <li><a href="<?php echo zen_href_link(FILENAME_CONDITIONS);?>"<?php if($body_id == 'conditions'){?> class="activeILPage"<?php }?>>Conditions of Use</a></li>
-
-      <li><a href="<?php echo zen_href_link(FILENAME_SHIPPING);?>"<?php if($body_id == 'shippinginfo'){?> class="activeILPage"<?php }?>>Shipping & Returns</a></li>
-
-      <li><a href="<?php echo zen_href_link(FILENAME_CONTACT_US);?>"<?php if($body_id == 'contactus'){?> class="activeILPage"<?php }?>>Contact Us</a></li>
-
-      <li><a href="<?php echo zen_href_link('page', '&id=8&chapter=0' . '');?>"<?php if($body_id == 'page'){?> class="activeILPage"<?php }?>>About Us</a></li>
-    </ul>
-</div>
-<div class="footLinks">
-	<ul>
-    	<li><a href="http://www.accessorieslocker.com">cashmere pants</a></li>
-        <li><a href="http://www.accessorieslocker.com">wholesale stocking</a></li>
-        <li><a href="http://www.accessorieslocker.com">twin bed sheet</a></li>
-    </ul>
-    <ul>
-    	<li><a href="http://www.accessorieslocker.com">cheap gloves</a></li>
-        <li><a href="http://www.accessorieslock.com">twin bed sheet</a></li>
-        <li><a href="http://www.accessorieslock.com">cheap mens sweater</a></li>
-    </ul>
-    <ul>
-    	<li><a href="http://www.accessorieslock.com">blanket suppliers</a></li>
-        <li><a href="http://www.accessorieslock.com">fully fashion stockings</a></li>
-        <li><a href="http://www.accessoriessell.com">Accessories Sell</a></li>
-    </ul>
-    <ul>
-    	<li><a href="http://www.accessoriessell.com">Wholesale Accessories Sell</a></li>
-        <li><a href="http://www.accessoriessell.com">Wholesale store</a></li>
-        <li><a href="http://www.accessoriessell.com">Wholesale Accessories</a></li>
-    </ul>
-</div>
-<br class="clearBoth">		
-<div class="bottom_img">
-	<img src="<?php echo DIR_WS_TEMPLATE;?>images/footer_icon.jpg" />
-</div>								
+							
 				</div>
 			</div>
 			<!--eof-navigation display -->
