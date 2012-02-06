@@ -22,7 +22,7 @@
         ?>
             <div class="div_one">
                 <div class="top_one" id="jersey_one" style="display:none;">
-				<?
+				<?php
 				for($i=0;$i<count($images_array_contain_all);$i++){
 					$arrimgsize=getimagesize($images_array_contain_all[$i]); 
 					if($i == 0){
@@ -35,15 +35,20 @@
                 
                 </div>
                 <div class="bottom_one">
-                    <?
+                    <?php
 					count($images_array_contain_all) == 1? $one_img_style = 'width:230px; height:270px;' : $one_img_style = '' ;
 					for($i=0;$i<count($images_array_contain_all);$i++){
 						$arrimgsize=getimagesize($images_array_contain_all[$i]); 
 						if(count($images_array_contain_all) == 1){
 						/*if($i == 0){*/
-							echo '<div class="thumbone"><a href="' . DIR_WS_CATALOG . $images_array_contain_all[$i].'" rel="lytebox[plants]"><img src="' . DIR_WS_CATALOG . $images_array_contain_all[$i].'" /></a></div>';
+							echo '<div class="thumbone"><a href="' . DIR_WS_CATALOG . $images_array_contain_all[$i].'" rel="lytebox[plants]"><img src="' . DIR_WS_CATALOG . $images_array_contain_all[$i].'" /><span class="zoom"></span></a></div>';
 						}else{
-							echo '<div class="thumbnail"><a href="' . DIR_WS_CATALOG . $images_array_contain_all[$i].'" rel="lyteshow[vacation]"><img src="' . DIR_WS_CATALOG . $images_array_contain_all[$i].'" w="'.$arrimgsize[0].'" h="'.$arrimgsize[1].'" class="latest_img" /></a><span class="smallzoomimg"></span></div>';
+							if($i == 0){
+								echo '<div class="thumbone"><a href="' . DIR_WS_CATALOG . $images_array_contain_all[$i].'" rel="lyteshow[vacation]"><img src="' . DIR_WS_CATALOG . $images_array_contain_all[$i].'" /><span class="zoom"></span></a></div>';
+							} else {
+								echo '<div class="thumbnail"><a href="' . DIR_WS_CATALOG . $images_array_contain_all[$i].'" rel="lyteshow[vacation]"><img src="' . DIR_WS_CATALOG . $images_array_contain_all[$i].'" w="'.$arrimgsize[0].'" h="'.$arrimgsize[1].'" class="latest_img" /></a><span class="smallzoomimg"></span></div>';
+							}
+							
 						}
 					}
 					?> 

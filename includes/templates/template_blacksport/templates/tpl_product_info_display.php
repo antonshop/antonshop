@@ -88,8 +88,8 @@ if (CUSTOMERS_APPROVAL == 3 and TEXT_LOGIN_FOR_PRICE_BUTTON_REPLACE_SHOWROOM == 
   <?php if ($display_qty != '' or $display_button != '') { ?>
     <div id="cartAdd">
     <?php
-      echo $display_qty;
-      echo $display_button;
+      echo '<strong class="fleft text2">' . $display_qty . '</strong>';
+      echo '<span class="buttonRow">' . $display_button . '</span>';
             ?>
           </div>
   <?php } // display qty and button ?>
@@ -184,7 +184,7 @@ require($template->get_template_dir('/tpl_products_next_previous.php',DIR_WS_TEM
 <br class="clearBoth" />
 <p class="reviewCount"><?php echo ($flag_show_product_info_reviews_count == 1 ? TEXT_CURRENT_REVIEWS . ' ' . $reviews->fields['count'] : ''); ?></p>
 <?php } else { ?>
-<div id="productReviewLink" class="buttonRow back"><?php echo '<a href="' . zen_href_link(FILENAME_PRODUCT_REVIEWS_WRITE, zen_get_all_get_params(array())) . '">' . zen_image_button(BUTTON_IMAGE_WRITE_REVIEW, BUTTON_WRITE_REVIEW_ALT) . '</a>'; ?></div>
+<div id="productReviewLink" class="buttonRow back"><?php echo '&nbsp;<a href="' . zen_href_link(FILENAME_PRODUCT_REVIEWS_WRITE, zen_get_all_get_params(array())) . '">' . zen_image_button(BUTTON_IMAGE_WRITE_REVIEW, BUTTON_WRITE_REVIEW_ALT) . '</a>'; ?></div>
 <br class="clearBoth" />
 <?php
   }

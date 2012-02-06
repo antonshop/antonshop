@@ -104,8 +104,8 @@ if (CUSTOMERS_APPROVAL == 3 and TEXT_LOGIN_FOR_PRICE_BUTTON_REPLACE_SHOWROOM == 
   <?php if ($display_qty != '' or $display_button != '') { ?>
     <div id="cartAdd">
     <?php
-      echo $display_qty;
-      echo $display_button;
+      echo '<strong class="fleft text2">' . $display_qty . '</strong>';
+      echo '<span class="buttonRow">' . $display_button . '</span>';
             ?>
           </div>
   <?php } // display qty and button ?>

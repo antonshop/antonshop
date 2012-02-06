@@ -341,6 +341,7 @@ p { margin:0; padding:0;}
 
 /* ============================= forms ======================= */
 input, select, textarea{ font-family:Arial, Helvetica, sans-serif; font-size:12px; line-height:normal; color:#010101; border:solid 1px #e3e3e3; padding:2px; background:#fdfdfd;}
+input:images{ border:none;}
 input:focus, select:focus, textarea:focus{outline:none;}
 .cartRemoveItemDisplay input,
 #gender-female, #gender-male, #newsletter-checkbox, #email-format-text, #email-format-html, #rating-1, #rating-2, #rating-3, #rating-4, #rating-5, #pmt-linkpoint_api, #pmt-moneyorder, #pmt-paypal, #pmt-cod, #notify-0{ border:none!important;}
