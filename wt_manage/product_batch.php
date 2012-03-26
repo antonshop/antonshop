@@ -6,6 +6,7 @@
  * 
  */
  set_time_limit(0);
+ ini_set('memory_limit', '-1');
 //ini_set("max_execution_time", "18000");
 require('includes/application_top.php');
 //csv文件夹
@@ -151,7 +152,7 @@ if($action == 'export'){
 		header("Content-Type: application/unknown");
 		die($zip->file());
 	}
-}else{
+}else if($action == 'import'){
 	$charset = isset($_POST['charset']) ? $_POST['charset'] : '';
 	$csvfilename = isset($_POST['csvfilename']) ? $_POST['csvfilename'] : '';
 	class arrayiconv
@@ -298,6 +299,114 @@ if($action == 'export'){
 			zen_redirect(zen_href_link('product_batch'));
 		}
 	}
+	/* export magento style */
+} else if ($action == 'export_tomagento') {
+	$filename = isset($_POST['filename']) ? $_POST['filename'] : '';
+	$charset = isset($_POST['charset']) ? $_POST['charset'] : '';
+	
+	if($filename && $charset){
+		require('includes/classes/phpzip.php');
+		$zip = new PHPZip;
+		
+		$sql = "select p.*, pd.*, mate.*
+			  from " . TABLE_PRODUCTS . " p, " .
+					   TABLE_PRODUCTS_DESCRIPTION . " pd, " .
+					   TABLE_META_TAGS_PRODUCTS_DESCRIPTION . " mate 
+			  where    p.products_id = pd.products_id AND mate.products_id = p.products_id";
+		$product_info = $db->Execute($sql);
+		
+		$replace_foundarr = array("\r",'"',"\n");
+		$replace_arr = array("",'""',"");
+		/* 导出内容 */
+		$product_arr = array(
+			'websites' => '',
+			'store' => '',
+			'attribute_set' => '',
+			'type' => '',
+			'name' => '',
+			'categories' => '',
+			'sku' => '',
+			'status' => '',
+			'visibility' => '',
+			'price' => 0,
+			'short_description' => '"',
+			'description ' => '',
+			'weight ' => 0,
+			'is_in_stock' => 0,
+			'manage_stock' => 0,
+			'qty' => 0,
+			'tax_class_id' => '',
+			'has_options ' => 0,
+			'size:drop_down:1' => '',
+			'image' => '',
+			'small_image' => '',
+			'thumbnail' => '',
+			'gallery' => '',
+			'meta_title ' => '',
+			'meta_keyword' => '',
+			'meta_description' => '',
+		);
+		
+		$content = '"' . implode('","', array_keys($product_arr)) . "\"\n";
+		//while($row = mysql_fetch_array($product_info->resource)){
+			$i = 0;
+		while(!$product_info->EOF){
+			$i++;
+			//echo $row['products_id']."<br>";
+			$row = $product_info->fields;	
+			$product_arr['websites'] 		= 'base';
+			$product_arr['store'] 			= 'admin';
+			$product_arr['attribute_set'] 	= 'Default';
+			$product_arr['type'] 			= 'simple';
+			$product_arr['name']			= '"' . $row['products_name'] . '"';
+			$product_arr['categories'] 		= '';
+			$product_arr['sku'] 			= '"' . strtolower(str_replace(" ", '-', $row['products_name'])) . '"';
+			$product_arr['status'] 			= 'Enabled';
+			$product_arr['visibility'] 		= 'Catalog, Search';
+			$product_arr['price'] 			='"' . $row['products_price'] . '"';
+			$product_arr['short_description'] 	= '"' . substr(str_replace($replace_foundarr,$replace_arr,"{$row['products_description']}"), 0, 30) . '"';
+			$product_arr['description'] 	= '"' . str_replace($replace_foundarr,$replace_arr,"{$row['products_description']}") . '"';
+			$product_arr['weight'] 			= '"' . $row['products_weight'] . '"';
+			$product_arr['is_in_stock'] 	= '';
+			$product_arr['manage_stock'] 	= '0';
+			$product_arr['qty'] 			= '"' . $row['products_quantity'] . '"';
+			$product_arr['tax_class_id'] 	= 'None';
+			$product_arr['has_options'] 	= '';
+			$product_arr['size:drop_down:1'] 	= '';
+			$product_arr['image'] 			= '"' . $row['products_image'] . '"';
+			$product_arr['small_image'] 	= '';
+			$product_arr['thumbnail'] 		= '';
+			$product_arr['gallery'] 		= '"' . $row['products_image'] . '"';
+			$product_arr['meta_title']		= '"' . $row['metatags_title'] . '"';
+			$product_arr['meta_keyword']	= '"' . $row['metatags_keywords'] . '"';
+			$product_arr['meta_description']	= '"' . $row['metatags_description'] . '"';
+	
+			$content .= implode(",", $product_arr) . "\n";
+			
+			/* 压缩图片 */
+			$img = explode(",", $row['products_image']);
+			if(is_array($img)){
+				foreach($img as $item){
+					if (!empty($item) && is_file(DIR_FS_CATALOG . DIR_WS_IMAGES . $item))
+					{
+						$zip->add_file(file_get_contents(DIR_FS_CATALOG . DIR_WS_IMAGES . $item), $item);
+					}
+				}
+			}
+			$product_info->MoveNext();
+			echo "<pre>";
+			print_r($product_arr);
+			echo "</pre>";
+			exit;
+		}
+		$charset = empty($charset) ? 'utf-8' : trim($charset);
+		$content = iconv('utf-8', $charset, $content);
+		$zip->add_file($content, $filename.'.csv');
+	
+		header("Content-Disposition: attachment; filename=". $filename .".zip");
+		header("Content-Type: application/unknown");
+		die($zip->file());
+	}
 }
 ?>
 <!doctype html public "-//W3C//DTD HTML 4.01 Transitional//EN">
@@ -357,6 +466,7 @@ if($action == 'export'){
                     <P class="topTit">商品批量导入导出</P>
                     <P class="topC0">商品批量导入</P>
                     <P class="topC0">商品批量导出</P>
+                    <P class="topC0">商品批量导出magento格式</P>
                 </DIV>
             <DIV id="NewsTop_cnt">
             <SPAN></SPAN>
@@ -402,6 +512,27 @@ if($action == 'export'){
                 <form method="post" action="product_batch.php?action=export" onSubmit="return checkexpform(this)">
                     <tr>
                         <td class="txtright">导出文件名称：</td>
+                        <td><input type="text" name="filename"></td>
+                    </tr>
+                    <tr>
+                        <td class="txtright">编码格式：</td>
+                        <td><select name="charset">
+                        <option value="utf-8">utf-8</option>
+                        <option value="gb2312">gb2312</option>
+                        <option value="gbk">gbk</option>
+                        </select></td>
+                    </tr>
+                    <tr><td colspan="2" class="txtcenter"><input type="submit" value="导出"></td></tr>
+                </form>
+                </table>
+            </div>
+            </span>
+            <span>
+            <div class="product_export">
+                <table>
+                <form method="post" action="product_batch.php?action=export_tomagento" onSubmit="return checkexpform(this)">
+                    <tr>
+                        <td class="txtright">导出magento格式文件名称：</td>
                         <td><input type="text" name="filename"></td>
                     </tr>
                     <tr>
