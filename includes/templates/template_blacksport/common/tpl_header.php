@@ -35,7 +35,7 @@
 			<div class="fright">
 				<div class="search">
 					<!-- ========== SEARCH ========== -->
-					<form name="quick_find_header" action="index.php?main_page=advanced_search_result" method="get" name="quick_find_header">
+					<form name="quick_find_header" action="index.php?main_page=advanced_search_result" method="get" name="quick_find_header"> 
                     <input type="hidden" value="advanced_search_result" name="main_page">
                     <input type="hidden" value="1" name="search_in_description">
                     <input class="input1" name="keyword" type="text"  value="Search:" onFocus="if (this.value == 'Search:') this.value ='';" onBlur="if (this.value == '') this.value = 'Search:<?php //echo HEADER_SEARCH_DEFAULT_TEXT;?>';" />
