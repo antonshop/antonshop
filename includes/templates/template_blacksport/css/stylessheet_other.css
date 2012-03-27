@@ -1,0 +1,93 @@
+/* ============================= slider ====================== */
+#slider{	overflow:hidden;	width:670px;	height:322px;	margin-bottom:10px;}
+#coin-slider-coin-slider{	width:670px;	height:322px;	position:relative;	float:left;	overflow:hidden;}
+#coin-slider{	width:670px!important;	height:322px!important;	overflow:hidden!important;	
+}
+#cs-buttons-coin-slider{	position:absolute;	bottom:0px;	left:0px;	padding:0;	overflow:hidden;	background:url("../images/pagination-bg.png") repeat-x left top;	width:701px;	height:18px;	padding: 7px 0 0 9px;}
+#cs-buttons-coin-slider a{	display:block;	text-indent:-10000px;	float:left;	width:12px;	height:12px;	background:url("../images/pagination.png") no-repeat right top;	margin-right:2px;}
+#cs-buttons-coin-slider a:hover,
+#cs-buttons-coin-slider a.cs-active{	background:url("../images/pagination.png") no-repeat left top;}
+#cs-navigation-coin-slider{	display:block!important;	position:absolute;	top:0;	left:0;}
+#cs-prev-coin-slider{	display:none;}
+#cs-next-coin-slider{	display:none;}
+.product-col .img img{ width:190px; height:130px;}
+
+/* product lightbox */
+.con_right .jersey_pro {overflow:hidden;zoom:1;}
+.jersey_pic {float:left;max-width:281px;}
+
+.top_one {width:279px;height:246px;border:1px solid #c0c0c0;overflow:hidden;line-height:246px;vertical-align:middle;display:table-cell;}
+.top_one img {display:none;}
+.top_one .top_pic {display:block;margin:auto;_margin-top: expression_r(( 246 - this.height ) / 2);}
+.bottom_one {max-width:265px;margin:7px 0;overflow:hidden;zoom:1;padding:7px 7px 5px 7px;}
+.bottom_one .out_one {width:235px;height:62px;float:left;overflow:hidden;}
+.out_one  img {width:53px;height:50px;filter:alpha(opacity=40);opacity: 0.4;display:block;}
+.out_one .special_img {filter:alpha(opacity=100);opacity: 1;border:1px black solid;}
+.bottom_one input {float:left;width:15px;height:52px;margin-top:5px;}
+.bottom_one .main_one {float:left;height:52px;}
+
+.tanchu {position:absolute;left:20%;width:800px;top:80px;z-index:99;display:none;}
+.top {width:800px;height:500px;margin:0 auto;background-color:white;overflow:hidden;line-height:500px;vertical-align:middle;display:table-cell;}
+.top img {display:none;}
+.top .change_img {display:block;margin:0 auto;_margin-top: expression_r(( 500 - this.height ) / 2);}
+.bottom_two {width:738px;margin:40px auto;overflow:hidden;zoom:1;}
+.bottom_two .out {width:668px; float:left;margin-top:5px;float:left;overflow:hidden;}
+.bottom_two .main {height:122px;float:left;}
+.out img {width:125px;height:120px;border:1px black solid;filter:alpha(opacity=40);opacity: 0.4;float:left;margin-right:5px;}
+.out .special {filter:alpha(opacity=100);opacity: 1;}
+.bottom_two input {float:left;width:25px;height:132px;margin-right:5px;}
+#mask {background-color:black;width:100%;filter:alpha(opacity=70);opacity: 0.7;height:100%;_height:2000px;position:absolute;left:0;top:0;z-index:60;display:none;}
+.close {width:23px;height:23px;background:url("../images/close.gif") no-repeat;cursor:pointer;font-size:18px;color:orange;font-weight:bold;position:absolute;top:0;left:777px;}
+.lf_but {width:42px;height:74px;background:url("../images/c_left.gif") no-repeat;cursor:pointer;position:absolute;left:20px;top:213px;z-index:25;}
+.rg_but {width:42px;height:74px;background:url("../images/c_right.gif") no-repeat;cursor:pointer;position:absolute;left:738px;top:213px;z-index:25;}
+.lf_but_color {width:42px;height:74px;background:url("../images/m_left.gif") no-repeat;cursor:pointer;position:absolute;left:20px;top:213px;z-index:25;}
+.rg_but_color {width:42px;height:74px;background:url("../images/m_right.gif") no-repeat;cursor:pointer;position:absolute;left:738px;top:213px;z-index:25;}
+
+.share {overflow:hidden;zoom:1;}
+.share .share_span,.share .share_link {float:left;}
+.share .share_span {font-weight:bold;margin-right:10px;}
+.share .share_link {margin-right:6px;}
+
+.jersey_rg {float:left;margin-left:14px;width:370px;display:inline;position:relative;}
+.jersey_rg span {display:block;}
+.jersey_rg .pro_num {text-align:right;font-weight:600;width:360px;}
+.jersey_rg .jer_pro_inf {font-size:18px;color:#ff6c02;font-weight:600;margin-top:6px;}
+.jersey_rg .jer_price {margin-top:8px;}
+.jersey_rg .jer_price var {text-decoration:line-through;margin-right:20px;font-size:14px;font-weight:bold;}
+.jersey_rg .jer_price em {font-size:14px;color:#da0000;font-weight:bold;}
+.jersey_rg .jer_save_price {font-size:14px;font-weight:bold;color:#3f8fcc;margin-top:6px;}
+.jersey_rg .jer_size {margin-top:10px;}
+.jersey_rg .jer_size label {font-size:14px;color:black;font-weight:600;}
+.jersey_rg .jer_cart {display:block;width:184px;padding-left:59px;height:45px;margin-top:26px;background:url("../images/abc.gif") -157px -386px no-repeat;font-size:16px;font-weight:bold;line-height:45px;color:#fc8121;}
+.jersey_rg .jer_free {position:absolute;left:284px;top:74px;width:120px;height:119px;background:url("../images/abc.gif") 0 -365px no-repeat;}
+.top_one img { width:230px; height:270px;}
+
+/* thumbnail */
+.thumbnail{ width:66px; height:66px; margin:10px 10px 5px 5px;; float:left;}
+.thumbnail img { width:68px; height:66px;}
+.thumbone{max-width: 270px; height:auto; background:none; z-index:1000;}
+.thumbone img { max-width:260px;}
+.thumbone .smallzoomimg{ position:relative; z-index:3; top:-20; left:-20; background:url("../images/icon/small_zomm.gif");}
+.thumbone a {
+    display: inline-block;
+    position: relative;
+}
+.zoom {
+    background: url("../images/icons/zoom-icon.png") no-repeat scroll 0 0 transparent;
+    bottom: 3px;
+    height: 28px;
+    left: 3px;
+    position: absolute;
+    width: 29px;
+}
+
+.productGeneral .normalprice, .productGeneral .price{ float:left;}
+.productGeneral .save_price{ clear:left;}
+#productTellFriendLink, #productReviewLink{ padding:0px; float:left;}
+#productDetailsList{ margin-left:0px;}
+.zhuce table tr{ height:32px;}
+.zhuce_tit{ height:26px;}
+.right_list{ padding:5px; margin:5px 0px 10px; border:1px solid #E1E1E1;}
+.right_list {border:2px solid #e1e1e1;margin-bottom:10px;}
+.right_list .child_list {padding:0px;overflow:hidden;zoom:1;}
+.right_list .child_list li {line-height:26px;width:220px;padding-left:22px;float:left;}

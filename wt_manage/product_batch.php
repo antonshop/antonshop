@@ -308,43 +308,60 @@ if($action == 'export'){
 		require('includes/classes/phpzip.php');
 		$zip = new PHPZip;
 		
-		$sql = "select p.*, pd.*, mate.*
+		$sql = "select p.*, pd.* 
 			  from " . TABLE_PRODUCTS . " p, " .
-					   TABLE_PRODUCTS_DESCRIPTION . " pd, " .
-					   TABLE_META_TAGS_PRODUCTS_DESCRIPTION . " mate 
-			  where    p.products_id = pd.products_id AND mate.products_id = p.products_id";
+					   TABLE_PRODUCTS_DESCRIPTION . " pd 
+			  where    p.products_id = pd.products_id AND pd.language_id = 1 
+			  order by p.products_id asc";
 		$product_info = $db->Execute($sql);
+		
+		$sql = "select pa.products_id, pov.products_options_values_id, pov.products_options_values_name  
+		from ". TABLE_PRODUCTS_ATTRIBUTES ." pa, ".
+			   TABLE_PRODUCTS_OPTIONS . " po, " .
+			   TABLE_PRODUCTS_OPTIONS_VALUES . " pov  
+		where  pa.options_id = po.products_options_id AND po.language_id = 1 AND pa.options_values_id = pov.products_options_values_id 
+		order by pa.products_id asc ";
+		$options_arr = $db->Execute($sql);
+		$options = array();
+		while(!$options_arr->EOF){
+			$item = $options_arr->fields;
+			$options[$item['products_id']][] = $item;
+			$options_arr->MoveNext();
+		}
+
 		
 		$replace_foundarr = array("\r",'"',"\n");
 		$replace_arr = array("",'""',"");
 		/* 导出内容 */
 		$product_arr = array(
-			'websites' => '',
-			'store' => '',
-			'attribute_set' => '',
-			'type' => '',
+			//'id' => '',
+			'websites' => 'base',
+			'store' => 'admin',
+			'attribute_set' => 'Default',
+			'type' => 'simple',
 			'name' => '',
 			'categories' => '',
 			'sku' => '',
+			'url_key' => '',
 			'status' => '',
-			'visibility' => '',
+			'visibility' => '"Catalog, Search"',
 			'price' => 0,
 			'short_description' => '"',
-			'description ' => '',
-			'weight ' => 0,
-			'is_in_stock' => 0,
+			'description' => '',
+			'weight' => 0,
+			'is_in_stock' => 1,
 			'manage_stock' => 0,
 			'qty' => 0,
 			'tax_class_id' => '',
-			'has_options ' => 0,
+			'has_options' => 0,
 			'size:drop_down:1' => '',
 			'image' => '',
 			'small_image' => '',
 			'thumbnail' => '',
 			'gallery' => '',
-			'meta_title ' => '',
-			'meta_keyword' => '',
-			'meta_description' => '',
+			//'meta_title ' => '',
+			//'meta_keyword' => '',
+			//'meta_description' => '',
 		);
 		
 		$content = '"' . implode('","', array_keys($product_arr)) . "\"\n";
@@ -354,37 +371,39 @@ if($action == 'export'){
 			$i++;
 			//echo $row['products_id']."<br>";
 			$row = $product_info->fields;	
-			$product_arr['websites'] 		= 'base';
-			$product_arr['store'] 			= 'admin';
-			$product_arr['attribute_set'] 	= 'Default';
-			$product_arr['type'] 			= 'simple';
+			//$product_arr['id'] 		= $row['products_id'];
+//			$product_arr['websites'] 		= 'base';
+//			$product_arr['store'] 			= 'admin';
+//			$product_arr['attribute_set'] 	= 'Default';
+//			$product_arr['type'] 			= 'simple';
 			$product_arr['name']			= '"' . $row['products_name'] . '"';
-			$product_arr['categories'] 		= '';
+			$product_arr['categories'] 		= '"'.get_categories_path($row['master_categories_id']).'"';
 			$product_arr['sku'] 			= '"' . strtolower(str_replace(" ", '-', $row['products_name'])) . '"';
 			$product_arr['status'] 			= 'Enabled';
-			$product_arr['visibility'] 		= 'Catalog, Search';
+			//$product_arr['visibility'] 		= '"Catalog, Search"';
 			$product_arr['price'] 			='"' . $row['products_price'] . '"';
-			$product_arr['short_description'] 	= '"' . substr(str_replace($replace_foundarr,$replace_arr,"{$row['products_description']}"), 0, 30) . '"';
+			$product_arr['short_description'] 	= '"' . substr(strip_tags(str_replace($replace_foundarr,$replace_arr,"{$row['products_description']}")), 0, 100) . '"';
 			$product_arr['description'] 	= '"' . str_replace($replace_foundarr,$replace_arr,"{$row['products_description']}") . '"';
 			$product_arr['weight'] 			= '"' . $row['products_weight'] . '"';
-			$product_arr['is_in_stock'] 	= '';
+			//$product_arr['is_in_stock'] 	= '';
 			$product_arr['manage_stock'] 	= '0';
 			$product_arr['qty'] 			= '"' . $row['products_quantity'] . '"';
 			$product_arr['tax_class_id'] 	= 'None';
-			$product_arr['has_options'] 	= '';
-			$product_arr['size:drop_down:1'] 	= '';
-			$product_arr['image'] 			= '"' . $row['products_image'] . '"';
+			$product_arr['size:drop_down:1'] 	= '"'.get_options($row['products_id']).'"';
+			$product_arr['image'] 			= '"/zc/' . $row['products_image'] . '"';
 			$product_arr['small_image'] 	= '';
 			$product_arr['thumbnail'] 		= '';
-			$product_arr['gallery'] 		= '"' . $row['products_image'] . '"';
-			$product_arr['meta_title']		= '"' . $row['metatags_title'] . '"';
-			$product_arr['meta_keyword']	= '"' . $row['metatags_keywords'] . '"';
-			$product_arr['meta_description']	= '"' . $row['metatags_description'] . '"';
-	
+			$product_arr['gallery'] 		= '"' . get_product_imagelist($row['products_image']) . '"';
+			//$product_arr['meta_title']		= '"' . $row['metatags_title'] . '"';
+			//$product_arr['meta_keyword']	= '"' . $row['metatags_keywords'] . '"';
+			//$product_arr['meta_description']	= '"' . $row['metatags_description'] . '"';
+			if(get_options($row['products_id'])){
+				$product_arr['has_options'] 	= '1';
+			}
 			$content .= implode(",", $product_arr) . "\n";
 			
 			/* 压缩图片 */
-			$img = explode(",", $row['products_image']);
+			/*$img = explode(",", $row['products_image']);
 			if(is_array($img)){
 				foreach($img as $item){
 					if (!empty($item) && is_file(DIR_FS_CATALOG . DIR_WS_IMAGES . $item))
@@ -392,12 +411,14 @@ if($action == 'export'){
 						$zip->add_file(file_get_contents(DIR_FS_CATALOG . DIR_WS_IMAGES . $item), $item);
 					}
 				}
-			}
+			}*/
 			$product_info->MoveNext();
-			echo "<pre>";
+			/*echo "<pre>";
+			echo $row['products_id']."* ";
+			
 			print_r($product_arr);
 			echo "</pre>";
-			exit;
+			exit;*/
 		}
 		$charset = empty($charset) ? 'utf-8' : trim($charset);
 		$content = iconv('utf-8', $charset, $content);
@@ -407,6 +428,41 @@ if($action == 'export'){
 		header("Content-Type: application/unknown");
 		die($zip->file());
 	}
+}
+/* get category name path */
+function get_categories_path($cateid){
+	$patharr = zen_generate_category_path($cateid);
+	$path = '';
+	foreach($patharr[0] as $value){
+		$path = $value['text']."/".$path;
+	}
+	return substr($path,0,-1);
+}
+
+/* get products options value */
+function get_options($pid){
+	global $options;
+	$options_list = '';
+	if(isset($options[$pid])){
+		foreach($options[$pid] as $value){
+			$options_list .= $value['products_options_values_name'] . '|';
+		}
+	}
+	return substr($options_list, 0, -1);
+}
+
+function get_product_imagelist($image){
+	$imagelist = '';
+	for($i=1;$i<10;$i++){
+		$pathinfo = pathinfo($image);
+		//echo DIR_FS_CATALOG . DIR_WS_IMAGES . $pathinfo['filename']."_".$i.".".$pathinfo['extension'];
+		if (is_file(DIR_FS_CATALOG . DIR_WS_IMAGES . $pathinfo['filename']."_".$i.".".$pathinfo['extension'])){
+			$imagelist .= '/zc/'.$pathinfo['filename']."_".$i.".".$pathinfo['extension'].';';
+		}else{
+			continue;
+		}
+	}
+	return substr($imagelist, 0, -1);
 }
 ?>
 <!doctype html public "-//W3C//DTD HTML 4.01 Transitional//EN">
